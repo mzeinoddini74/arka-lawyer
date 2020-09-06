@@ -1,0 +1,199 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "assets/fonts/fontawesome/css/all.min.css";
+
+
+@font-face {
+  font-family: IRANSans;
+  font-style: normal;
+  font-weight: normal;
+  src: url('assets/fonts/IranSans/eot/IRANSansWeb_Light.eot');
+  src: url('assets/fonts/IranSans/eot/IRANSansWeb_Light.eot') format('embedded-opentype'),
+  url('assets/fonts/IranSans/woff2/IRANSansWeb_Light.woff2') format('woff2'),
+  url('assets/fonts/IranSans/woff/IRANSansWeb_Light.woff') format('woff'),
+  url('assets/fonts/IranSans/ttf/IRANSansWeb_Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: IRANSans-Bold;
+  font-style: normal;
+  font-weight: bold;
+  src: url('assets/fonts/IranSans/eot/IRANSansWeb_Bold.eot');
+  src: url('assets/fonts/IranSans/eot/IRANSansWeb_Bold.eot') format('embedded-opentype'),
+  url('assets/fonts/IranSans/woff2/IRANSansWeb_Bold.woff2') format('woff2'),
+  url('assets/fonts/IranSans/woff/IRANSansWeb_Bold.woff') format('woff'),
+  url('assets/fonts/IranSans/ttf/IRANSansWeb_Bold.ttf') format('truetype');
+}
+
+/* line 3, ../../01 cl html template/New folder/May 2019/178 Real Estate/Real Estate Html/sass/_common.scss */
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: IRANSans, "Helvetica Neue", sans-serif;
+}
+*{
+  font-family: IRANSans;
+}
+p, span, section, h1, h2, h3, h4, h5, h6, a, li, button, input, textarea{
+  font-family: IRANSans!important;
+}
+
+a{
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+
+ul li{
+  list-style: none;
+}
+
+.rtl{
+  direction: rtl;
+}
+
+.btn-outline-success,.btn-outline-success:visited {
+  display: inline-block;
+  font-size: 16px;
+  color: #037160!important;
+  border: 1px solid #037160!important;
+  padding: 12px 15px;
+  position: relative;
+  z-index: 1;
+  border-radius: 0px;
+  background-color: transparent!important;
+  box-shadow: unset!important;
+}
+
+.btn-outline-success:hover,.btn-outline-success:active {
+  display: inline-block;
+  font-size: 16px;
+  color: #ffffff!important;
+  border: 1px solid #037160!important;
+  padding: 12px 15px;
+  position: relative;
+  z-index: 1;
+  background-color: #037160!important;
+  box-shadow: unset!important;
+}
+.pb-70{
+  padding-bottom: 70px;
+}
+.pt-30{
+  padding-top: 30px;
+}
+.pt-70{
+   padding-top: 70px;
+ }
+.pb-100{
+  padding-bottom: 100px;
+}
+.pt-100{
+  padding-top: 100px;
+}
+
+mat-icon {
+  vertical-align: middle!important;
+}
+
+/*BreadCrumb*/
+.page-title-area {
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  height: 400px;
+  text-align: center;
+  position: relative;
+}
+.title-img {
+  background-image: url(assets/images/shared/breadcrumbs-bg.jpg);
+}
+.page-title-area:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #333;
+  opacity: .9;
+}
+.page-title-text {
+  position: relative;
+  margin-top: 150px;
+  color: #fff;
+}
+.page-title-text h2 {
+  font-weight: 900;
+  font-size: 38px;
+  color: #fff;
+  margin-bottom: 30px;
+}
+.page-title-text ul {
+  padding: 0;
+  margin: 0 0 25px;
+}
+.page-title-text ul li {
+  list-style-type: none;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 17px;
+}
+.page-title-text ul li a {
+  display: inline-block;
+  color: #fff;
+}
+.page-title-text ul li mat-icon {
+  font-size: 17px;
+  line-height: 20px;
+  height: 17px;
+}
+/*End*/
+
+
+.downloadbtns {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+.app-btn {
+  width: 45%;
+  max-width: 160px;
+  color: #101010!important;
+  padding: 8px;
+  text-align: left;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 10px;
+  background-color: #f2f2f2;
+  -webkit-transition: background-color 0.25s linear;
+  transition: background-color 0.25s linear;
+  margin: 2px;
+}
+.app-btn:hover {
+  background-color: #454545;
+  color: #ffffff;
+}
+.app-btn:hover p ,.app-btn:hover i{
+  color: #ffffff;
+}
+.app-btn i {
+  width: 20%;
+  text-align: center;
+  font-size: 28px;
+  margin-left: 7px;
+}
+.app-btn p{
+  text-align: right;
+  margin-bottom: unset;
+  padding-bottom: unset;
+  font-size: 15px ;
+}
+.app-btn .big-txt {
+  font-size: 17px;
+  font-weight: bold;
+}
