@@ -28,6 +28,12 @@ import { BlogDetailComponent } from './pages/blog/blog-detail/blog-detail.compon
 import { HomeAppComponent } from './pages/home/home-app/home-app.component';
 import { ConsultationComponent } from './pages/consultation/consultation.component';
 import { AdminDashboardComponent } from './panels/admin/admin-dashboard/admin-dashboard.component';
+import { LoginComponent } from './pages/account/login/login.component';
+import { RegisterComponent } from './pages/account/register/register.component';
+import { ForgotPasswordComponent } from './pages/account/forgot-password/forgot-password.component';
+import { AdminMenuComponent } from './panels/admin/shared/admin-menu/admin-menu.component';
+import { AdminHeaderComponent } from './panels/admin/shared/admin-header/admin-header.component';
+import { PanelFooterComponent } from './panels/shared/panel-footer/panel-footer.component';
 
 
 @NgModule({
@@ -52,7 +58,13 @@ import { AdminDashboardComponent } from './panels/admin/admin-dashboard/admin-da
     BlogDetailComponent,
     HomeAppComponent,
     ConsultationComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    LoginComponent,
+    RegisterComponent,
+    ForgotPasswordComponent,
+    AdminMenuComponent,
+    AdminHeaderComponent,
+    PanelFooterComponent
   ],
   imports: [
     BrowserModule,
