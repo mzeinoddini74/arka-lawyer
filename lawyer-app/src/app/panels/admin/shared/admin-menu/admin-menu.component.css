@@ -7,7 +7,7 @@
   overflow-x:hidden;
   height: 100%;
   z-index: 100;
-  background-color: #ffffff;
+  background-color: #1F262D;
   width: 240px;
   padding-top: 60px;
 
@@ -47,7 +47,7 @@
 .user-profile .profile-img img {
    width: 100%;
    padding: 5px;
-   border: 1px solid rgba(120, 130, 140, 0.13);
+   border: 1px solid #f2f2f2;
    border-radius: 100%;
  }
 .user-profile .profile-text {
@@ -56,15 +56,15 @@
   text-align: center;
 }
 .user-profile .profile-text > a {
-  color: #99abb4;
+  color: #ffffff;
   padding: 0 5px;
 }
 .user-profile .profile-text > a {
-  color: #99abb4;
+  color: #ffffff;
   padding: 0 5px;
 }
 .sidebar-nav {
-  background: #fff;
+  background: #1F262D;
   padding: 0px;
 }
 .sidebar-nav ul {
@@ -81,7 +81,7 @@
   font-size: 12px;
   margin-bottom: 0px;
   padding: 14px 14px 14px 20px;
-  color: #263238;
+  color: #ffffff;
   font-weight: 500;
 }
 .sidebar-nav > ul > li {
@@ -94,17 +94,20 @@
   border-right: 3px solid transparent;
 }
 .sidebar-nav ul li a {
-  color: #607d8b;
+  color: #ffffff;
   padding: 8px 15px 8px 35px;
   display: block;
   font-size: 14px;
+}
+.sidebar-nav ul li:focus {
+  outline: none;
 }
 .sidebar-nav > ul > li > a i {
   width: 27px;
   font-size: 19px;
   display: inline-block;
   vertical-align: middle;
-  color: #99abb4;
+  color: #ffffff;
 }
 .sidebar-nav .has-arrow::after {
   position: absolute;
@@ -113,7 +116,7 @@
   height: 7px;
   border-width: 0 1px 1px 0;
   border-style: solid;
-  border-color: #607d8b;
+  border-color: #ffffff;
   left: 1em;
   -webkit-transform: rotate(135deg) translate(0, -50%);
   -ms-transform: rotate(135deg) translate(0, -50%);
@@ -136,10 +139,17 @@
   padding: 7px 35px 7px 15px;
 }
 .sidebar-nav ul li a {
-  color: #607d8b;
+  color: #ffffff;
   padding: 8px 15px 8px 35px;
   display: block;
   font-size: 14px;
+}
+
+.sidebar-nav ul li a:hover{
+  cursor: pointer;
+}
+.sidebar-nav ul li a:focus{
+  border: none;
 }
 @media screen and (max-width: 768px) {
   .right-sidebar{

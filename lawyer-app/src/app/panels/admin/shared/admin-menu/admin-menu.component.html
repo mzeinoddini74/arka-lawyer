@@ -1,5 +1,3 @@
-
-
 <aside class="right-sidebar rtl text-right" id="panel-menu">
     <div class="user-profile">
       <div class="profile-img">
@@ -14,17 +12,29 @@
     <nav class="sidebar-nav">
       <ul id="sidebarnav">
         <li class="nav-devider"></li>
-        <li class="nav-small-cap">داشبورد</li>
+        <li class="nav-small-cap">مدیریت</li>
 
-        <li class="">
-        <a class="has-arrow" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-          <i class="fa fa-users fa-sm"></i><span class="hide-menu"> کاربران </span>
-        </a>
-        <ul class="collapse" id="collapseExample">
-          <li><a href="/Admin/User/Index">لیست کاربران</a></li>
-          <li><a href="/Admin/User/Add">ثبت کاربر</a></li>
-        </ul>
+        <li class="" routerLink="/admin/dashboard">
+          <a>
+            <i class="fa fa-home fa-sm"></i><span class="hide-menu"> داشبورد </span>
+          </a>
         </li>
+
+        <li class="" routerLink="/admin/user">
+          <a>
+            <i class="fa fa-users fa-sm"></i><span class="hide-menu"> کاربران </span>
+          </a>
+        </li>
+
+<!--        <li class="">-->
+<!--          <a class="has-arrow" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">-->
+<!--            <i class="fa fa-users fa-sm"></i><span class="hide-menu"> کاربران </span>-->
+<!--          </a>-->
+<!--          <ul class="collapse" id="collapseExample">-->
+<!--            <li><a href="/Admin/User/Index">لیست کاربران</a></li>-->
+<!--            <li><a href="/Admin/User/Add">ثبت کاربر</a></li>-->
+<!--          </ul>-->
+<!--        </li>-->
       </ul>
     </nav>
 </aside>

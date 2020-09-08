@@ -34,7 +34,9 @@ import { ForgotPasswordComponent } from './pages/account/forgot-password/forgot-
 import { AdminMenuComponent } from './panels/admin/shared/admin-menu/admin-menu.component';
 import { AdminHeaderComponent } from './panels/admin/shared/admin-header/admin-header.component';
 import { PanelFooterComponent } from './panels/shared/panel-footer/panel-footer.component';
-
+import { AdminUserComponent } from './panels/admin/admin-user/admin-user.component';
+import {MatPaginatorIntl} from '@angular/material/paginator';
+import {getDutchPaginatorIntl} from './dutch-paginator-intl';
 
 @NgModule({
   declarations: [
@@ -64,7 +66,8 @@ import { PanelFooterComponent } from './panels/shared/panel-footer/panel-footer.
     ForgotPasswordComponent,
     AdminMenuComponent,
     AdminHeaderComponent,
-    PanelFooterComponent
+    PanelFooterComponent,
+    AdminUserComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +77,9 @@ import { PanelFooterComponent } from './panels/shared/panel-footer/panel-footer.
     CarouselModule,
     NgwWowModule
   ],
-  providers: [],
+  providers: [
+    { provide: MatPaginatorIntl, useValue: getDutchPaginatorIntl() }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

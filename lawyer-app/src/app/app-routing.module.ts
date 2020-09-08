@@ -9,10 +9,11 @@ import {ContactComponent} from './pages/contact/contact.component';
 import {BlogDetailComponent} from './pages/blog/blog-detail/blog-detail.component';
 import {BlogComponent} from './pages/blog/blog.component';
 import {ConsultationComponent} from './pages/consultation/consultation.component';
-import {AdminDashboardComponent} from './panels/admin/admin-dashboard/admin-dashboard.component';
 import {LoginComponent} from './pages/account/login/login.component';
 import {ForgotPasswordComponent} from './pages/account/forgot-password/forgot-password.component';
 import {RegisterComponent} from './pages/account/register/register.component';
+import {AdminDashboardComponent} from './panels/admin/admin-dashboard/admin-dashboard.component';
+import {AdminUserComponent} from './panels/admin/admin-user/admin-user.component';
 
 const routes: Routes = [
   {path : '' , component : HomeComponent},
@@ -27,7 +28,8 @@ const routes: Routes = [
   {path : 'login' , component : LoginComponent},
   {path : 'register' , component : RegisterComponent},
   {path : 'forgot-password' , component : ForgotPasswordComponent},
-  {path : 'admin/dashboard' , component : AdminDashboardComponent}
+  {path : 'admin/dashboard' , component : AdminDashboardComponent},
+  {path : 'admin/user' , component : AdminUserComponent}
 
 ];
 

@@ -151,7 +151,7 @@ mat-icon {
 }
 /*End*/
 
-
+/*Download App Buttons*/
 .downloadbtns {
   display: -webkit-box;
   display: flex;
@@ -197,20 +197,89 @@ mat-icon {
   font-size: 17px;
   font-weight: bold;
 }
+/*End*/
 
-
+/*ُScrollbar*/
 ::-webkit-scrollbar {
   width: 10px;
 }
-
 ::-webkit-scrollbar-track {
-  background-color: #ebebeb;
+  background-color: #ffffff;
   -webkit-border-radius: 10px;
   border-radius: 10px;
 }
-
 ::-webkit-scrollbar-thumb {
   -webkit-border-radius: 10px;
   border-radius: 10px;
-  background: #037160;
+  background: #ebebeb;
 }
+/*End*/
+
+
+/*Panel Styles*/
+.content {
+  background-color: #EEEEEE;
+  width: 100%;
+  position: relative;
+  text-align: right;
+}
+.content .content-inner {
+  padding: 20px 260px 0 0px;
+}
+.content .content-wrapper {
+  padding: 20px;
+}
+
+.content .content-box {
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0px solid transparent;
+  border-radius: 0px;
+}
+.content .content-title {
+  font-size: 24px;
+  line-height: 28px;
+  color: #037160;
+  font-weight: 300;
+  display: block;
+}
+.content .content-titleSection {
+  margin-bottom: 15px;
+}
+.content .breadcrumb-link {
+  color: #929394;
+  display: inline-block;
+  font-size: 14px;
+}
+.content .breadcrumb-link.active {
+  color: #037160;
+}
+.content .breadcrumb {
+
+  padding: 0px;
+  margin-bottom: 0px;
+  background-color: unset;
+}
+.content .breadcrumb-separator {
+  display: inline-block;
+}
+.content .breadcrumb-separator i {
+  font-size: 10px;
+  line-height: 20px;
+  padding-right: 5px;
+  padding-left: 5px;
+  color: #929394;
+}
+.content .content-inner-box {
+  padding: 50px 20px 50px 20px;
+}
+@media screen and (max-width: 768px) {
+  .content .content-inner {
+    padding-right: 0 !important;
+  }
+  .content .content-wrapper {
+    padding: 20px 10px;
+  }
+
+}
+/*End*/

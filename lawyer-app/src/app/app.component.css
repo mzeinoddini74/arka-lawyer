@@ -7,7 +7,7 @@
   z-index: 10;
 }
 .back-to-top-btn mat-icon{
-  background-color: #037160;
+  background-color: #1c1c1c;
   color: #fff;
   height: 50px;
   width: 50px;
@@ -18,5 +18,5 @@
   border-radius: 50%;
   transition: all .5s ease;
   margin-left: 28px;
-  box-shadow: 0 0 14px 0 #b69d74;
+  box-shadow: 0 0 14px 0 #1c1c1c;
 }
