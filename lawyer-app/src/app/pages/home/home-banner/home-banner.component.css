@@ -99,28 +99,20 @@
     top: 0;
   }
 }
-@media only screen and (max-width: 1000px){
+@media only screen and (max-width: 1000px) {
   .parent {
     padding-top: 30px;
     padding-bottom: 15px;
     top: 0;
     height: auto;
   }
-  .counter-item{
+
+  .counter-item {
     padding-bottom: 15px;
   }
 
 }
-.banner-box a:hover {
-  background-color: #037160;
-}
-.banner-box a {
-  margin-top: 20px;
-  display: inline-block;
-  color: #fff;
-  border: 3px solid #037160;
-  padding: 18px 25px;
-}
+
 .banner-box a mat-icon{
   font-size: 18px;
 }

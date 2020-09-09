@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './modules/material/material.module';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgwWowModule } from 'ngx-wow';
+import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -37,6 +38,17 @@ import { PanelFooterComponent } from './panels/shared/panel-footer/panel-footer.
 import { AdminUserComponent } from './panels/admin/admin-user/admin-user.component';
 import {MatPaginatorIntl} from '@angular/material/paginator';
 import {getDutchPaginatorIntl} from './dutch-paginator-intl';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { AdminBannerComponent } from './panels/admin/admin-banner/admin-banner.component';
+import { AdminAddBannerComponent } from './panels/admin/admin-banner/admin-add-banner/admin-add-banner.component';
+import { AdminEditBannerComponent } from './panels/admin/admin-banner/admin-edit-banner/admin-edit-banner.component';
+import { AdminBlogComponent } from './panels/admin/admin-blog/admin-blog.component';
+import { AdminAddBlogComponent } from './panels/admin/admin-blog/admin-add-blog/admin-add-blog.component';
+import { AdminEditBlogComponent } from './panels/admin/admin-blog/admin-edit-blog/admin-edit-blog.component';
+import { AdminCommentBlogComponent } from './panels/admin/admin-blog/admin-comment-blog/admin-comment-blog.component';
+import { AdminAttorneyComponent } from './panels/admin/admin-attorney/admin-attorney.component';
+import { AdminAddAttorneyComponent } from './panels/admin/admin-attorney/admin-add-attorney/admin-add-attorney.component';
+import { AdminEditAttorneyComponent } from './panels/admin/admin-attorney/admin-edit-attorney/admin-edit-attorney.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +79,17 @@ import {getDutchPaginatorIntl} from './dutch-paginator-intl';
     AdminMenuComponent,
     AdminHeaderComponent,
     PanelFooterComponent,
-    AdminUserComponent
+    AdminUserComponent,
+    AdminBannerComponent,
+    AdminAddBannerComponent,
+    AdminEditBannerComponent,
+    AdminBlogComponent,
+    AdminAddBlogComponent,
+    AdminEditBlogComponent,
+    AdminCommentBlogComponent,
+    AdminAttorneyComponent,
+    AdminAddAttorneyComponent,
+    AdminEditAttorneyComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +97,10 @@ import {getDutchPaginatorIntl} from './dutch-paginator-intl';
     BrowserAnimationsModule,
     MaterialModule,
     CarouselModule,
-    NgwWowModule
+    NgwWowModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CKEditorModule
   ],
   providers: [
     { provide: MatPaginatorIntl, useValue: getDutchPaginatorIntl() }

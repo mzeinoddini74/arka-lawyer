@@ -211,7 +211,7 @@ mat-icon {
 ::-webkit-scrollbar-thumb {
   -webkit-border-radius: 10px;
   border-radius: 10px;
-  background: #ebebeb;
+  background: #dddddd;
 }
 /*End*/
 
@@ -229,7 +229,6 @@ mat-icon {
 .content .content-wrapper {
   padding: 20px;
 }
-
 .content .content-box {
   background-color: #fff;
   background-clip: border-box;
@@ -255,7 +254,6 @@ mat-icon {
   color: #037160;
 }
 .content .breadcrumb {
-
   padding: 0px;
   margin-bottom: 0px;
   background-color: unset;
@@ -283,3 +281,77 @@ mat-icon {
 
 }
 /*End*/
+
+input.ng-invalid.ng-touched{
+  border: 1px solid #dc3545!important;
+}
+
+
+.form-group {
+  text-align: right!important;
+}
+.form-group .form-control {
+  color: #333!important;
+}
+.form-group label {
+  color: #1c1c1c!important;
+  font-size: 15px!important;
+  text-align: right!important;
+}
+.form-group .form-control {
+  background-color: transparent!important;
+  border: 1px solid #037160!important;
+  border-radius: 0!important;
+  padding-left: 30px!important;
+  color: #1c1c1c!important;
+  font-size: 15px!important;
+}
+.form-group .form-control:focus {
+  color: #495057!important;
+  background-color: #fff!important;
+  border-color: #037160!important;
+  outline: 0!important;
+  box-shadow: 0 0 0 0.2rem #bbe8df!important;
+}
+.green-btn {
+  font-weight: 600!important;
+  font-size: 16px!important;
+  color: #fff!important;
+  background-color: #037160!important;
+  padding: 16px 40px!important;
+  border: 0!important;
+  position: relative!important;
+  z-index: 1!important;
+  transition: all .5s ease!important;
+  line-height: unset!important;
+  border-radius: 0px!important;
+}
+.green-btn:hover {
+  color: #037160!important;
+  background-color: #fff!important;
+  border: 1px #037160 solid!important;
+  border-radius: 0px!important;
+}
+
+.border-btn {
+  font-weight: 600!important;
+  font-size: 16px!important;
+  color: #037160!important;
+  background-color: transparent!important;
+  padding: 16px 40px!important;
+  border: 1px #037160 solid!important;
+  position: relative!important;
+  z-index: 1!important;
+  transition: all .5s ease!important;
+  line-height: unset!important;
+  border-radius: 0px!important;
+}
+.border-btn:hover {
+  color: #ffffff!important;
+  background-color: #037160!important;
+  border: 1px #037160 solid!important;
+  border-radius: 0px!important;
+}
+button:focus {
+  outline: none !important;
+}

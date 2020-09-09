@@ -1,24 +1,8 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
-
-export interface UserData {
-  id: string;
-  name: string;
-  progress: string;
-  color: string;
-}
-
-/** Constants used to fill up our data base. */
-const COLORS: string[] = [
-  'maroon', 'red', 'orange', 'yellow', 'olive', 'green', 'purple', 'fuchsia', 'lime', 'teal',
-  'aqua', 'blue', 'navy', 'black', 'gray'
-];
-const NAMES: string[] = [
-  'Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack', 'Charlotte', 'Theodore', 'Isla', 'Oliver',
-  'Isabella', 'Jasper', 'Cora', 'Levi', 'Violet', 'Arthur', 'Mia', 'Thomas', 'Elizabeth'
-];
+import {UserModel} from '../../../models/admin/UserModel';
 
 @Component({
   selector: 'app-admin-user',
@@ -28,15 +12,25 @@ const NAMES: string[] = [
 
 export class AdminUserComponent implements AfterViewInit {
 
-  displayedColumns: string[] = ['id', 'name', 'progress', 'color'];
-  dataSource: MatTableDataSource<UserData>;
+  displayedColumns: string[] = ['id', 'mobile', 'fullname', 'email', 'date'];
+  dataSource: MatTableDataSource<UserModel>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
   constructor() {
-    // Create 100 users
-    const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
+
+    const users = [
+      new UserModel(1, '09122222222', 'ali', 'ali@google.com', '1399/06/20'),
+      new UserModel(2, '09122222222', 'sara', 'sara@google.com', '1399/06/20'),
+      new UserModel(3, '09122222222', 'ali', 'ali@google.com', '1399/06/20'),
+      new UserModel(4, '09122222222', 'mina', 'mina@google.com', '1399/06/20'),
+      new UserModel(5, '09122222222', 'ali', 'ali@google.com', '1399/06/20'),
+      new UserModel(6, '09122222222', 'sima', 'sima@google.com', '1399/06/20'),
+      new UserModel(7, '09122222222', 'ali', 'ali@google.com', '1399/06/20'),
+      new UserModel(8, '09122222222', 'mohammad', 'mohammad@google.com', '1399/06/20'),
+      new UserModel(9, '09122222222', 'amir', 'amir@google.com', '1399/06/20')
+    ];
 
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(users);
@@ -58,17 +52,4 @@ export class AdminUserComponent implements AfterViewInit {
     }
   }
 
-}
-
-/** Builds and returns a new User. */
-function createNewUser(id: number): UserData {
-  const name = NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
-    NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
-
-  return {
-    id: id.toString(),
-    name: name,
-    progress: Math.round(Math.random() * 100).toString(),
-    color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
-  };
 }

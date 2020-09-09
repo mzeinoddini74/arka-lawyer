@@ -20,33 +20,79 @@
                 </a>
               </div>
             </div>
-            <div class="row login-wrap rtl">
-              <div class="col-12 text-center">
-                <div class="form-group">
-                  <input type="text" name="name" id="username" placeholder="شماره موبایل" class="form-control">
+            <form [formGroup]='registerUserForm' (ngSubmit)="saveUser()" class="w-100">
+              <div class="row login-wrap rtl">
+                <div class="col-12 text-center">
+                  <div class="form-group">
+                    <input  type="text" formControlName="mobile" name="mobile" id="mobile" placeholder="شماره موبایل" class="form-control" minlength="11" maxlength="11">
+                    <small class="float-right pb-2 text-danger"
+                           *ngIf="registerUserForm.controls.mobile.errors?.required
+                           && registerUserForm.controls.mobile.touched">
+                      لطفا شماره موبایل خود را وارد نمایید.
+                    </small>
+                    <small class="float-right pb-2 text-danger"
+                           *ngIf="registerUserForm.controls.mobile.errors?.minlength
+                           && registerUserForm.controls.mobile.touched">
+                      موبایل باید 11 کاراکتر باشد.
+                    </small>
+                    <small class="float-right pb-2 text-danger"
+                           *ngIf="registerUserForm.controls.mobile.errors?.maxlength
+                           && registerUserForm.controls.mobile.touched">
+                      موبایل باید 11 کاراکتر باشد.
+                    </small>
+                    <small class="float-right pb-2 text-danger"
+                           *ngIf="registerUserForm.controls.mobile.errors?.pattern
+                           && registerUserForm.controls.mobile.touched">
+                      فرمت موبایل وارد شده صحیح نمی باشد.
+                    </small>
+                  </div>
+
+                </div>
+                <div class="col-12 text-center">
+                  <div class="form-group">
+                    <input type="password" formControlName="password" name="password" id="password" placeholder="رمز عبور" class="form-control" minlength="6">
+                    <small class="float-right pb-2 text-danger"
+                           *ngIf="registerUserForm.controls.password.errors?.required
+                           && registerUserForm.controls.password.touched">
+                      لطفا رمز عبور را وارد نمایید.
+                    </small>
+                    <small class="float-right pb-2 text-danger"
+                           *ngIf="registerUserForm.controls.password.errors?.minlength
+                           && registerUserForm.controls.password.touched">
+                      رمز عبور باید بیشتر از 5 کاراکتر باشد.
+                    </small>
+                  </div>
+                </div>
+                <div class="col-12 text-center">
+                  <div class="form-group mb-3">
+                    <input type="password" formControlName="confirmPassword" name="confirmPassword" id="confirmPassword" placeholder="تکرار رمز عبور" class="form-control" minlength="6">
+                    <span class="float-right pb-2 text-danger"
+                           *ngIf="registerUserForm.controls.confirmPassword.errors?.required
+                           && registerUserForm.controls.confirmPassword.touched">
+                      لطفا تکرار رمز عبور را وارد نمایید.
+                    </span>
+                    <span class="float-right pb-2 text-danger"
+                           *ngIf="registerUserForm.controls.confirmPassword.errors?.minlength
+                           && registerUserForm.controls.confirmPassword.touched">
+                      تکرار رمز عبور باید بیشتر از 5 کاراکتر باشد.
+                    </span>
+                    <span class="float-right pb-2 text-danger" *ngIf="(registerUserForm.controls.confirmPassword.touched || registerUserForm.controls.confirmPassword.dirty) && registerUserForm.controls.confirmPassword.errors?.notSame"> <!-- Checked the errors property contains the 'phoneNumberInvalid' property or not which is returned by the validation function -->
+                      تکرار رمز عبور مطابقت ندارد.
+                    </span>
+                  </div>
+                </div>
+                <div class="col-md-12 col-lg-12 pt-30">
+                  <div class="text-center">
+                    <button mat-raised-button type="submit" class="btn btn-block green-btn" [disabled]="registerAttorneyForm.invalid">ثبت نام</button>
+                  </div>
+                </div>
+                <div class="col-4 text-left mt-3">
+                </div>
+                <div class="col-8 text-left mt-3">
+                  <a routerLink="/login">قبلا ثبت نام کرده اید؟</a>
                 </div>
               </div>
-              <div class="col-12 text-center">
-                <div class="form-group">
-                  <input type="text" name="name" id="password" placeholder="رمز عبور" class="form-control">
-                </div>
-              </div>
-              <div class="col-12 text-center">
-                <div class="form-group mb-3">
-                  <input type="text" name="name" id="re-password" placeholder="تکرار رمز عبور" class="form-control">
-                </div>
-              </div>
-              <div class="col-md-12 col-lg-12 pt-30">
-                <div class="text-center">
-                  <button type="submit" class="btn btn-block login-btn">ثبت نام</button>
-                </div>
-              </div>
-              <div class="col-4 text-left mt-3">
-              </div>
-              <div class="col-8 text-left mt-3">
-                <a routerLink="/login">قبلا ثبت نام کرده اید؟</a>
-              </div>
-            </div>
+            </form>
           </div>
           <div class="tab-pane fade" id="attorney" role="tabpanel" aria-labelledby="attorney-tab">
             <div class="row logo-area justify-content-center">
@@ -74,7 +120,7 @@
               </div>
               <div class="col-md-12 col-lg-12 pt-30">
                 <div class="text-center">
-                  <button type="submit" class="btn btn-block login-btn">ثبت نام</button>
+                  <button mat-raised-button type="submit" class="btn btn-block green-btn" [disabled]="registerAttorneyForm.invalid">ثبت نام</button>
                 </div>
               </div>
               <div class="col-4 text-left mt-3">

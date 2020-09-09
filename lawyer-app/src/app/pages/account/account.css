@@ -17,7 +17,7 @@
 }
 .login-area{
   background-color: white;
-  height: 570px;
+  height: 600px;
   border-bottom-right-radius: 25px;
   border-bottom-left-radius: 25px;
   box-shadow: 0 0 25px #000000;
@@ -46,26 +46,9 @@
 }
 
 .login-wrap .form-group .form-control {
-  background-color: transparent;
-  border: 1px solid #037160;
-  border-radius: 0;
   height: 60px;
-  padding-left: 30px;
-  color: #1c1c1c;
-  font-size: 15px;
 }
 
-.login-btn {
-  font-weight: 600;
-  font-size: 16px;
-  color: #fff;
-  background-color: #037160;
-  padding: 16px 40px;
-  border: 0;
-  position: relative;
-  z-index: 1;
-  transition: all .5s ease;
-}
 .form-check-label {
   margin-right: 25px;
 }

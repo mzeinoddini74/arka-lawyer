@@ -1,3 +1,4 @@
+/*pagination*/
 mat-form-field{
   direction: rtl;
   text-align: right;
@@ -7,7 +8,9 @@ mat-form-field{
 table{
   width: 100%;
 }
-
+table th{
+  text-align: right;
+}
 ::ng-deep .mat-paginator .mat-paginator-navigation-next {
   order: 4;
   transform: rotate(-180deg);
@@ -52,3 +55,4 @@ table{
     right: unset;
   }
 }
+/*end*/
