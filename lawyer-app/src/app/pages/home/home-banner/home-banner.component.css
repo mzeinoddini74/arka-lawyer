@@ -65,12 +65,41 @@
 .parent-div{
   background-color:#f2faf9 ;
 }
+
+.banner-box a mat-icon{
+  font-size: 18px;
+}
+.banner-box h1{
+  font-size: 30px;
+  font-weight: bold;
+}
+.banner-box p{
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 30px;
+}
+.banner-box a{
+  font-size: 18px;
+  font-weight: bold;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
 @media only screen and (max-width: 767px){
   .desc{
     padding-bottom: 30px;
-    padding-top: 20px;
+    padding-top: 50px;
     text-align: center;
   }
+
+  .desc h1{
+    font-size: 25px;
+  }
+
+  .desc p{
+    font-size: 16px;
+  }
+
   .parent {
     padding-top: 30px;
     padding-bottom: 15px;
@@ -111,23 +140,4 @@
     padding-bottom: 15px;
   }
 
-}
-
-.banner-box a mat-icon{
-  font-size: 18px;
-}
-.banner-box h1{
-  font-size: 30px;
-  font-weight: bold;
-}
-.banner-box p{
-  font-size: 18px;
-  font-weight: normal;
-  line-height: 30px;
-}
-.banner-box a{
-  font-size: 18px;
-  font-weight: bold;
-  display: inline-flex;
-  vertical-align: middle;
 }

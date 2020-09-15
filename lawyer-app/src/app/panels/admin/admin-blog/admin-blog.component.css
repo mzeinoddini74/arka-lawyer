@@ -47,6 +47,11 @@ table th{
   position: absolute;
   right: 300px;
 }
+::ng-deep .ck.ck-dropdown .ck-dropdown__panel.ck-dropdown__panel_ne,::ng-deep .ck.ck-dropdown .ck-dropdown__panel.ck-dropdown__panel_se {
+  right: 0!important;
+  left: unset!important;
+}
+
 @media only screen and (max-width: 767px){
   ::ng-deep .mat-paginator .mat-paginator-page-size {
     display: flex;
@@ -61,5 +66,5 @@ table th{
 .blog-image{
   padding-top: 5px;
   padding-bottom: 5px;
-  width: 150px;
+  width: 100px;
 }

@@ -3,6 +3,8 @@ import {BlogModel} from '../../../models/admin/BlogModel';
 import { MatTableDataSource } from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
+import {MatDialog} from '@angular/material/dialog';
+import {AdminEditDialogBlogComponent} from './admin-edit-dialog-blog/admin-edit-dialog-blog.component';
 
 @Component({
   selector: 'app-admin-blog',
@@ -12,13 +14,13 @@ import {MatSort} from '@angular/material/sort';
 
 export class AdminBlogComponent implements AfterViewInit{
 
-  displayedColumns: string[] = ['id', 'title', 'picture', 'actions'];
+  displayedColumns: string[] = ['id', 'picture', 'title', 'actions'];
   dataSource: MatTableDataSource<BlogModel>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() {
+  constructor(public dialog: MatDialog) {
     const blogs = [
       new BlogModel(1, 'اگر بی گناه باشید عدالت برای شما ممکن است', 'assets/images/home/1.jpg', '', '', '', ) ,
       new BlogModel(2, 'اگر بی گناه باشید عدالت برای شما ممکن است', 'assets/images/home/1.jpg', '', '', '')
@@ -26,6 +28,19 @@ export class AdminBlogComponent implements AfterViewInit{
 
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(blogs);
+  }
+
+  openEditDialog(row: BlogModel): void {
+    const dialogRef = this.dialog.open(AdminEditDialogBlogComponent, {
+      width: '800px',
+      data: {id: row.id, title: row.title, picture: row.picture, summary: row.summary, description: row.description}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        console.log(result);
+      }
+    });
   }
 
   ngAfterViewInit(): void {
@@ -43,4 +58,8 @@ export class AdminBlogComponent implements AfterViewInit{
     }
   }
 
+  // tslint:disable-next-line:typedef
+  delete() {
+    console.log('delete');
+  }
 }

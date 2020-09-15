@@ -25,6 +25,7 @@
   color: #fff;
 }
 .section-title h2 {
+  line-height: 50px;
   text-align: right;
   font-weight: 700;
   font-size: 38px;
@@ -32,4 +33,12 @@
   margin-bottom: 0;
 }
 
-
+.new-buttons a{
+  margin-left: 3px;
+  margin-right: 3px;
+}
+@media only screen and (max-width: 767px) {
+  .new-buttons a{
+    margin-bottom: 6px;
+  }
+}

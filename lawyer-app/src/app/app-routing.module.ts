@@ -18,11 +18,11 @@ import {AdminAddBannerComponent} from './panels/admin/admin-banner/admin-add-ban
 import {AdminEditBannerComponent} from './panels/admin/admin-banner/admin-edit-banner/admin-edit-banner.component';
 import {AdminBlogComponent} from './panels/admin/admin-blog/admin-blog.component';
 import {AdminAddBlogComponent} from './panels/admin/admin-blog/admin-add-blog/admin-add-blog.component';
-import {AdminEditBlogComponent} from './panels/admin/admin-blog/admin-edit-blog/admin-edit-blog.component';
 import {AdminAttorneyComponent} from './panels/admin/admin-attorney/admin-attorney.component';
 import {AdminAddAttorneyComponent} from './panels/admin/admin-attorney/admin-add-attorney/admin-add-attorney.component';
 import {AdminEditAttorneyComponent} from './panels/admin/admin-attorney/admin-edit-attorney/admin-edit-attorney.component';
 import {AdminUserComponent} from './panels/admin/admin-user/admin-user.component';
+import {AdminCommentComponent} from './panels/admin/admin-comment/admin-comment.component';
 
 const routes: Routes = [
   {path : '' , component : HomeComponent},
@@ -43,11 +43,11 @@ const routes: Routes = [
   {path : 'admin/edit-banner' , component : AdminEditBannerComponent},
   {path : 'admin/blog' , component : AdminBlogComponent},
   {path : 'admin/add-blog' , component : AdminAddBlogComponent},
-  {path : 'admin/edit-blog' , component : AdminEditBlogComponent},
   {path : 'admin/attorney' , component : AdminAttorneyComponent},
   {path : 'admin/add-attorney' , component : AdminAddAttorneyComponent},
   {path : 'admin/edit-attorney' , component : AdminEditAttorneyComponent},
-  {path : 'admin/user' , component : AdminUserComponent}
+  {path : 'admin/user' , component : AdminUserComponent},
+  {path : 'admin/comment' , component : AdminCommentComponent}
 ];
 
 @NgModule({

@@ -126,4 +126,124 @@
     </div>
   </div>
 </div>
+
+<div class="contact-form rtl">
+  <div class="container">
+    <div class="contact-wrap">
+      <form id="contactForm">
+        <h2>ثبت نظر</h2>
+        <div class="row">
+          <div class="col-sm-12 col-lg-6">
+            <div class="form-group">
+              <input type="text" name="name" id="name" placeholder="نام" class="form-control">
+            </div>
+          </div>
+          <div class="col-sm-12 col-lg-6">
+            <div class="form-group">
+              <input type="email" name="email" id="email" placeholder="ایمیل" class="form-control">
+            </div>
+          </div>
+          <div class="col-sm-12 col-lg-12">
+            <div class="form-group">
+              <ckeditor
+                [editor]="Editor"
+                [config]="{ toolbar: [ 'heading', '|', 'bold', 'italic', '|', 'undo', 'redo' ] }"></ckeditor>
+            </div>
+          </div>
+          <div class="col-sm-12 col-lg-12">
+            <ngx-recaptcha2 #captchaElem siteKey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                            (success)="handleSuccess($event)"
+                            [size]="size"
+                            [hl]="lang"
+                            [theme]="theme"
+                            [type]="type"
+                            formControlName="recaptcha">
+            </ngx-recaptcha2>
+          </div>
+          <div class="col-md-12 col-lg-12">
+            <div class="text-center">
+              <button type="submit" class="contact-btn">ثبت نظر</button>
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container mb-5 rtl text-right">
+  <div class="card">
+    <h3 class="text-right mb-2"> سایر نظرات </h3>
+    <div class="row">
+      <div class="col-md-12 p-0">
+        <div class="media">
+          <img class="ml-3 rounded-circle" alt="Bootstrap Media Preview" src="assets/images/shared/user01.jpg" />
+          <div class="media-body">
+            <div class="row">
+              <div class="col-sm-12 col-lg-8 d-flex align-self-end name">
+                <h5>Maria Smantha</h5> <span>- 2 hours ago</span>
+              </div>
+              <div class="col-sm-12 col-lg-4 btns text-left">
+
+                <button mat-button class="btn-outline">
+                  25<mat-icon>thumb_up</mat-icon>
+                </button>
+                <button mat-button class="btn-outline">
+                  25<mat-icon>thumb_down</mat-icon>
+                </button>
+              </div>
+            </div>
+            It is a long established fact that a reader will be distracted by the readable content of a page.
+            <div class="media reply">
+              <a class="pl-3" href="#">
+                <img class="rounded-circle" alt="Bootstrap Media Another Preview" src="assets/images/shared/user01.jpg" />
+              </a>
+            <div class="media-body">
+              <div class="row">
+                <div class="col-sm-12 col-lg-8 d-flex align-self-end name">
+                  <h5>Maria Smantha</h5> <span>- 2 hours ago</span>
+                </div>
+                <div class="col-sm-12 col-lg-4 btns text-left">
+
+                  <button mat-button class="btn-outline">
+                    25<mat-icon>thumb_up</mat-icon>
+                  </button>
+                  <button mat-button class="btn-outline">
+                    25<mat-icon>thumb_down</mat-icon>
+                  </button>
+                </div>
+              </div>
+              letters, as opposed to using 'Content here, content here', making it look like readable English.
+            </div>
+          </div>
+            <div class="media reply">
+              <a class="pl-3" href="#">
+                <img class="rounded-circle" alt="Bootstrap Media Another Preview" src="assets/images/shared/user01.jpg" />
+              </a>
+              <div class="media-body">
+                <div class="row">
+                  <div class="col-sm-12 col-lg-8 d-flex align-self-end name">
+                    <h5>Maria Smantha</h5> <span>- 2 hours ago</span>
+                  </div>
+                  <div class="col-sm-12 col-lg-4 btns text-left">
+
+                    <button mat-button class="btn-outline">
+                      25<mat-icon>thumb_up</mat-icon>
+                    </button>
+                    <button mat-button class="btn-outline">
+                      25<mat-icon>thumb_down</mat-icon>
+                    </button>
+                  </div>
+                </div>
+                the majority have suffered alteration in some form, by injected humour, or randomised words.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <app-footer></app-footer>

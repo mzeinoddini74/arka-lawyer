@@ -42,10 +42,16 @@
           <ul class="collapse" id="blog">
             <li routerLink="/admin/blog"><a>لیست اخبار</a></li>
             <li routerLink="/admin/add-blog"><a>ثبت خبر</a></li>
-            <li routerLink="/admin/blog-comment"><a>نظرات کاربران</a></li>
           </ul>
         </li>
-        
+        <li class="">
+          <a class="has-arrow" data-toggle="collapse" href="#comment" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <i class="fa fa-comment fa-sm"></i><span class="hide-menu"> مدیریت پیام های کاربران </span>
+          </a>
+          <ul class="collapse" id="comment">
+            <li routerLink="/admin/comment"><a>لیست پیام های کاربران</a></li>
+          </ul>
+        </li>
       </ul>
     </nav>
 </aside>

@@ -57,9 +57,20 @@ table th{
 }
 /*end*/
 
+.element-detail {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-.blog-image{
-  padding-top: 5px;
-  padding-bottom: 5px;
-  width: 100px;
+.element-detail table {
+  margin-top: 8px;
+}
+
+.detail-row{
+  height: 0;
+}
+.detail-row td{
+  border-bottom-width: 0;
 }

@@ -6,6 +6,8 @@ import { MaterialModule } from './modules/material/material.module';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgwWowModule } from 'ngx-wow';
 import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -44,11 +46,13 @@ import { AdminAddBannerComponent } from './panels/admin/admin-banner/admin-add-b
 import { AdminEditBannerComponent } from './panels/admin/admin-banner/admin-edit-banner/admin-edit-banner.component';
 import { AdminBlogComponent } from './panels/admin/admin-blog/admin-blog.component';
 import { AdminAddBlogComponent } from './panels/admin/admin-blog/admin-add-blog/admin-add-blog.component';
-import { AdminEditBlogComponent } from './panels/admin/admin-blog/admin-edit-blog/admin-edit-blog.component';
-import { AdminCommentBlogComponent } from './panels/admin/admin-blog/admin-comment-blog/admin-comment-blog.component';
 import { AdminAttorneyComponent } from './panels/admin/admin-attorney/admin-attorney.component';
 import { AdminAddAttorneyComponent } from './panels/admin/admin-attorney/admin-add-attorney/admin-add-attorney.component';
 import { AdminEditAttorneyComponent } from './panels/admin/admin-attorney/admin-edit-attorney/admin-edit-attorney.component';
+import { AdminCommentComponent } from './panels/admin/admin-comment/admin-comment.component';
+import { AdminReplyDialogCommentComponent } from './panels/admin/admin-comment/admin-reply-dialog-comment/admin-reply-dialog-comment.component';
+import { AdminEditDialogCommentComponent } from './panels/admin/admin-comment/admin-edit-dialog-comment/admin-edit-dialog-comment.component';
+import { AdminEditDialogBlogComponent } from './panels/admin/admin-blog/admin-edit-dialog-blog/admin-edit-dialog-blog.component';
 
 @NgModule({
   declarations: [
@@ -85,11 +89,13 @@ import { AdminEditAttorneyComponent } from './panels/admin/admin-attorney/admin-
     AdminEditBannerComponent,
     AdminBlogComponent,
     AdminAddBlogComponent,
-    AdminEditBlogComponent,
-    AdminCommentBlogComponent,
     AdminAttorneyComponent,
     AdminAddAttorneyComponent,
-    AdminEditAttorneyComponent
+    AdminEditAttorneyComponent,
+    AdminCommentComponent,
+    AdminReplyDialogCommentComponent,
+    AdminEditDialogCommentComponent,
+    AdminEditDialogBlogComponent
   ],
   imports: [
     BrowserModule,
@@ -100,7 +106,9 @@ import { AdminEditAttorneyComponent } from './panels/admin/admin-attorney/admin-
     NgwWowModule,
     FormsModule,
     ReactiveFormsModule,
-    CKEditorModule
+    CKEditorModule,
+    SweetAlert2Module.forRoot(),
+    NgxCaptchaModule
   ],
   providers: [
     { provide: MatPaginatorIntl, useValue: getDutchPaginatorIntl() }

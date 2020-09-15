@@ -220,8 +220,10 @@ mat-icon {
 .content {
   background-color: #EEEEEE;
   width: 100%;
+  height: 100vh;
   position: relative;
   text-align: right;
+  padding-bottom: 50px;
 }
 .content .content-inner {
   padding: 20px 260px 0 0px;
@@ -352,6 +354,42 @@ input.ng-invalid.ng-touched{
   border: 1px #037160 solid!important;
   border-radius: 0px!important;
 }
+
+.border-btn mat-icon {
+  line-height: 25px;
+  font-size: 16px;
+  vertical-align: middle!important;
+}
+
 button:focus {
   outline: none !important;
+}
+
+.swal2-container{
+  direction: rtl;
+}
+
+button.swal2-confirm.swal2-styled{
+  display: inline-block;
+  border-left-color: #037160;
+  border-right-color: #037160;
+  border: 0;
+  border-radius: .25em;
+  background: initial;
+  background-color: #037160;
+  color: #fff;
+  font-size: 1.0625em;
+}
+
+h2.section-title {
+  line-height: 50px;
+}
+
+.mat-tooltip{
+  font-family: IRANSans!important;
+
+}
+
+::ng-deep .mat-button-disabled .mat-button-wrapper{
+  color: rgba(0,0,0,.26) !important;
 }
