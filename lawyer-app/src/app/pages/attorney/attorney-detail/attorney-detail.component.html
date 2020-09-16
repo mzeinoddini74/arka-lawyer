@@ -130,39 +130,81 @@
 <div class="contact-form rtl">
   <div class="container">
     <div class="contact-wrap">
-      <form id="contactForm">
+      <form [formGroup]='form' (ngSubmit)="saveComment()" class="w-100">
         <h2>ثبت نظر</h2>
+
         <div class="row">
           <div class="col-sm-12 col-lg-6">
             <div class="form-group">
-              <input type="text" name="name" id="name" placeholder="نام" class="form-control">
+              <input type="text" formControlName="name" name="name"
+                     placeholder="نام" class="form-control"
+                     maxlength="200">
+
+              <ul class="mt-1 mb-0 pb-0" *ngFor="let error of errorMessages.name">
+                <li class="font-small text-danger font-weight-bold"
+                    *ngIf="form.get('name').hasError(error.type)
+                            && (form.get('name').dirty
+                            || form.get('name').touched)">
+                  {{ error.message }}
+                </li>
+              </ul>
             </div>
           </div>
           <div class="col-sm-12 col-lg-6">
             <div class="form-group">
-              <input type="email" name="email" id="email" placeholder="ایمیل" class="form-control">
+              <input type="email" formControlName="email" name="email"
+                     placeholder="پست الکترونیکی" class="form-control"
+                     maxlength="200">
+
+              <ul class="mt-1 mb-0 pb-0" *ngFor="let error of errorMessages.email">
+                <li class="font-small text-danger font-weight-bold"
+                    *ngIf="form.get('email').hasError(error.type)
+                            && (form.get('email').dirty
+                            || form.get('email').touched)">
+                  {{ error.message }}
+                </li>
+              </ul>
             </div>
           </div>
           <div class="col-sm-12 col-lg-12">
             <div class="form-group">
               <ckeditor
                 [editor]="Editor"
+                formControlName="comment"
                 [config]="{ toolbar: [ 'heading', '|', 'bold', 'italic', '|', 'undo', 'redo' ] }"></ckeditor>
+
+              <ul class="mt-1 mb-0 pb-0" *ngFor="let error of errorMessages.comment">
+                <li class="font-small text-danger font-weight-bold"
+                    *ngIf="form.get('comment').hasError(error.type)
+                            && (form.get('comment').dirty
+                            || form.get('comment').touched)">
+                  {{ error.message }}
+                </li>
+              </ul>
             </div>
           </div>
-          <div class="col-sm-12 col-lg-12">
-            <ngx-recaptcha2 #captchaElem siteKey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
-                            (success)="handleSuccess($event)"
-                            [size]="size"
-                            [hl]="lang"
-                            [theme]="theme"
-                            [type]="type"
-                            formControlName="recaptcha">
-            </ngx-recaptcha2>
+          <div class="col-sm-12 col-lg-12 text-center">
+            <div class="form-group">
+              <ngx-recaptcha2 #captchaElem siteKey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                              (success)="handleSuccess($event)"
+                              size="normal"
+                              hl="en"
+                              theme="light"
+                              type="'image' | 'audio'"
+                              formControlName="recaptcha">
+              </ngx-recaptcha2>
+
+              <ul class="mt-1 mb-0 pb-0 text-center" *ngIf="captchaError">
+                <li class="font-small text-danger font-weight-bold">
+                  فیلد اعتبارسنجی (کپچا) اجباری است.
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="col-md-12 col-lg-12">
             <div class="text-center">
-              <button type="submit" class="contact-btn">ثبت نظر</button>
+              <button mat-raised-button type="submit" class="btn btn-block green-btn"
+                      [disabled]="form.invalid">ثبت</button>
             </div>
           </div>
 

@@ -157,3 +157,7 @@
 .location-item ul li a:hover {
   color: #333;
 }
+::ng-deep ngx-recaptcha2 > div > div > div{
+  margin-left: auto!important;
+  margin-right: auto!important;
+}

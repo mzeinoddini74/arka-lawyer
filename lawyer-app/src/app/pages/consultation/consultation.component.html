@@ -20,37 +20,108 @@
 <div class="contact-form pt-100 rtl">
   <div class="container">
     <div class="contact-wrap">
-      <form id="contactForm">
-        <h2>ثبت درخواست مشاوره</h2>
+      <form [formGroup]='form' (ngSubmit)="saveRequest()" class="w-100">
         <div class="row">
+          <h2 class="text-right mb-5">برای مشاوره، لطفا فرم زیر را تکمیل و ثبت نمایید. مشاوران ما در اسرع وقت با شما تماس می گیرند.</h2>
+
           <div class="col-sm-6 col-lg-6">
             <div class="form-group">
-              <input type="text" name="name" id="name" placeholder="نام و نام خانوادگی" class="form-control">
+              <input type="text" formControlName="name" name="name"
+                     placeholder="نام" class="form-control"
+                     maxlength="100">
+              <ul class="mt-1 mb-0 pb-0" *ngFor="let error of errorMessages.name">
+                <li class="font-small text-danger font-weight-bold"
+                    *ngIf="form.get('name').hasError(error.type)
+                            && (form.get('name').dirty
+                            || form.get('name').touched)">
+                  {{ error.message }}
+                </li>
+              </ul>
             </div>
           </div>
           <div class="col-sm-6 col-lg-6">
             <div class="form-group">
-              <input type="email" name="email" id="email" placeholder="ایمیل" class="form-control">
+              <input type="text" formControlName="email" name="email"
+                     placeholder="پست الکترونیکی" class="form-control"
+                     maxlength="200">
+              <ul class="mt-1 mb-0 pb-0" *ngFor="let error of errorMessages.email">
+                <li class="font-small text-danger font-weight-bold"
+                    *ngIf="form.get('email').hasError(error.type)
+                            && (form.get('email').dirty
+                            || form.get('email').touched)">
+                  {{ error.message }}
+                </li>
+              </ul>
             </div>
           </div>
           <div class="col-sm-6 col-lg-6">
             <div class="form-group">
-              <input type="text" name="phone_number" id="phone_number" placeholder="موبایل" class="form-control">
+              <input  type="text" formControlName="mobile" name="mobile" placeholder="شماره موبایل" class="form-control"
+                      minlength="11" maxlength="11"
+                      [pattern]="mobileRegix">
+              <ul class="mt-1" *ngFor="let error of errorMessages.mobile">
+                <li class="font-small text-danger font-weight-bold"
+                    *ngIf="form.get('mobile').hasError(error.type)
+                            && (form.get('mobile').dirty
+                            || form.get('mobile').touched)">
+                  {{ error.message }}
+                </li>
+              </ul>
             </div>
           </div>
           <div class="col-sm-6 col-lg-6">
             <div class="form-group">
-              <input type="text" name="msg_subject" id="msg_subject" placeholder="موضوع" class="form-control">
+              <input type="text" formControlName="subject" name="subject"
+                     placeholder="موضوع" class="form-control"
+                     maxlength="200">
+              <ul class="mt-1 mb-0 pb-0" *ngFor="let error of errorMessages.subject">
+                <li class="font-small text-danger font-weight-bold"
+                    *ngIf="form.get('subject').hasError(error.type)
+                            && (form.get('subject').dirty
+                            || form.get('subject').touched)">
+                  {{ error.message }}
+                </li>
+              </ul>
             </div>
           </div>
           <div class="col-md-12 col-lg-12">
             <div class="form-group">
-              <textarea name="message" id="message" cols="30" rows="8" placeholder="توضیحات" class="form-control"></textarea>
+          <textarea name="description" formControlName="description"
+                    cols="30" rows="8" placeholder="توضیحات"
+                    class="form-control" maxlength="500"></textarea>
+
+              <ul class="mt-1 mb-0 pb-0" *ngFor="let error of errorMessages.description">
+                <li class="font-small text-danger font-weight-bold"
+                    *ngIf="form.get('description').hasError(error.type)
+                            && (form.get('description').dirty
+                            || form.get('description').touched)">
+                  {{ error.message }}
+                </li>
+              </ul>
+
+            </div>
+          </div>
+          <div class="col-sm-12 col-lg-12 text-center">
+            <div class="form-group">
+              <ngx-recaptcha2 #captchaElem siteKey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                              (success)="handleSuccess($event)"
+                              size="normal"
+                              hl="en"
+                              theme="light"
+                              type="'image' | 'audio'"
+                              formControlName="recaptcha">
+              </ngx-recaptcha2>
+
+              <ul class="mt-1 mb-0 pb-0 text-center" *ngIf="captchaError">
+                <li class="font-small text-danger font-weight-bold">
+                  فیلد اعتبارسنجی (کپچا) اجباری است.
+                </li>
+              </ul>
             </div>
           </div>
           <div class="col-md-12 col-lg-12">
             <div class="text-center">
-              <button type="submit" class="contact-btn">ثبت درخواست</button>
+              <button mat-raised-button type="submit" class="btn green-btn" [disabled]="form.invalid">ثبت درخواست مشاوره</button>
             </div>
           </div>
         </div>

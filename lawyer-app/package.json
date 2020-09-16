@@ -29,6 +29,8 @@
     "ngx-captcha": "^8.0.1",
     "ngx-owl-carousel-o": "^4.0.0",
     "ngx-wow": "^2.0.1",
+    "primeicons": "^4.0.0",
+    "primeng": "^10.0.0",
     "rxjs": "~6.5.5",
     "sweetalert2": "^10.0.2",
     "tslib": "^2.0.0",

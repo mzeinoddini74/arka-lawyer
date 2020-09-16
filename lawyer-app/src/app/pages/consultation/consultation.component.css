@@ -68,3 +68,7 @@
     padding: 12px 28px;
   }
 }
+::ng-deep ngx-recaptcha2 > div > div > div{
+  margin-left: auto!important;
+  margin-right: auto!important;
+}

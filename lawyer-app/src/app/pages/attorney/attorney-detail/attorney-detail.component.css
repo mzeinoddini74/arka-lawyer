@@ -281,3 +281,8 @@ button.btn-outline:hover{
  color: white;
   background-color: #037160;
 }
+
+::ng-deep ngx-recaptcha2 > div > div > div{
+  margin-left: auto!important;
+  margin-right: auto!important;
+}

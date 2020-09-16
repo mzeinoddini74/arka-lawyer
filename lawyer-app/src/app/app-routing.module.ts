@@ -20,7 +20,6 @@ import {AdminBlogComponent} from './panels/admin/admin-blog/admin-blog.component
 import {AdminAddBlogComponent} from './panels/admin/admin-blog/admin-add-blog/admin-add-blog.component';
 import {AdminAttorneyComponent} from './panels/admin/admin-attorney/admin-attorney.component';
 import {AdminAddAttorneyComponent} from './panels/admin/admin-attorney/admin-add-attorney/admin-add-attorney.component';
-import {AdminEditAttorneyComponent} from './panels/admin/admin-attorney/admin-edit-attorney/admin-edit-attorney.component';
 import {AdminUserComponent} from './panels/admin/admin-user/admin-user.component';
 import {AdminCommentComponent} from './panels/admin/admin-comment/admin-comment.component';
 
@@ -45,7 +44,6 @@ const routes: Routes = [
   {path : 'admin/add-blog' , component : AdminAddBlogComponent},
   {path : 'admin/attorney' , component : AdminAttorneyComponent},
   {path : 'admin/add-attorney' , component : AdminAddAttorneyComponent},
-  {path : 'admin/edit-attorney' , component : AdminEditAttorneyComponent},
   {path : 'admin/user' , component : AdminUserComponent},
   {path : 'admin/comment' , component : AdminCommentComponent}
 ];

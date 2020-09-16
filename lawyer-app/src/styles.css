@@ -44,7 +44,9 @@ a{
 a:hover {
   text-decoration: none;
 }
-
+ul{
+  padding-right: unset!important;
+}
 ul li{
   list-style: none;
 }
@@ -52,7 +54,9 @@ ul li{
 .rtl{
   direction: rtl;
 }
-
+.ltr{
+  direction: ltr;
+}
 .btn-outline-success,.btn-outline-success:visited {
   display: inline-block;
   font-size: 16px;
@@ -354,6 +358,9 @@ input.ng-invalid.ng-touched{
   border: 1px #037160 solid!important;
   border-radius: 0px!important;
 }
+::ng-deep .mat-button-disabled .mat-button-wrapper{
+  color: rgba(0,0,0,.26) !important;
+}
 
 .border-btn mat-icon {
   line-height: 25px;
@@ -390,6 +397,3 @@ h2.section-title {
 
 }
 
-::ng-deep .mat-button-disabled .mat-button-wrapper{
-  color: rgba(0,0,0,.26) !important;
-}

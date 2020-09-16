@@ -48,11 +48,13 @@ import { AdminBlogComponent } from './panels/admin/admin-blog/admin-blog.compone
 import { AdminAddBlogComponent } from './panels/admin/admin-blog/admin-add-blog/admin-add-blog.component';
 import { AdminAttorneyComponent } from './panels/admin/admin-attorney/admin-attorney.component';
 import { AdminAddAttorneyComponent } from './panels/admin/admin-attorney/admin-add-attorney/admin-add-attorney.component';
-import { AdminEditAttorneyComponent } from './panels/admin/admin-attorney/admin-edit-attorney/admin-edit-attorney.component';
 import { AdminCommentComponent } from './panels/admin/admin-comment/admin-comment.component';
 import { AdminReplyDialogCommentComponent } from './panels/admin/admin-comment/admin-reply-dialog-comment/admin-reply-dialog-comment.component';
 import { AdminEditDialogCommentComponent } from './panels/admin/admin-comment/admin-edit-dialog-comment/admin-edit-dialog-comment.component';
 import { AdminEditDialogBlogComponent } from './panels/admin/admin-blog/admin-edit-dialog-blog/admin-edit-dialog-blog.component';
+import { AdminEditDialogBannerComponent } from './panels/admin/admin-banner/admin-edit-dialog-banner/admin-edit-dialog-banner.component';
+import { AdminEditDialogAttorneyComponent } from './panels/admin/admin-attorney/admin-edit-dialog-attorney/admin-edit-dialog-attorney.component';
+import {PrimengModule} from './modules/primeng/primeng.module';
 
 @NgModule({
   declarations: [
@@ -91,11 +93,12 @@ import { AdminEditDialogBlogComponent } from './panels/admin/admin-blog/admin-ed
     AdminAddBlogComponent,
     AdminAttorneyComponent,
     AdminAddAttorneyComponent,
-    AdminEditAttorneyComponent,
     AdminCommentComponent,
     AdminReplyDialogCommentComponent,
     AdminEditDialogCommentComponent,
-    AdminEditDialogBlogComponent
+    AdminEditDialogBlogComponent,
+    AdminEditDialogBannerComponent,
+    AdminEditDialogAttorneyComponent
   ],
   imports: [
     BrowserModule,
@@ -108,7 +111,8 @@ import { AdminEditDialogBlogComponent } from './panels/admin/admin-blog/admin-ed
     ReactiveFormsModule,
     CKEditorModule,
     SweetAlert2Module.forRoot(),
-    NgxCaptchaModule
+    NgxCaptchaModule,
+    PrimengModule
   ],
   providers: [
     { provide: MatPaginatorIntl, useValue: getDutchPaginatorIntl() }
