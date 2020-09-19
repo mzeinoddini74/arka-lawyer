@@ -19,27 +19,58 @@
 </div>
 <div class="contact-form pt-100 rtl">
   <div class="container">
-
     <div class="row">
-      <mat-card class="example-card">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Shiba Inu</mat-card-title>
-          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-        <mat-card-content>
-          <p>
-            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-            bred for hunting.
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
-        </mat-card-actions>
-      </mat-card>
+      <div class="col-sm-12 col-lg-4 mt-4">
+        <mat-card class="category-item text-center">
+          <i class="fas fa-comment fa-4x mb-3 green-color"></i>
+          <mat-card-header>
+            <mat-card-title>مشاوره آنلاین</mat-card-title>
+          </mat-card-header>
+          <hr>
+          <mat-card-content class="my-1 text-right">
+            <p>
+              بصورت آنلاین و سریع سوال خود را مطرح کنید، وکلا و متخصصین پاسخگوی پرسش شما هستند
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button class="border-btn-sm" routerLink="/online-consultatin"> ثبت سوال<mat-icon>keyboard_arrow_left</mat-icon></button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+      <div class="col-sm-12 col-lg-4 mt-4">
+        <mat-card class="category-item text-center">
+          <i class="fa fa-phone fa-4x mb-3 green-color"></i>
+          <mat-card-header>
+            <mat-card-title>مشاوره تلفنی</mat-card-title>
+          </mat-card-header>
+          <hr>
+          <mat-card-content class="my-1 text-right">
+            <p>
+              نیاز به مشاوره تلفنی دارید؟ هم اکنون وقت مشاوره تلفنی رزرو کنید و با متخصص مربوطه گتفگو کنید
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button class="border-btn-sm" routerLink="/tel-consultatin"> رزرو وقت<mat-icon>keyboard_arrow_left</mat-icon></button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+      <div class="col-sm-12 col-lg-4 mt-4">
+        <mat-card class="category-item text-center">
+          <i class="fas fa-user fa-4x mb-3 green-color"></i>
+          <mat-card-header>
+            <mat-card-title>مشاوره حضوری</mat-card-title>
+          </mat-card-header>
+          <hr>
+          <mat-card-content class="my-1 text-right">
+            <p>
+              بصورت حضوری با وکیل یا متخصص گفتگو کنید. نتیجه بهتری بگیرید و فرایند حقوقی خود را بررسی کنید
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button class="border-btn-sm" routerLink="/in-person-consultatin"> رزرو وقت<mat-icon>keyboard_arrow_left</mat-icon></button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
     </div>
   </div>
 </div>

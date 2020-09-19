@@ -35,12 +35,3 @@
   box-shadow: 0 0 12px 0 hsla(0,0%,86.7%,.68);
   transition: all .5s ease;
 }
-
-::ng-deep .mat-card-header {
-  display: unset!important;
-}
-
-.border-btn-sm{
-  margin-top: 15px;
-  margin-bottom: 20px;
-}

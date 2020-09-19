@@ -55,10 +55,12 @@ import { AdminEditDialogBlogComponent } from './panels/admin/admin-blog/admin-ed
 import { AdminEditDialogBannerComponent } from './panels/admin/admin-banner/admin-edit-dialog-banner/admin-edit-dialog-banner.component';
 import { AdminEditDialogAttorneyComponent } from './panels/admin/admin-attorney/admin-edit-dialog-attorney/admin-edit-dialog-attorney.component';
 import {PrimengModule} from './modules/primeng/primeng.module';
-import { ConsultationTypeComponent } from './pages/consultation/consultation-type/consultation-type.component';
-import { TelConsultationComponent } from './pages/consultation/consultation-type/tel-consultation/tel-consultation.component';
-import { InPersonConsultationComponent } from './pages/consultation/consultation-type/in-person-consultation/in-person-consultation.component';
-import {OnlineConsultationComponent} from './pages/consultation/consultation-type/online-consultation/online-consultation.component';
+import { TelConsultationComponent } from './pages/consultation/tel-consultation/tel-consultation.component';
+import { InPersonConsultationComponent } from './pages/consultation/in-person-consultation/in-person-consultation.component';
+import {OnlineConsultationComponent} from './pages/consultation/online-consultation/online-consultation.component';
+import { ServiceComponent } from './pages/service/service.component';
+import { ServiceDetailComponent } from './pages/service/service-detail/service-detail.component';
+
 
 @NgModule({
   declarations: [
@@ -106,7 +108,8 @@ import {OnlineConsultationComponent} from './pages/consultation/consultation-typ
     OnlineConsultationComponent,
     TelConsultationComponent,
     InPersonConsultationComponent,
-    ConsultationTypeComponent
+    ServiceComponent,
+    ServiceDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -121,6 +124,7 @@ import {OnlineConsultationComponent} from './pages/consultation/consultation-typ
     SweetAlert2Module.forRoot(),
     NgxCaptchaModule,
     PrimengModule
+
   ],
   providers: [
     { provide: MatPaginatorIntl, useValue: getDutchPaginatorIntl() }

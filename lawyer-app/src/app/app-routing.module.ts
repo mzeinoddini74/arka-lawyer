@@ -22,10 +22,11 @@ import {AdminAttorneyComponent} from './panels/admin/admin-attorney/admin-attorn
 import {AdminAddAttorneyComponent} from './panels/admin/admin-attorney/admin-add-attorney/admin-add-attorney.component';
 import {AdminUserComponent} from './panels/admin/admin-user/admin-user.component';
 import {AdminCommentComponent} from './panels/admin/admin-comment/admin-comment.component';
-import {TelConsultationComponent} from './pages/consultation/consultation-type/tel-consultation/tel-consultation.component';
-import {OnlineConsultationComponent} from './pages/consultation/consultation-type/online-consultation/online-consultation.component';
-import {InPersonConsultationComponent} from './pages/consultation/consultation-type/in-person-consultation/in-person-consultation.component';
-import {ConsultationTypeComponent} from './pages/consultation/consultation-type/consultation-type.component';
+import {TelConsultationComponent} from './pages/consultation/tel-consultation/tel-consultation.component';
+import {OnlineConsultationComponent} from './pages/consultation/online-consultation/online-consultation.component';
+import {InPersonConsultationComponent} from './pages/consultation/in-person-consultation/in-person-consultation.component';
+import {ServiceComponent} from './pages/service/service.component';
+import {ServiceDetailComponent} from './pages/service/service-detail/service-detail.component';
 
 const routes: Routes = [
   {path : '' , component : HomeComponent},
@@ -34,10 +35,11 @@ const routes: Routes = [
   {path : 'faq' , component : FaqComponent},
   {path : 'attorney' , component : AttorneyComponent},
   {path : 'attorney-detail' , component : AttorneyDetailComponent},
+  {path : 'service' , component : ServiceComponent},
+  {path : 'service-detail' , component : ServiceDetailComponent},
   {path : 'blog' , component : BlogComponent},
   {path : 'blog-detail' , component : BlogDetailComponent},
   {path : 'consultation' , component : ConsultationComponent},
-  {path : 'consultation-type' , component : ConsultationTypeComponent},
   {path : 'online-consultation' , component : OnlineConsultationComponent},
   {path : 'tel-consultation' , component : TelConsultationComponent},
   {path : 'in-person-consultation' , component : InPersonConsultationComponent},
