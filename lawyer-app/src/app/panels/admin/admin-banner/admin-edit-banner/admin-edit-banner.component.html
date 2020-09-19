@@ -1,0 +1,68 @@
+<app-admin-header></app-admin-header>
+<app-admin-menu></app-admin-menu>
+
+<div class="content rtl">
+
+  <div class="content-inner" id="main-content">
+    <div class="content-wrapper">
+
+      <div class="content-titleSection row justify-content-center">
+        <div class="col-12 align-self-center">
+          <strong class="content-title">ویرایش تصویر هدر</strong>
+        </div>
+      </div>
+
+      <div class="content-titleSection row justify-content-center">
+        <div class="col-12 align-self-center">
+          <div class="breadcrumb">
+            <a routerLink="/admin/dashboard" class="breadcrumb-link">داشبورد</a>
+            <span class="breadcrumb-separator"><i class="fa fa-chevron-left"></i></span>
+            <a routerLink="/admin/blog" class="breadcrumb-link">مدیریت تصاویر هدر</a>
+            <span class="breadcrumb-separator"><i class="fa fa-chevron-left"></i></span>
+            <a class="breadcrumb-link active">ویرایش تصویر هدر</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="content-inner-box rtl">
+          <form class="w-100">
+            <div class="row">
+              <div class="col-12 text-center">
+                <div class="form-group">
+                  <label class="group">عنوان</label>
+                  <input type="text" name="title" id="title" class="form-control">
+                </div>
+              </div>
+              <div class="col-6 text-center">
+                <div class="form-group mb-3">
+                  <label>تصویر</label>
+                  <input type="file" name="picture" id="picture" class="form-control">
+                </div>
+              </div>
+              <div class="col-6 text-center">
+                <div class="form-group mb-3">
+                  <label>لینک</label>
+                  <input type="text" name="link" id="link" class="form-control">
+                </div>
+              </div>
+              <div class="col-12 text-center">
+                <div class="form-group mb-3">
+                  <label>توضیحات</label>
+                  <textarea name="description" id="description" class="form-control" rows="5"></textarea>
+                </div>
+              </div>
+
+              <div class="col-md-12 col-lg-12 pt-30">
+                <div class="text-center">
+                  <button mat-raised-button class="green-btn" type="submit">ویرایش</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-panel-footer></app-panel-footer>

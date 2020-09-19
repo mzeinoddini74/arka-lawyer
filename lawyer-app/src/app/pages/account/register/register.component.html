@@ -1,0 +1,171 @@
+<div class="container-fluid login-bg">
+  <div class="layer"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 col-lg-4 login-area">
+        <ul class="nav nav-tabs text-center" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" id="attorney-tab" data-toggle="tab" href="#attorney" role="tab" aria-controls="attorney" aria-selected="false">کاربر حقوقی</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="user-tab" data-toggle="tab" href="#user" role="tab" aria-controls="user" aria-selected="true">کاربر عادی</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="loginTab">
+          <div class="tab-pane fade show active" id="user" role="tabpanel" aria-labelledby="user-tab">
+            <div class="row logo-area justify-content-center">
+              <div class="col-12 text-center align-self-center">
+                <a routerLink="/">
+                  <img src="../../../../assets/images/shared/logo-small.png" alt="Logo" class="img-fluid">
+                </a>
+              </div>
+            </div>
+            <form [formGroup]='registerUserForm' (ngSubmit)="saveUser()" class="w-100">
+              <div class="row login-wrap rtl">
+                <div class="col-12 text-center">
+                  <div class="form-group">
+                    <input type="text" pKeyFilter="int" formControlName="mobile" name="mobile"
+                           placeholder="شماره موبایل" class="form-control"
+                           minlength="11" maxlength="11"
+                           [pattern]="mobileRegix">
+                    <ul class="mt-1" *ngFor="let error of errorMessages.mobile">
+                      <li class="font-small text-danger font-weight-bold"
+                          *ngIf="registerUserForm.get('mobile').hasError(error.type)
+                            && (registerUserForm.get('mobile').dirty
+                            || registerUserForm.get('mobile').touched)">
+                        {{ error.message }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-12 text-center">
+                  <div class="form-group">
+                    <input type="password" formControlName="password"
+                           name="password" placeholder="کلمه عبور"
+                           class="form-control" minlength="6">
+                    <ul class="mt-1" *ngFor="let error of errorMessages.password">
+                      <li class="font-small text-danger font-weight-bold"
+                          *ngIf="registerUserForm.get('password').hasError(error.type)
+                            && (registerUserForm.get('password').dirty
+                            || registerUserForm.get('confirmPassword').touched)">
+                        {{ error.message }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-12 text-center">
+                  <div class="form-group mb-3">
+                    <input type="password" formControlName="confirmPassword"
+                           name="confirmPassword" placeholder="تکرار کلمه عبور" class="form-control"
+                           minlength="6">
+
+                    <ul class="mt-1 mb-0 pb-0" *ngFor="let error of errorMessages.confirmPassword">
+                      <li class="font-small text-danger font-weight-bold"
+                          *ngIf="registerUserForm.get('confirmPassword').hasError(error.type)
+                            && (registerUserForm.get('confirmPassword').dirty || registerUserForm.get('confirmPassword').touched)">
+                        {{ error.message }}
+                      </li>
+                    </ul>
+                    <ul class="mt-0">
+                      <li class="font-small text-danger font-weight-bold"
+                          *ngIf="registerUserForm.errors?.passwordNotMatch
+                            && (registerUserForm.get('confirmPassword').dirty || registerUserForm.get('confirmPassword').touched)">
+                        تکرار کلمه عبور مطابقت ندارد.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-12 col-lg-12 pt-30">
+                  <div class="text-center">
+                    <button mat-raised-button type="submit" class="btn btn-block green-btn" [disabled]="registerUserForm.invalid">ثبت نام</button>
+                  </div>
+                </div>
+                <div class="col-4 text-left mt-3">
+                </div>
+                <div class="col-8 text-left mt-3">
+                  <a routerLink="/login">قبلا ثبت نام کرده اید؟</a>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="tab-pane fade" id="attorney" role="tabpanel" aria-labelledby="attorney-tab">
+            <div class="row logo-area justify-content-center">
+              <div class="col-12 text-center align-self-center">
+                <a routerLink="/">
+                  <img src="../../../../assets/images/shared/logo-small.png" alt="Logo" class="img-fluid">
+                </a>
+              </div>
+            </div>
+            <form [formGroup]='registerAttorneyForm' (ngSubmit)="saveAttorney()" class="w-100">
+              <div class="row login-wrap rtl">
+                <div class="col-12 text-center">
+                  <div class="form-group">
+                    <input  type="text" formControlName="mobile" name="mobile" placeholder="شماره موبایل" class="form-control"
+                            minlength="11" maxlength="11"
+                            [pattern]="mobileRegix">
+                    <ul class="mt-1" *ngFor="let error of errorMessages.mobile">
+                      <li class="font-small text-danger font-weight-bold"
+                          *ngIf="registerAttorneyForm.get('mobile').hasError(error.type)
+                            && (registerAttorneyForm.get('mobile').dirty
+                            || registerAttorneyForm.get('mobile').touched)">
+                        {{ error.message }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-12 text-center">
+                  <div class="form-group">
+                    <input type="password" formControlName="password" name="password"
+                           placeholder="کلمه عبور" class="form-control" minlength="6">
+                    <ul class="mt-1" *ngFor="let error of errorMessages.password">
+                      <li class="font-small text-danger font-weight-bold"
+                          *ngIf="registerAttorneyForm.get('password').hasError(error.type)
+                            && (registerAttorneyForm.get('password').dirty
+                            || registerAttorneyForm.get('confirmPassword').touched)">
+                        {{ error.message }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-12 text-center">
+                  <div class="form-group mb-3">
+                    <input type="password" formControlName="confirmPassword" name="confirmPassword"
+                           placeholder="تکرار کلمه عبور" class="form-control"
+                           minlength="6">
+
+                    <ul class="mt-1 mb-0 pb-0" *ngFor="let error of errorMessages.confirmPassword">
+                      <li class="font-small text-danger font-weight-bold"
+                          *ngIf="registerAttorneyForm.get('confirmPassword').hasError(error.type)
+                            && (registerAttorneyForm.get('confirmPassword').dirty
+                            || registerAttorneyForm.get('confirmPassword').touched)">
+                        {{ error.message }}
+                      </li>
+                    </ul>
+                    <ul class="mt-0">
+                      <li class="font-small text-danger font-weight-bold"
+                          *ngIf="registerAttorneyForm.errors?.passwordNotMatch
+                            && (registerAttorneyForm.get('confirmPassword').dirty
+                            || registerAttorneyForm.get('confirmPassword').touched)">
+                        تکرار کلمه عبور مطابقت ندارد.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-12 col-lg-12 pt-30">
+                  <div class="text-center">
+                    <button mat-raised-button type="submit" class="btn btn-block green-btn" [disabled]="registerAttorneyForm.invalid">ثبت نام</button>
+                  </div>
+                </div>
+                <div class="col-4 text-left mt-3">
+                </div>
+                <div class="col-8 text-left mt-3">
+                  <a routerLink="/login">قبلا ثبت نام کرده اید؟</a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

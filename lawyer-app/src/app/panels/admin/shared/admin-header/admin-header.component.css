@@ -1,0 +1,24 @@
+nav.navbar {
+  height: 60px;
+  width: calc(100% - 240px);
+  z-index: 1039;
+  /*background-color: #1F262D;*/
+  background-color: #037160;
+}
+nav.navbar a,nav.navbar ul li,nav.navbar button{
+  color: white;
+}
+.dropdown-menu-right{
+  left: 0;
+  right: auto;
+  text-align: right;
+}
+.dropdown-menu-right a{
+  color: #1F262D!important;
+}
+
+@media screen and (max-width: 768px) {
+  nav.navbar{
+    width: 100%;
+  }
+}

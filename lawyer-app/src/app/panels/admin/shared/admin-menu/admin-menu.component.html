@@ -1,0 +1,57 @@
+<aside class="right-sidebar rtl text-right" id="panel-menu">
+    <div class="user-profile">
+      <div class="profile-img">
+        <img src="assets/images/shared/admin.png">
+      </div>
+      <div class="profile-text">
+        <h5></h5>
+        <a data-toggle="tooltip" title="" data-original-title="تنظیمات"><i class="fa fa-cog"></i></a>
+        <a data-toggle="tooltip" title="" data-original-title="خروج"><i class="fa fa-sign-out-alt"></i></a>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <ul id="sidebarnav">
+        <li class="nav-devider"></li>
+
+        <li class="nav-small-cap">اصلی</li>
+        <li class="" routerLink="/admin/dashboard">
+          <a>
+            <i class="fa fa-home fa-sm"></i><span class="hide-menu"> داشبورد </span>
+          </a>
+        </li>
+        <li class="" routerLink="/admin/user">
+          <a>
+            <i class="fa fa-users fa-sm"></i><span class="hide-menu"> کاربران </span>
+          </a>
+        </li>
+
+        <li class="nav-small-cap">مدیریت صفحه اصلی</li>
+        <li class="">
+          <a class="has-arrow" data-toggle="collapse" href="#banner" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <i class="fa fa-image fa-sm"></i><span class="hide-menu"> مدیریت تصاویر هدر </span>
+          </a>
+          <ul class="collapse" id="banner">
+            <li routerLink="/admin/banner"><a>لیست تصاویر</a></li>
+            <li routerLink="/admin/add-banner"><a>ثبت تصویر</a></li>
+          </ul>
+        </li>
+        <li class="">
+          <a class="has-arrow" data-toggle="collapse" href="#blog" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <i class="fa fa-blog fa-sm"></i><span class="hide-menu"> مدیریت اخبار </span>
+          </a>
+          <ul class="collapse" id="blog">
+            <li routerLink="/admin/blog"><a>لیست اخبار</a></li>
+            <li routerLink="/admin/add-blog"><a>ثبت خبر</a></li>
+          </ul>
+        </li>
+        <li class="">
+          <a class="has-arrow" data-toggle="collapse" href="#comment" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <i class="fa fa-comment fa-sm"></i><span class="hide-menu"> مدیریت پیام های کاربران </span>
+          </a>
+          <ul class="collapse" id="comment">
+            <li routerLink="/admin/comment"><a>لیست پیام های کاربران</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+</aside>

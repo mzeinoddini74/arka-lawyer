@@ -1,0 +1,146 @@
+<div class="contact-form pb-100">
+  <div class="loaction-area rtl">
+    <div class="container">
+      <div class="row location-bg">
+        <div class="col-sm-6 col-lg-4">
+          <div class="location-item">
+            <div class="location-icon">
+              <mat-icon>pin_drop</mat-icon>
+            </div>
+            <h3>آدرس</h3>
+            <ul>
+              <li>تهران، نیاوران، خیابان باهنر، بعد از چهارراه کامرانیه، پلاک 127، طبقه 4، واحد 5</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="location-item">
+            <div class="location-icon">
+              <mat-icon>email</mat-icon>
+            </div>
+            <h3>ایمیل</h3>
+            <ul>
+              <li>
+                <a href="mailto:hello@arkainvent.com" class="">info@arkainvent.com</a>
+              </li>
+              <li>
+                <a href="mailto:info@arkainvent.com" class="">info@arkainvent.com</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-6 offset-sm-3 offset-lg-0 col-lg-4">
+          <div class="location-item">
+            <div class="location-icon">
+              <mat-icon>phone</mat-icon>
+            </div>
+            <h3>تلفن</h3>
+            <ul>
+              <li style="direction: ltr;">
+                <a href="tel:+982126156619" class="">+21 26156619</a>
+              </li>
+              <li style="direction: ltr;">
+                <a href="tel:+982126156619" class="">+21 26156619</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <form id="contactForm" class="rtl">
+      <form [formGroup]='form' (ngSubmit)="saveRequest()" class="w-100">
+        <div class="row contact-wrap">
+          <div class="col-sm-6 col-lg-6">
+            <div class="form-group">
+              <input type="text" formControlName="name" name="name"
+                     placeholder="نام" class="form-control"
+                     maxlength="100">
+              <ul class="mt-1 mb-0 pb-0" *ngFor="let error of errorMessages.name">
+                <li class="font-small text-danger font-weight-bold"
+                    *ngIf="form.get('name').hasError(error.type)
+                            && (form.get('name').dirty
+                            || form.get('name').touched)">
+                  {{ error.message }}
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-6">
+            <div class="form-group">
+              <input type="text" pKeyFilter="int" formControlName="mobile" name="mobile"
+                     placeholder="شماره موبایل" class="form-control"
+                     minlength="11" maxlength="11"
+                     [pattern]="mobileRegix">
+
+              <ul class="mt-1" *ngFor="let error of errorMessages.mobile">
+                <li class="font-small text-danger font-weight-bold"
+                    *ngIf="form.get('mobile').hasError(error.type)
+                            && (form.get('mobile').dirty
+                            || form.get('mobile').touched)">
+                  {{ error.message }}
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-12 col-lg-12">
+            <div class="form-group">
+              <input type="text" formControlName="subject" name="subject"
+                     placeholder="موضوع" class="form-control"
+                     maxlength="200">
+              <ul class="mt-1 mb-0 pb-0" *ngFor="let error of errorMessages.subject">
+                <li class="font-small text-danger font-weight-bold"
+                    *ngIf="form.get('subject').hasError(error.type)
+                            && (form.get('subject').dirty
+                            || form.get('subject').touched)">
+                  {{ error.message }}
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-12">
+            <div class="form-group">
+          <textarea name="description" formControlName="description"
+                    cols="30" rows="8" placeholder="توضیحات"
+                    class="form-control" maxlength="500"></textarea>
+
+              <ul class="mt-1 mb-0 pb-0" *ngFor="let error of errorMessages.description">
+                <li class="font-small text-danger font-weight-bold"
+                    *ngIf="form.get('description').hasError(error.type)
+                            && (form.get('description').dirty
+                            || form.get('description').touched)">
+                  {{ error.message }}
+                </li>
+              </ul>
+
+            </div>
+          </div>
+          <div class="col-sm-12 col-lg-12 text-center">
+            <div class="form-group">
+              <ngx-recaptcha2 #captchaElem siteKey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                              (success)="handleSuccess($event)"
+                              size="normal"
+                              hl="en"
+                              theme="light"
+                              type="'image' | 'audio'"
+                              formControlName="recaptcha">
+              </ngx-recaptcha2>
+
+              <ul class="mt-1 mb-0 pb-0 text-center" *ngIf="captchaError">
+                <li class="font-small text-danger font-weight-bold">
+                  فیلد اعتبارسنجی (کپچا) اجباری است.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-12">
+            <div class="text-center">
+              <button mat-raised-button type="submit" class="btn border-btn" [disabled]="form.invalid">ثبت درخواست مشاوره</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </form>
+  </div>
+</div>

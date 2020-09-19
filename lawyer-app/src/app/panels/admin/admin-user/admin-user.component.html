@@ -1,0 +1,77 @@
+<app-admin-header></app-admin-header>
+<app-admin-menu></app-admin-menu>
+
+<div class="content rtl">
+
+  <div class="content-inner" id="main-content">
+    <div class="content-wrapper">
+
+      <div class="content-titleSection row justify-content-center">
+        <div class="col-12 align-self-center">
+         <strong class="content-title">لیست کاربران</strong>
+        </div>
+      </div>
+
+      <div class="content-titleSection row justify-content-center">
+        <div class="col-12 align-self-center">
+          <div class="breadcrumb">
+            <a routerLink="/admin/dashboard" class="breadcrumb-link">داشبورد</a>
+            <span class="breadcrumb-separator"><i class="fa fa-chevron-left"></i></span>
+            <a class="breadcrumb-link active">مدیریت کاربران</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="content-inner-box">
+          <mat-form-field appearance="legacy">
+            <mat-label>جستجو</mat-label>
+            <input matInput (keyup)="applyFilter($event)" #input />
+            <mat-icon matSuffix>search</mat-icon>
+          </mat-form-field>
+
+          <div>
+            <table mat-table [dataSource]="dataSource" matSort>
+
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="mobile">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> mobile </th>
+                <td mat-cell *matCellDef="let row"> {{row.mobile}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="fullname">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> fullname </th>
+                <td mat-cell *matCellDef="let row"> {{row.fullname}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> email </th>
+                <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="date">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> date </th>
+                <td mat-cell *matCellDef="let row"> {{row.date}} </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+              <!-- Row shown when there is no matching data. -->
+              <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">رکوردی یافت نشد.</td>
+              </tr>
+            </table>
+
+            <mat-paginator class="mt-5" showFirstLastButtons [pageSizeOptions]="[5, 10, 25, 50]"></mat-paginator>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-panel-footer></app-panel-footer>

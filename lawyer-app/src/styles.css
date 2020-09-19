@@ -1,0 +1,399 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "assets/fonts/fontawesome/css/all.min.css";
+
+
+@font-face {
+  font-family: IRANSans;
+  font-style: normal;
+  font-weight: normal;
+  src: url('assets/fonts/IranSans/eot/IRANSansWeb_Light.eot');
+  src: url('assets/fonts/IranSans/eot/IRANSansWeb_Light.eot') format('embedded-opentype'),
+  url('assets/fonts/IranSans/woff2/IRANSansWeb_Light.woff2') format('woff2'),
+  url('assets/fonts/IranSans/woff/IRANSansWeb_Light.woff') format('woff'),
+  url('assets/fonts/IranSans/ttf/IRANSansWeb_Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: IRANSans-Bold;
+  font-style: normal;
+  font-weight: bold;
+  src: url('assets/fonts/IranSans/eot/IRANSansWeb_Bold.eot');
+  src: url('assets/fonts/IranSans/eot/IRANSansWeb_Bold.eot') format('embedded-opentype'),
+  url('assets/fonts/IranSans/woff2/IRANSansWeb_Bold.woff2') format('woff2'),
+  url('assets/fonts/IranSans/woff/IRANSansWeb_Bold.woff') format('woff'),
+  url('assets/fonts/IranSans/ttf/IRANSansWeb_Bold.ttf') format('truetype');
+}
+
+/* line 3, ../../01 cl html template/New folder/May 2019/178 Real Estate/Real Estate Html/sass/_common.scss */
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: IRANSans, "Helvetica Neue", sans-serif;
+}
+*{
+  font-family: IRANSans;
+}
+p, span, section, h1, h2, h3, h4, h5, h6, a, li, button, input, textarea{
+  font-family: IRANSans!important;
+}
+
+a{
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+ul{
+  padding-right: unset!important;
+}
+ul li{
+  list-style: none;
+}
+
+.rtl{
+  direction: rtl;
+}
+.ltr{
+  direction: ltr;
+}
+.btn-outline-success,.btn-outline-success:visited {
+  display: inline-block;
+  font-size: 16px;
+  color: #037160!important;
+  border: 1px solid #037160!important;
+  padding: 12px 15px;
+  position: relative;
+  z-index: 1;
+  border-radius: 0px;
+  background-color: transparent!important;
+  box-shadow: unset!important;
+}
+
+.btn-outline-success:hover,.btn-outline-success:active {
+  display: inline-block;
+  font-size: 16px;
+  color: #ffffff!important;
+  border: 1px solid #037160!important;
+  padding: 12px 15px;
+  position: relative;
+  z-index: 1;
+  background-color: #037160!important;
+  box-shadow: unset!important;
+}
+.pb-70{
+  padding-bottom: 70px;
+}
+.pt-30{
+  padding-top: 30px;
+}
+.pt-70{
+   padding-top: 70px;
+ }
+.pb-100{
+  padding-bottom: 100px;
+}
+.pt-100{
+  padding-top: 100px;
+}
+
+mat-icon {
+  vertical-align: middle!important;
+}
+
+/*BreadCrumb*/
+.page-title-area {
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  height: 400px;
+  text-align: center;
+  position: relative;
+}
+.title-img {
+  background-image: url(assets/images/shared/breadcrumbs-bg.jpg);
+}
+.page-title-area:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #333;
+  opacity: .9;
+}
+.page-title-text {
+  position: relative;
+  margin-top: 150px;
+  color: #fff;
+}
+.page-title-text h2 {
+  font-weight: 900;
+  font-size: 38px;
+  color: #fff;
+  margin-bottom: 30px;
+}
+.page-title-text ul {
+  padding: 0;
+  margin: 0 0 25px;
+}
+.page-title-text ul li {
+  list-style-type: none;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 17px;
+}
+.page-title-text ul li a {
+  display: inline-block;
+  color: #fff;
+}
+.page-title-text ul li mat-icon {
+  font-size: 17px;
+  line-height: 20px;
+  height: 17px;
+}
+/*End*/
+
+/*Download App Buttons*/
+.downloadbtns {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+.app-btn {
+  width: 45%;
+  max-width: 160px;
+  color: #101010!important;
+  padding: 8px;
+  text-align: left;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 10px;
+  background-color: #f2f2f2;
+  -webkit-transition: background-color 0.25s linear;
+  transition: background-color 0.25s linear;
+  margin: 2px;
+}
+.app-btn:hover {
+  background-color: #454545;
+  color: #ffffff;
+}
+.app-btn:hover p ,.app-btn:hover i{
+  color: #ffffff;
+}
+.app-btn i {
+  width: 20%;
+  text-align: center;
+  font-size: 28px;
+  margin-left: 7px;
+}
+.app-btn p{
+  text-align: right;
+  margin-bottom: unset;
+  padding-bottom: unset;
+  font-size: 15px ;
+}
+.app-btn .big-txt {
+  font-size: 17px;
+  font-weight: bold;
+}
+/*End*/
+
+/*ُScrollbar*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: #ffffff;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #dddddd;
+}
+/*End*/
+
+
+/*Panel Styles*/
+.content {
+  background-color: #EEEEEE;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  text-align: right;
+  padding-bottom: 50px;
+}
+.content .content-inner {
+  padding: 20px 260px 0 0px;
+}
+.content .content-wrapper {
+  padding: 20px;
+}
+.content .content-box {
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0px solid transparent;
+  border-radius: 0px;
+}
+.content .content-title {
+  font-size: 24px;
+  line-height: 28px;
+  color: #037160;
+  font-weight: 300;
+  display: block;
+}
+.content .content-titleSection {
+  margin-bottom: 15px;
+}
+.content .breadcrumb-link {
+  color: #929394;
+  display: inline-block;
+  font-size: 14px;
+}
+.content .breadcrumb-link.active {
+  color: #037160;
+}
+.content .breadcrumb {
+  padding: 0px;
+  margin-bottom: 0px;
+  background-color: unset;
+}
+.content .breadcrumb-separator {
+  display: inline-block;
+}
+.content .breadcrumb-separator i {
+  font-size: 10px;
+  line-height: 20px;
+  padding-right: 5px;
+  padding-left: 5px;
+  color: #929394;
+}
+.content .content-inner-box {
+  padding: 50px 20px 50px 20px;
+}
+@media screen and (max-width: 768px) {
+  .content .content-inner {
+    padding-right: 0 !important;
+  }
+  .content .content-wrapper {
+    padding: 20px 10px;
+  }
+
+}
+/*End*/
+
+input.ng-invalid.ng-touched{
+  border: 1px solid #dc3545!important;
+}
+
+
+.form-group {
+  text-align: right!important;
+}
+.form-group .form-control {
+  color: #333!important;
+}
+.form-group label {
+  color: #1c1c1c!important;
+  font-size: 15px!important;
+  text-align: right!important;
+}
+.form-group .form-control {
+  background-color: transparent!important;
+  border: 1px solid #037160!important;
+  border-radius: 0!important;
+  padding-left: 30px!important;
+  color: #1c1c1c!important;
+  font-size: 15px!important;
+}
+.form-group .form-control:focus {
+  color: #495057!important;
+  background-color: #fff!important;
+  border-color: #037160!important;
+  outline: 0!important;
+  box-shadow: 0 0 0 0.2rem #bbe8df!important;
+}
+.green-btn {
+  font-weight: 600!important;
+  font-size: 16px!important;
+  color: #fff!important;
+  background-color: #037160!important;
+  padding: 16px 40px!important;
+  border: 0!important;
+  position: relative!important;
+  z-index: 1!important;
+  transition: all .5s ease!important;
+  line-height: unset!important;
+  border-radius: 0px!important;
+}
+.green-btn:hover {
+  color: #037160!important;
+  background-color: #fff!important;
+  border: 1px #037160 solid!important;
+  border-radius: 0px!important;
+}
+
+.border-btn {
+  font-weight: 600!important;
+  font-size: 16px!important;
+  color: #037160!important;
+  background-color: transparent!important;
+  padding: 16px 40px!important;
+  border: 1px #037160 solid!important;
+  position: relative!important;
+  z-index: 1!important;
+  transition: all .5s ease!important;
+  line-height: unset!important;
+  border-radius: 0px!important;
+}
+.border-btn:hover {
+  color: #ffffff!important;
+  background-color: #037160!important;
+  border: 1px #037160 solid!important;
+  border-radius: 0px!important;
+}
+::ng-deep .mat-button-disabled .mat-button-wrapper{
+  color: rgba(0,0,0,.26) !important;
+}
+
+.border-btn mat-icon {
+  line-height: 25px;
+  font-size: 16px;
+  vertical-align: middle!important;
+}
+
+button:focus {
+  outline: none !important;
+}
+
+.swal2-container{
+  direction: rtl;
+}
+
+button.swal2-confirm.swal2-styled{
+  display: inline-block;
+  border-left-color: #037160;
+  border-right-color: #037160;
+  border: 0;
+  border-radius: .25em;
+  background: initial;
+  background-color: #037160;
+  color: #fff;
+  font-size: 1.0625em;
+}
+
+h2.section-title {
+  line-height: 50px;
+}
+
+.mat-tooltip{
+  font-family: IRANSans!important;
+
+}
+

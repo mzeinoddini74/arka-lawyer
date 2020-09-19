@@ -1,0 +1,208 @@
+<app-header></app-header>
+<div class="container-fluid page-title-area title-img">
+  <div class="row justify-content-center">
+    <div class="col-12 align-self-center">
+      <div class="page-title-text">
+        <h2>مشاوره آنلاین</h2>
+        <ul>
+          <li>مشاوره حقوقی آنلاین</li>
+          <li>
+            <mat-icon>keyboard_arrow_left</mat-icon>
+          </li>
+          <li>
+            <a routerLink="/consultation-type" class="">مشاوره حقوقی</a>
+          </li>
+          <li>
+            <mat-icon>keyboard_arrow_left</mat-icon>
+          </li>
+          <li>
+            <a routerLink="/" class="">صفحه اصلی</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="contact-form pt-100 rtl">
+  <div class="container">
+    <div class="contact-wrap">
+
+      <form [formGroup]='form' (ngSubmit)="saveComment()" class="w-100">
+        <h2>مشاوره آنلاین</h2>
+
+        <div class="message my-4">
+          <p class="font-bold">کاربر ارجمند، پیش از درج پرسش خود به نکات زیر توجه
+            فرمایید.</p>
+          <ul>
+            <li>1- پرسش و پاسخ حقوقی آنلاین ماهیت مشاوره‌ای نداشته و صرفا جهت رفع
+              ابهامات شما در خصوص خدمات و مسائل روزمره حقوقی شما است.
+            </li>
+            <li>2- مدت زمان تایید و پاسخگویی پرسش‌ها معمولا بین ۱۲ الی ۷۲ ساعت بوده و
+              بنیاد
+              وکلا هیچ تعهدی نسبت به پیگیری پاسخگویی ندارد.
+            </li>
+            <li>3- پیشنهاد می‌شود جهت دریافت نتیجه مطلوب و صرفه جویی در زمان از
+              <a class="font-bold" routerLink="/tel-consultation">مشاوره
+                تلفنی</a>
+              استفاده فرمایید.
+            </li>
+          </ul>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 col-lg-6">
+            <div class="form-group">
+              <input type="text" formControlName="name" name="name"
+                     placeholder="نام" class="form-control"
+                     maxlength="200">
+
+              <ul class="mt-1 mb-0 pb-0" *ngFor="let error of errorMessages.name">
+                <li class="font-small text-danger font-weight-bold"
+                    *ngIf="form.get('name').hasError(error.type)
+                            && (form.get('name').dirty
+                            || form.get('name').touched)">
+                  {{ error.message }}
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-12 col-lg-6">
+            <div class="form-group">
+              <input type="text" pKeyFilter="int" formControlName="mobile" name="mobile"
+                     placeholder="شماره موبایل" class="form-control"
+                     minlength="11" maxlength="11"
+                     [pattern]="mobileRegix">
+              <ul class="mt-1" *ngFor="let error of errorMessages.mobile">
+                <li class="font-small text-danger font-weight-bold"
+                    *ngIf="form.get('mobile').hasError(error.type)
+                            && (form.get('mobile').dirty
+                            || form.get('mobile').touched)">
+                  {{ error.message }}
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-12 col-lg-12">
+            <div class="form-group">
+              <ckeditor
+                [editor]="Editor"
+                formControlName="comment"
+                [config]="{ toolbar: [ 'heading', '|', 'bold', 'italic', '|', 'undo', 'redo' ] }"></ckeditor>
+
+              <ul class="mt-1 mb-0 pb-0" *ngFor="let error of errorMessages.comment">
+                <li class="font-small text-danger font-weight-bold"
+                    *ngIf="form.get('comment').hasError(error.type)
+                            && (form.get('comment').dirty
+                            || form.get('comment').touched)">
+                  {{ error.message }}
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-12 col-lg-12 text-center">
+            <div class="form-group">
+              <ngx-recaptcha2 #captchaElem siteKey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                              (success)="handleSuccess($event)"
+                              size="normal"
+                              hl="en"
+                              theme="light"
+                              type="'image' | 'audio'"
+                              formControlName="recaptcha">
+              </ngx-recaptcha2>
+
+              <ul class="mt-1 mb-0 pb-0 text-center" *ngIf="captchaError">
+                <li class="font-small text-danger font-weight-bold">
+                  فیلد اعتبارسنجی (کپچا) اجباری است.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-12">
+            <div class="text-center">
+              <button mat-raised-button type="submit" class="btn btn-block green-btn"
+                      [disabled]="form.invalid">ثبت</button>
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container mb-5 rtl text-right">
+  <div class="card">
+    <h3 class="text-right mb-2"> سایر نظرات </h3>
+    <div class="row">
+      <div class="col-md-12 p-0">
+        <div class="media">
+          <img class="ml-3 rounded-circle" alt="Bootstrap Media Preview" src="assets/images/shared/user01.jpg" />
+          <div class="media-body">
+            <div class="row">
+              <div class="col-sm-12 col-lg-8 d-flex align-self-end name">
+                <h5>Maria Smantha</h5> <span>- 2 hours ago</span>
+              </div>
+              <div class="col-sm-12 col-lg-4 btns text-left">
+
+                <button mat-button class="btn-outline">
+                  25<mat-icon>thumb_up</mat-icon>
+                </button>
+                <button mat-button class="btn-outline">
+                  25<mat-icon>thumb_down</mat-icon>
+                </button>
+              </div>
+            </div>
+            It is a long established fact that a reader will be distracted by the readable content of a page.
+            <div class="media reply">
+              <a class="pl-3" href="#">
+                <img class="rounded-circle" alt="Bootstrap Media Another Preview" src="assets/images/shared/user01.jpg" />
+              </a>
+              <div class="media-body">
+                <div class="row">
+                  <div class="col-sm-12 col-lg-8 d-flex align-self-end name">
+                    <h5>Maria Smantha</h5> <span>- 2 hours ago</span>
+                  </div>
+                  <div class="col-sm-12 col-lg-4 btns text-left">
+
+                    <button mat-button class="btn-outline">
+                      25<mat-icon>thumb_up</mat-icon>
+                    </button>
+                    <button mat-button class="btn-outline">
+                      25<mat-icon>thumb_down</mat-icon>
+                    </button>
+                  </div>
+                </div>
+                letters, as opposed to using 'Content here, content here', making it look like readable English.
+              </div>
+            </div>
+            <div class="media reply">
+              <a class="pl-3" href="#">
+                <img class="rounded-circle" alt="Bootstrap Media Another Preview" src="assets/images/shared/user01.jpg" />
+              </a>
+              <div class="media-body">
+                <div class="row">
+                  <div class="col-sm-12 col-lg-8 d-flex align-self-end name">
+                    <h5>Maria Smantha</h5> <span>- 2 hours ago</span>
+                  </div>
+                  <div class="col-sm-12 col-lg-4 btns text-left">
+
+                    <button mat-button class="btn-outline">
+                      25<mat-icon>thumb_up</mat-icon>
+                    </button>
+                    <button mat-button class="btn-outline">
+                      25<mat-icon>thumb_down</mat-icon>
+                    </button>
+                  </div>
+                </div>
+                the majority have suffered alteration in some form, by injected humour, or randomised words.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

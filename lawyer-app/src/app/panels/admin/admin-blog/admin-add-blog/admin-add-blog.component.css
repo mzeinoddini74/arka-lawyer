@@ -1,0 +1,30 @@
+::ng-deep .ck.ck-toolbar__items{
+  direction: rtl!important;
+}
+::ng-deep .ck.ck-toolbar>.ck-toolbar__items>* {
+  margin-right: 0px;
+  margin-left: 10px;
+}
+
+::ng-deep .ck.ck-dropdown .ck-dropdown__arrow {
+  margin-left: 0px;
+  margin-right: 5px;
+}
+
+::ng-deep .ck.ck-editor__main>.ck-editor__editable {
+  direction: rtl;
+  text-align: right;
+  min-height: 250px;
+}
+
+::ng-deep .ck.ck-editor__main>.ck-editor__editable:focus {
+  color: #495057!important;
+  background-color: #fff!important;
+  border-color: #037160!important;
+  outline: 0!important;
+  box-shadow: 0 0 0 0.2rem #bbe8df!important;
+}
+::ng-deep .ck.ck-dropdown .ck-dropdown__panel.ck-dropdown__panel_ne,::ng-deep .ck.ck-dropdown .ck-dropdown__panel.ck-dropdown__panel_se {
+  right: 0!important;
+  left: unset!important;
+}

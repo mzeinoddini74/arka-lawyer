@@ -1,0 +1,163 @@
+.contact-form {
+  background-image: url(../../../../assets/images/home/contact-bg.jpg);
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.loaction-area {
+  position: relative;
+  top: -100px;
+}
+.location-bg {
+  background-image: url(../../../../assets/images/home/location-bg.jpg);
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 50px 40px 20px;
+}
+.location-bg:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #037160;
+  opacity: .9;
+}
+.location-bg:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  top: -20px;
+  width: 88%;
+  height: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #037160;
+  opacity: 0.6;
+}
+.location-item {
+  margin-bottom: 30px;
+  position: relative;
+  padding-right: 90px;
+  color: #fff;
+}
+.location-item .location-icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.location-item .location-icon mat-icon {
+  display: inline-block;
+  color: #fff;
+  font-size: 35px;
+  position: absolute;
+  right: 32px;
+  top: 22px;
+}
+.location-item h3 {
+  color: #fff;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 28px;
+  text-align: right;
+}
+.location-item ul {
+  padding: 0;
+  margin: 0 0 2px;
+  text-align: right;
+}
+.location-item ul li:last-child {
+  margin-bottom: 0;
+}
+.location-item ul li {
+  list-style-type: none;
+  display: block;
+  margin-bottom: 3px;
+  font-size: 15px;
+}
+.contact-wrap {
+  max-width: 970px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.contact-wrap .form-group {
+  margin-bottom: 30px;
+}
+.contact-wrap .form-group .form-control {
+  background-color: transparent;
+  border: 1px solid #037160;
+  border-radius: 0;
+  height: 60px;
+  padding-right: 30px;
+  color: #fff;
+  font-size: 15px;
+  text-align: right;
+}
+
+.contact-btn {
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff;
+  background-color: #037160;
+  padding: 16px 40px;
+  border: 0;
+  position: relative;
+  z-index: 1;
+  transition: all .5s ease;
+}
+
+@media only screen and (max-width: 767px){
+  .pb-100 {
+    padding-bottom: 50px;
+  }
+  .loaction-area {
+    top: -50px;
+  }
+  .location-bg {
+    padding: 30px 0 0;
+  }
+  .location-item {
+    padding-right: 90px;
+  }
+  .location-item .location-icon mat-icon {
+    font-size: 22px;
+    right: 32px;
+  }
+  .location-item h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .location-item ul li {
+    font-size: 13px;
+  }
+  .contact-wrap {
+    max-width: 970px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .contact-wrap .form-group .form-control {
+    height: 50px;
+    padding-right: 20px;
+    font-size: 14px;
+  }
+  .contact-btn, .list-unstyled {
+    font-size: 14px;
+  }
+  .contact-btn {
+    padding: 12px 28px;
+  }
+}
+.location-item ul li a {
+  color: #fff;
+}
+.location-item ul li a:hover {
+  color: #333;
+}
+::ng-deep ngx-recaptcha2 > div > div > div{
+  margin-left: auto!important;
+  margin-right: auto!important;
+}

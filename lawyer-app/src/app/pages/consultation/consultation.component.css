@@ -1,0 +1,29 @@
+.contact-form {
+  padding-bottom: 200px;
+}
+.contact-form .contact-wrap {
+  max-width: 100%;
+  padding: 55px 100px;
+  box-shadow: 0 0 20px 0 #ddd;
+}
+.contact-form h2 {
+  font-size: 25px;
+  font-weight: 600;
+  font-family: Playfair Display,serif;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 767px){
+  .contact-form{
+    padding-bottom: 100px;
+  }
+  .contact-form .contact-wrap {
+    padding: 30px 15px;
+  }
+  .contact-form h2 {
+    font-size: 22px;
+    margin-bottom: 30px;
+  }
+
+}

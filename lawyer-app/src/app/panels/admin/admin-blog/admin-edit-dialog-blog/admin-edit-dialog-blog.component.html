@@ -1,0 +1,31 @@
+<h4 class="rtl text-right my-2">ویرایش خبر</h4>
+<div mat-dialog-content class="my-4 rtl">
+    <div class="col-12 text-center">
+      <div class="form-group">
+        <label class="group">عنوان</label>
+        <input type="text" class="form-control" [(ngModel)]="data.title" >
+      </div>
+    </div>
+    <div class="col-12 text-center">
+      <div class="form-group mb-3">
+        <label>تصویر</label>
+        <input type="file" class="form-control" [(ngModel)]="data.picture" >
+      </div>
+    </div>
+    <div class="col-12 text-center">
+      <div class="form-group mb-3">
+        <label>خلاصه</label>
+        <textarea [(ngModel)]="data.summary" class="form-control" rows="5"></textarea>
+      </div>
+    </div>
+    <div class="col-12 text-center">
+      <div class="form-group mb-3 rtl text-right">
+        <label>جزییات</label>
+        <ckeditor [editor]="Editor" [(ngModel)]="data.description"></ckeditor>
+      </div>
+    </div>
+</div>
+<div mat-dialog-actions class="my-2">
+  <button mat-button (click)="onDismiss()">لغو</button>
+  <button mat-button (click)="onConfirm()" cdkFocusInitial>ویرایش</button>
+</div>

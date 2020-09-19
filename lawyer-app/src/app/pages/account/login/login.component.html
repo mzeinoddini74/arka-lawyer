@@ -1,0 +1,148 @@
+<div class="container-fluid login-bg">
+  <div class="layer"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 col-lg-4 login-area">
+        <ul class="nav nav-tabs text-center" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" id="attorney-tab" data-toggle="tab" href="#attorney" role="tab" aria-controls="attorney" aria-selected="false">کاربر حقوقی</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="user-tab" data-toggle="tab" href="#user" role="tab" aria-controls="user" aria-selected="true">کاربر عادی</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="loginTab">
+          <div class="tab-pane fade show active" id="user" role="tabpanel" aria-labelledby="user-tab">
+            <div class="row logo-area justify-content-center">
+              <div class="col-12 text-center align-self-center">
+                <a routerLink="/">
+                  <img src="../../../../assets/images/shared/logo-small.png" alt="Logo" class="img-fluid">
+                </a>
+              </div>
+            </div>
+            <form [formGroup]='loginUserForm' (ngSubmit)="loginUser()" class="w-100">
+              <div class="row login-wrap rtl">
+                <div class="col-12 text-center">
+                  <div class="form-group">
+                    <input type="text" pKeyFilter="int" formControlName="mobile" name="mobile"
+                           placeholder="شماره موبایل" class="form-control"
+                           minlength="11" maxlength="11"
+                           [pattern]="mobileRegix">
+                    <ul class="mt-1" *ngFor="let error of errorMessages.mobile">
+                      <li class="font-small text-danger font-weight-bold"
+                          *ngIf="loginUserForm.get('mobile').hasError(error.type)
+                            && (loginUserForm.get('mobile').dirty
+                            || loginUserForm.get('mobile').touched)">
+                        {{ error.message }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-12 text-center">
+                  <div class="form-group mb-3">
+                    <input type="password" formControlName="password" name="password"
+                           placeholder="کلمه عبور" class="form-control" minlength="6">
+                    <ul class="mt-1" *ngFor="let error of errorMessages.password">
+                      <li class="font-small text-danger font-weight-bold"
+                          *ngIf="loginUserForm.get('password').hasError(error.type)
+                            && (loginUserForm.get('password').dirty
+                            || loginUserForm.get('confirmPassword').touched)">
+                        {{ error.message }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-6 text-right">
+                  <div class="form-check">
+                    <input type="checkbox" name="name" id="remember-me" class="form-check-input">
+                    <label class="form-check-label" for="remember-me">مرا به خاطر بسپار</label>
+                  </div>
+                </div>
+                <div class="col-6 text-left">
+                  <div class="form-check">
+                    <a routerLink="/forgot-password">رمز عبور را فراموش کردید؟</a>
+                  </div>
+                </div>
+                <div class="col-md-12 col-lg-12 pt-30">
+                  <div class="text-center">
+                    <button mat-raised-button type="submit" class="btn btn-block green-btn" [disabled]="loginUserForm.invalid">ورود</button>
+                  </div>
+                </div>
+                <div class="col-4 text-left mt-3">
+                </div>
+                <div class="col-8 text-left mt-3">
+                  <a routerLink="/register">ثبت نام نکرده اید؟</a>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="tab-pane fade" id="attorney" role="tabpanel" aria-labelledby="attorney-tab">
+            <div class="row logo-area justify-content-center">
+              <div class="col-12 text-center align-self-center">
+                <a routerLink="/">
+                  <img src="../../../../assets/images/shared/logo-small.png" alt="Logo" class="img-fluid">
+                </a>
+              </div>
+            </div>
+            <form [formGroup]='loginAttorneyForm' (ngSubmit)="loginAttorney()" class="w-100">
+              <div class="row login-wrap rtl">
+                <div class="col-12 text-center">
+                  <div class="form-group">
+                    <input  type="text" formControlName="mobile" name="mobile"
+                            placeholder="شماره موبایل" class="form-control"
+                            minlength="11" maxlength="11"
+                            [pattern]="mobileRegix">
+                    <ul class="mt-1" *ngFor="let error of errorMessages.mobile">
+                      <li class="font-small text-danger font-weight-bold"
+                          *ngIf="loginAttorneyForm.get('mobile').hasError(error.type)
+                            && (loginAttorneyForm.get('mobile').dirty
+                            || loginAttorneyForm.get('mobile').touched)">
+                        {{ error.message }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-12 text-center">
+                  <div class="form-group mb-3">
+                    <input type="password" formControlName="password" name="password"
+                           placeholder="کلمه عبور" class="form-control" minlength="6">
+                    <ul class="mt-1" *ngFor="let error of errorMessages.password">
+                      <li class="font-small text-danger font-weight-bold"
+                          *ngIf="loginAttorneyForm.get('password').hasError(error.type)
+                            && (loginAttorneyForm.get('password').dirty
+                            || loginAttorneyForm.get('confirmPassword').touched)">
+                        {{ error.message }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-6 text-right">
+                  <div class="form-check">
+                    <input type="checkbox" name="name" id="remember-me-att" class="form-check-input">
+                    <label class="form-check-label" for="remember-me-att">مرا به خاطر بسپار</label>
+                  </div>
+                </div>
+                <div class="col-6 text-left">
+                  <div class="form-check">
+                    <a routerLink="/forgot-password">رمز عبور را فراموش کردید؟</a>
+                  </div>
+                </div>
+                <div class="col-md-12 col-lg-12 pt-30">
+                  <div class="text-center">
+                    <button mat-raised-button type="submit" class="btn btn-block green-btn"
+                            [disabled]="loginAttorneyForm.invalid">ورود</button>
+                  </div>
+                </div>
+                <div class="col-4 text-left mt-3">
+                </div>
+                <div class="col-8 text-left mt-3">
+                  <a routerLink="/register">ثبت نام نکرده اید؟</a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
