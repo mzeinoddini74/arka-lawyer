@@ -37,7 +37,13 @@ body {
 p, span, section, h1, h2, h3, h4, h5, h6, a, li, button, input, textarea{
   font-family: IRANSans!important;
 }
-
+.pi {
+  font-family: 'primeicons'!important;
+}
+.p-button .p-button-icon-left {
+  margin-left: 0.5rem!important;
+  margin-right: unset!important;
+}
 a{
   text-decoration: none;
 }

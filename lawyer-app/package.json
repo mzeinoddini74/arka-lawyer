@@ -25,6 +25,7 @@
     "@ckeditor/ckeditor5-build-classic": "^22.0.0",
     "@sweetalert2/ngx-sweetalert2": "^8.1.1",
     "bootstrap": "^4.5.2",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.5.1",
     "ngx-captcha": "^8.0.1",
     "ngx-owl-carousel-o": "^4.0.0",

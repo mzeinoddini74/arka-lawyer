@@ -1,0 +1,430 @@
+<div class="container-fluid login-bg">
+  <div class="layer"></div>
+  <div class="container rtl">
+    <div class="row">
+      <div class="col-9 login-area">
+        <mat-horizontal-stepper linear="false" #stepper>
+          <mat-step [stepControl]="personalForm" label="اطلاعات فردی">
+            <form [formGroup]='personalForm' class="mt-5">
+              <div class="row contact-wrap">
+                <div class="col-sm-12 col-lg-6">
+                  <div class="form-group">
+                    <label> نام و نام خانوادگی</label>
+                    <input type="text"
+                           class="form-control"
+                           maxlength="100"
+                    formControlName="fullname">
+                    <ul class="mt-1 mb-0 pb-0" *ngFor="let error of personalErrorMessages.fullname">
+                      <li class="font-small text-danger font-weight-bold"
+                          *ngIf="personalForm.get('fullname').hasError(error.type)
+                            && (personalForm.get('fullname').dirty
+                            || personalForm.get('fullname').touched)">
+                        {{ error.message }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-lg-6">
+                  <div class="form-group">
+                    <label>پست الکترونیکی</label>
+                    <input type="text" formControlName="email"
+                           class="form-control"
+                           maxlength="100">
+                    <ul class="mt-1 mb-0 pb-0" *ngFor="let error of personalErrorMessages.email">
+                      <li class="font-small text-danger font-weight-bold"
+                          *ngIf="personalForm.get('email').hasError(error.type)
+                            && (personalForm.get('email').dirty
+                            || personalForm.get('email').touched)">
+                        {{ error.message }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-lg-6">
+                  <div class="form-group">
+                    <label>تلفن</label>
+                    <input type="text" formControlName="tel"
+                           class="form-control"
+                           maxlength="100">
+                    <ul class="mt-1 mb-0 pb-0" *ngFor="let error of personalErrorMessages.tel">
+                      <li class="font-small text-danger font-weight-bold"
+                          *ngIf="personalForm.get('tel').hasError(error.type)
+                            && (personalForm.get('tel').dirty
+                            || personalForm.get('tel').touched)">
+                        {{ error.message }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-lg-6">
+                  <div class="form-group">
+                    <label>نام پدر</label>
+                    <input type="text" formControlName="fatherName"
+                           class="form-control"
+                           maxlength="100">
+                    <ul class="mt-1 mb-0 pb-0" *ngFor="let error of personalErrorMessages.fatherName">
+                      <li class="font-small text-danger font-weight-bold"
+                          *ngIf="personalForm.get('fatherName').hasError(error.type)
+                            && (personalForm.get('fatherName').dirty
+                            || personalForm.get('fatherName').touched)">
+                        {{ error.message }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-lg-12">
+                  <div class="form-group">
+                    <label> تصویر پروفایل</label>
+                    <p-fileUpload name="picture" accept="image/*" maxFileSize="1000000"
+                                  chooseLabel="انتخاب تصویر"
+                                  uploadLabel="آپلود تصویر"
+                                  cancelLabel="انصراف" formControlName="profilePicture"></p-fileUpload>
+                    <ul class="mt-1 mb-0 pb-0"
+                        *ngFor="let error of personalErrorMessages.profilePicture">
+                      <li class="font-small text-danger font-weight-bold"
+                          *ngIf="personalForm.get('profilePicture').hasError(error.type)
+                            && (personalForm.get('profilePicture').dirty
+                            || personalForm.get('profilePicture').touched)">
+                        {{ error.message }}
+                      </li>
+                    </ul>
+
+                  </div>
+                </div>
+                <div class="col-sm-12 col-lg-12">
+                  <div class="form-group">
+                    <label>جنسیت</label>
+                    <div class="clearfix"></div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio"
+                             id="maleRadio"
+                             value="1" formControlName="gender">
+                      <label class="form-check-label" for="maleRadio">آقا</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio"
+                             id="femaleRadio"
+                             value="2" formControlName="gender">
+                      <label class="form-check-label" for="femaleRadio">خانم</label>
+                    </div>
+                    <ul class="mt-1 mb-0 pb-0" *ngFor="let error of personalErrorMessages.gender">
+                      <li class="font-small text-danger font-weight-bold"
+                          *ngIf="personalForm.get('gender').hasError(error.type)
+                            && (personalForm.get('gender').dirty
+                            || personalForm.get('gender').touched)">
+                        {{ error.message }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-lg-12">
+                  <div class="form-group">
+                    <label>آدرس</label>
+                    <textarea formControlName="address"
+                              class="form-control"
+                              maxlength="200"></textarea>
+                    <ul class="mt-1 mb-0 pb-0" *ngFor="let error of personalErrorMessages.address">
+                      <li class="font-small text-danger font-weight-bold"
+                          *ngIf="personalForm.get('address').hasError(error.type)
+                            && (personalForm.get('address').dirty
+                            || personalForm.get('address').touched)">
+                        {{ error.message }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-12 col-lg-12  mt-4 d-flex justify-content-end ">
+                  <button mat-raised-button matStepperNext
+                          class="btn green-btn"
+                          [disabled]="personalForm.invalid">بعدی
+                  </button>
+                </div>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="educationForm" label="سوابق تحصیلی">
+            <form [formGroup]="educationForm" class="mt-5">
+              <div class="row contact-wrap">
+                <div class="col-sm-12 col-lg-12">
+                  <div class="form-group">
+                    <label> نام دانشگاه</label>
+                    <input type="text"
+                           class="form-control"
+                           maxlength="100"
+                           formControlName="university">
+                    <ul class="mt-1 mb-0 pb-0" *ngFor="let error of educationalErrorMessages.university">
+                      <li class="font-small text-danger font-weight-bold"
+                          *ngIf="educationForm.get('university').hasError(error.type)
+                            && (educationForm.get('university').dirty
+                            || educationForm.get('university').touched)">
+                        {{ error.message }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="col-sm-12 col-lg-6">
+                  <div class="form-group">
+                    <label>مقطع تحصیلی</label>
+                    <input type="text"
+                           class="form-control"
+                           maxlength="100"
+                           formControlName="grade">
+                    <ul class="mt-1 mb-0 pb-0" *ngFor="let error of educationalErrorMessages.grade">
+                      <li class="font-small text-danger font-weight-bold"
+                          *ngIf="educationForm.get('grade').hasError(error.type)
+                            && (educationForm.get('grade').dirty
+                            || educationForm.get('grade').touched)">
+                        {{ error.message }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-lg-6">
+                  <div class="form-group">
+                    <label>رشه تحصیلی</label>
+                    <input type="text"
+                           class="form-control"
+                           maxlength="100"
+                           formControlName="major">
+                    <ul class="mt-1 mb-0 pb-0" *ngFor="let error of educationalErrorMessages.major">
+                      <li class="font-small text-danger font-weight-bold"
+                          *ngIf="educationForm.get('major').hasError(error.type)
+                            && (educationForm.get('major').dirty
+                            || educationForm.get('major').touched)">
+                        {{ error.message }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="col-sm-12 col-lg-6">
+                  <div class="form-group">
+                    <label>سال شروع</label>
+                    <input type="text"
+                           class="form-control"
+                           maxlength="4"
+                           minlength="4"
+                           formControlName="startYear">
+                    <ul class="mt-1 mb-0 pb-0"
+                        *ngFor="let error of educationalErrorMessages.startYear">
+                      <li class="font-small text-danger font-weight-bold"
+                          *ngIf="educationForm.get('startYear').hasError(error.type)
+                            && (educationForm.get('startYear').dirty
+                            || educationForm.get('startYear').touched)">
+                        {{ error.message }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-lg-6">
+                  <div class="form-group">
+                    <label>سال پایان</label>
+                    <input type="text"
+                           class="form-control"
+                           maxlength="4"
+                           minlength="4"
+                           formControlName="major">
+                    <ul class="mt-1 mb-0 pb-0"
+                        *ngFor="let error of educationalErrorMessages.endYear">
+                      <li class="font-small text-danger font-weight-bold"
+                          *ngIf="educationForm.get('endYear').hasError(error.type)
+                            && (educationForm.get('endYear').dirty
+                            || educationForm.get('endYear').touched)">
+                        {{ error.message }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-lg-6">
+                  <div class="form-group">
+                  <div class="form-check text-right">
+                    <input type="checkbox" class="form-check-input"
+                           formControlName="stillStudying" id="stillStudying">
+                    <label class="form-check-label" for="stillStudying">در حال تحصیل</label>
+                  </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-6">
+                  <div class="form-group">
+                  <div class="form-check text-right">
+                    <input type="checkbox" class="form-check-input"
+                           formControlName="lastDegree" id="lastDegree">
+                    <label class="form-check-label" for="lastDegree">آیا آخرین مدرک تحصیلی است؟</label>
+                  </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-12 col-lg-12">
+                  <div class="form-group">
+                    <label> تصویر مدرک تحصیلی</label>
+                    <p-fileUpload name="picture" accept="image/*" maxFileSize="1000000"
+                                  chooseLabel="انتخاب تصویر"
+                                  uploadLabel="آپلود تصویر"
+                                  cancelLabel="انصراف" formControlName="degreePicture"></p-fileUpload>
+                  </div>
+                </div>
+
+
+                <div class="col-md-12 col-lg-12 mt-4 d-flex justify-content-between ">
+                  <button mat-raised-button matStepperPrevious
+                          class="btn green-btn">قبلی
+                  </button>
+                  <button mat-raised-button matStepperNext
+                          class="btn green-btn"
+                          [disabled]="personalForm.invalid">بعدی
+                  </button>
+                </div>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="workForm" label="سوابق کاری">
+            <form [formGroup]="workForm" class="mt-5">
+              <div class="row contact-wrap">
+                <div class="col-sm-12 col-lg-6">
+                  <div class="form-group">
+                    <label> نام موسسه</label>
+                    <input type="text"
+                           class="form-control"
+                           maxlength="100"
+                           formControlName="company">
+                    <ul class="mt-1 mb-0 pb-0" *ngFor="let error of workErrorMessages.company">
+                      <li class="font-small text-danger font-weight-bold"
+                          *ngIf="workForm.get('company').hasError(error.type)
+                            && (workForm.get('company').dirty
+                            || workForm.get('company').touched)">
+                        {{ error.message }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-lg-6">
+                  <div class="form-group">
+                    <label>سمت</label>
+                    <input type="text"
+                           class="form-control"
+                           maxlength="100"
+                           formControlName="position">
+                    <ul class="mt-1 mb-0 pb-0"
+                        *ngFor="let error of workErrorMessages.position">
+                      <li class="font-small text-danger font-weight-bold"
+                          *ngIf="workForm.get('position').hasError(error.type)
+                            && (workForm.get('position').dirty
+                            || workForm.get('position').touched)">
+                        {{ error.message }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="col-sm-12 col-lg-6">
+                  <div class="form-group">
+                    <label>سال شروع</label>
+                    <input type="text"
+                           class="form-control"
+                           maxlength="4"
+                           minlength="4"
+                           formControlName="startYear">
+                    <ul class="mt-1 mb-0 pb-0"
+                        *ngFor="let error of workErrorMessages.startYear">
+                      <li class="font-small text-danger font-weight-bold"
+                          *ngIf="workForm.get('startYear').hasError(error.type)
+                            && (workForm.get('startYear').dirty
+                            || workForm.get('startYear').touched)">
+                        {{ error.message }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-lg-6">
+                  <div class="form-group">
+                    <label>سال پایان</label>
+                    <input type="text"
+                           class="form-control"
+                           maxlength="4"
+                           minlength="4"
+                           formControlName="major">
+                    <ul class="mt-1 mb-0 pb-0"
+                        *ngFor="let error of workErrorMessages.endYear">
+                      <li class="font-small text-danger font-weight-bold"
+                          *ngIf="workForm.get('endYear').hasError(error.type)
+                            && (workForm.get('endYear').dirty
+                            || workForm.get('endYear').touched)">
+                        {{ error.message }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-lg-6">
+                  <div class="form-group">
+                    <div class="form-check text-right">
+                      <input type="checkbox" class="form-check-input"
+                             formControlName="stillWorking" id="stillWorking">
+                      <label class="form-check-label" for="stillWorking">در حال کار</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12 col-lg-12 mt-4 d-flex justify-content-between ">
+                  <button mat-raised-button matStepperPrevious
+                          class="btn green-btn">قبلی
+                  </button>
+                  <button mat-raised-button matStepperNext
+                          class="btn green-btn"
+                          [disabled]="workForm.invalid">بعدی
+                  </button>
+                </div>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="additionalForm" label="اطلاعات تکمیلی">
+            <form [formGroup]="additionalForm" class="mt-5">
+              <div class="row contact-wrap">
+                <div class="col-sm-12 col-lg-12">
+                  <div class="form-group">
+                    <label> پروانه وکالت</label>
+                    <p-fileUpload name="picture" accept="image/*" maxFileSize="1000000"
+                                  chooseLabel="انتخاب تصویر"
+                                  uploadLabel="آپلود تصویر"
+                                  cancelLabel="انصراف" formControlName="license"></p-fileUpload>
+                  </div>
+                </div>
+
+                <div class="col-sm-12 col-lg-12">
+                  <div class="form-group">
+                    <label> دفترچه وکالت</label>
+                    <p-fileUpload name="picture" accept="image/*" maxFileSize="1000000"
+                                  chooseLabel="انتخاب تصویر"
+                                  uploadLabel="آپلود تصویر"
+                                  cancelLabel="انصراف" formControlName="booklet"></p-fileUpload>
+                  </div>
+                </div>
+
+                <div class="col-sm-12 col-lg-12">
+                  <div class="form-group">
+                    <label> رزومه</label>
+                    <p-fileUpload name="picture" accept="image/*" maxFileSize="1000000"
+                                  chooseLabel="انتخاب تصویر"
+                                  uploadLabel="آپلود تصویر"
+                                  cancelLabel="انصراف" formControlName="resume"></p-fileUpload>
+                  </div>
+                </div>
+
+                <div class="col-md-12 col-lg-12 mt-4 d-flex justify-content-between ">
+                  <button mat-raised-button matStepperPrevious
+                          class="btn green-btn">قبلی
+                  </button>
+                  <button mat-raised-button matStepperNext
+                          class="btn green-btn"
+                          [disabled]="workForm.invalid">بعدی
+                  </button>
+                </div>
+              </div>
+            </form>
+          </mat-step>
+        </mat-horizontal-stepper>
+      </div>
+    </div>
+  </div>
+</div>

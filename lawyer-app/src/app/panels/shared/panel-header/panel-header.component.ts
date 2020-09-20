@@ -2,17 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 
 @Component({
-  selector: 'app-admin-header',
-  templateUrl: './admin-header.component.html',
-  styleUrls: ['./admin-header.component.css']
+  selector: 'app-panel-header',
+  templateUrl: './panel-header.component.html',
+  styleUrls: ['./panel-header.component.css']
 })
-export class AdminHeaderComponent implements OnInit {
+export class PanelHeaderComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  // tslint:disable-next-line:typedef
   toggleRightMenu() {
     if ($('#panel-menu').css('display') === 'block'){
 

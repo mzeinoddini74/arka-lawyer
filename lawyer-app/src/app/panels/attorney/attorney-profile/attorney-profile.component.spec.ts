@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminHeaderComponent } from './admin-header.component';
+import { AttorneyProfileComponent } from './attorney-profile.component';
 
-describe('AdminHeaderComponent', () => {
-  let component: AdminHeaderComponent;
-  let fixture: ComponentFixture<AdminHeaderComponent>;
+describe('AttorneyProfileComponent', () => {
+  let component: AttorneyProfileComponent;
+  let fixture: ComponentFixture<AttorneyProfileComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminHeaderComponent ]
+      declarations: [ AttorneyProfileComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdminHeaderComponent);
+    fixture = TestBed.createComponent(AttorneyProfileComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

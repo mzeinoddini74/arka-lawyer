@@ -10,6 +10,7 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatInputModule} from '@angular/material/input';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatStepperModule} from '@angular/material/stepper';
 
 const materialComponents = [
   MatButtonModule,
@@ -22,7 +23,8 @@ const materialComponents = [
   MatInputModule,
   MatFormFieldModule,
   MatTooltipModule,
-  MatDialogModule
+  MatDialogModule,
+  MatStepperModule
 ];
 
 @NgModule({

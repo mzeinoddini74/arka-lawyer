@@ -1,4 +1,4 @@
-<app-admin-header></app-admin-header>
+<app-panel-header></app-panel-header>
 <app-admin-menu></app-admin-menu>
 
 <div class="content rtl">
@@ -28,16 +28,19 @@
         <div class="content-inner-box rtl">
           <form class="w-100">
             <div class="row">
-              <div class="col-6 text-center">
+              <div class="col-12 text-center">
                 <div class="form-group">
                   <label class="group">عنوان</label>
                   <input type="text" name="title" id="title" class="form-control">
                 </div>
               </div>
-              <div class="col-6 text-center">
+              <div class="col-12 text-center">
                 <div class="form-group mb-3">
                   <label>تصویر</label>
-                  <input type="file" name="picture" id="picture" class="form-control">
+                  <p-fileUpload name="picture" accept="image/*" maxFileSize="1000000"
+                                chooseLabel="انتخاب تصویر"
+                                uploadLabel="آپلود تصویر"
+                                cancelLabel="انصراف"></p-fileUpload>
                 </div>
               </div>
               <div class="col-12 text-center">

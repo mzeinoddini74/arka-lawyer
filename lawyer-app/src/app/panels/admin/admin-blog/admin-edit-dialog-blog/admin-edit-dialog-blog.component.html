@@ -9,7 +9,10 @@
     <div class="col-12 text-center">
       <div class="form-group mb-3">
         <label>تصویر</label>
-        <input type="file" class="form-control" [(ngModel)]="data.picture" >
+        <p-fileUpload [(ngModel)]="data.picture" accept="image/*" maxFileSize="1000000"
+                      chooseLabel="انتخاب تصویر"
+                      uploadLabel="آپلود تصویر"
+                      cancelLabel="انصراف"></p-fileUpload>
       </div>
     </div>
     <div class="col-12 text-center">

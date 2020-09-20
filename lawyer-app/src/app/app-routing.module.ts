@@ -9,24 +9,35 @@ import {ContactComponent} from './pages/contact/contact.component';
 import {BlogDetailComponent} from './pages/blog/blog-detail/blog-detail.component';
 import {BlogComponent} from './pages/blog/blog.component';
 import {ConsultationComponent} from './pages/consultation/consultation.component';
+import {TelConsultationComponent} from './pages/consultation/tel-consultation/tel-consultation.component';
+import {OnlineConsultationComponent} from './pages/consultation/online-consultation/online-consultation.component';
+import {InPersonConsultationComponent} from './pages/consultation/in-person-consultation/in-person-consultation.component';
+import {ServiceComponent} from './pages/service/service.component';
+import {ServiceDetailComponent} from './pages/service/service-detail/service-detail.component';
+
 import {LoginComponent} from './pages/account/login/login.component';
 import {ForgotPasswordComponent} from './pages/account/forgot-password/forgot-password.component';
 import {RegisterComponent} from './pages/account/register/register.component';
+
 import {AdminDashboardComponent} from './panels/admin/admin-dashboard/admin-dashboard.component';
-import { AdminBannerComponent } from './panels/admin/admin-banner/admin-banner.component';
+import {AdminBannerComponent} from './panels/admin/admin-banner/admin-banner.component';
 import {AdminAddBannerComponent} from './panels/admin/admin-banner/admin-add-banner/admin-add-banner.component';
-import {AdminEditBannerComponent} from './panels/admin/admin-banner/admin-edit-banner/admin-edit-banner.component';
 import {AdminBlogComponent} from './panels/admin/admin-blog/admin-blog.component';
 import {AdminAddBlogComponent} from './panels/admin/admin-blog/admin-add-blog/admin-add-blog.component';
 import {AdminAttorneyComponent} from './panels/admin/admin-attorney/admin-attorney.component';
 import {AdminAddAttorneyComponent} from './panels/admin/admin-attorney/admin-add-attorney/admin-add-attorney.component';
 import {AdminUserComponent} from './panels/admin/admin-user/admin-user.component';
 import {AdminCommentComponent} from './panels/admin/admin-comment/admin-comment.component';
-import {TelConsultationComponent} from './pages/consultation/tel-consultation/tel-consultation.component';
-import {OnlineConsultationComponent} from './pages/consultation/online-consultation/online-consultation.component';
-import {InPersonConsultationComponent} from './pages/consultation/in-person-consultation/in-person-consultation.component';
-import {ServiceComponent} from './pages/service/service.component';
-import {ServiceDetailComponent} from './pages/service/service-detail/service-detail.component';
+
+import {AttorneyDashboardComponent} from './panels/attorney/attorney-dashboard/attorney-dashboard.component';
+import {AttorneyWorkComponent} from './panels/attorney/attorney-work/attorney-work.component';
+import {AttorneyAddWorkComponent} from './panels/attorney/attorney-work/attorney-add-work/attorney-add-work.component';
+import {AttorneyProfileComponent} from './panels/attorney/attorney-profile/attorney-profile.component';
+import {AttorneyEducationComponent} from './panels/attorney/attorney-education/attorney-education.component';
+import {AttorneyAddEducationComponent} from './panels/attorney/attorney-education/attorney-add-education/attorney-add-education.component';
+import {AttorneyLegalCaseComponent} from './panels/attorney/attorney-legal-case/attorney-legal-case.component';
+import {AdminProfileComponent} from './panels/admin/admin-profile/admin-profile.component';
+import {AttorneyEssentialInfoComponent} from './panels/attorney/attorney-essential-info/attorney-essential-info.component';
 
 const routes: Routes = [
   {path : '' , component : HomeComponent},
@@ -43,19 +54,32 @@ const routes: Routes = [
   {path : 'online-consultation' , component : OnlineConsultationComponent},
   {path : 'tel-consultation' , component : TelConsultationComponent},
   {path : 'in-person-consultation' , component : InPersonConsultationComponent},
+
   {path : 'login' , component : LoginComponent},
   {path : 'register' , component : RegisterComponent},
   {path : 'forgot-password' , component : ForgotPasswordComponent},
+
   {path : 'admin/dashboard' , component : AdminDashboardComponent},
+  {path : 'admin/profile' , component : AdminProfileComponent},
   {path : 'admin/banner' , component : AdminBannerComponent},
   {path : 'admin/add-banner' , component : AdminAddBannerComponent},
-  {path : 'admin/edit-banner' , component : AdminEditBannerComponent},
   {path : 'admin/blog' , component : AdminBlogComponent},
   {path : 'admin/add-blog' , component : AdminAddBlogComponent},
   {path : 'admin/attorney' , component : AdminAttorneyComponent},
   {path : 'admin/add-attorney' , component : AdminAddAttorneyComponent},
   {path : 'admin/user' , component : AdminUserComponent},
-  {path : 'admin/comment' , component : AdminCommentComponent}
+  {path : 'admin/comment' , component : AdminCommentComponent},
+
+  {path : 'attorney/dashboard' , component : AttorneyDashboardComponent},
+  {path : 'attorney/info' , component : AttorneyEssentialInfoComponent},
+  {path : 'attorney/profile' , component : AttorneyProfileComponent},
+  {path : 'attorney/work' , component : AttorneyWorkComponent},
+  {path : 'attorney/add-work' , component : AttorneyAddWorkComponent},
+  {path : 'attorney/education' , component : AttorneyEducationComponent},
+  {path : 'attorney/add-education' , component : AttorneyAddEducationComponent},
+  {path : 'attorney/legal-case' , component : AttorneyLegalCaseComponent},
+
+  {path : '**' , component : HomeComponent}
 ];
 
 @NgModule({
