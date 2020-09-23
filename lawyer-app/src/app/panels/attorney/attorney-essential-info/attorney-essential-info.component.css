@@ -38,11 +38,24 @@
 .login-wrap .form-group .form-control {
   height: 60px;
 }
-.form-check-label{
-  padding-right: 20px!important;
+table{
+  width: 100%;
+}
+table th{
+  text-align: right;
 }
 ::ng-deep .mat-horizontal-stepper-header .mat-step-icon {
   margin-right: unset;
   margin-left: 8px;
   flex: none;
+}
+.form-check-label{
+  padding-right: 20px!important;
+}
+.inner{
+  border: 1px #dddddd solid;
+  padding: 8px;
+}
+::ng-deep .p-dropdown {
+  width: 100%!important;
 }

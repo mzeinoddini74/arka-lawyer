@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {LegalUserType} from '../../../../models/attorney/ILegalUserType';
+import {AttorneyEducationModel} from '../../../../models/attorney/AttorneyModel';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-attorney-add-education',
-  templateUrl: './attorney-add-education.component.html',
-  styleUrls: ['./attorney-add-education.component.css']
+  selector: 'app-attorney-edit-dialog-education',
+  templateUrl: './attorney-edit-dialog-education.component.html',
+  styleUrls: ['./attorney-edit-dialog-education.component.css']
 })
-export class AttorneyAddEducationComponent implements OnInit {
+export class AttorneyEditDialogEducationComponent implements OnInit {
 
   educationForm: FormGroup;
   educationalErrorMessages = {
@@ -34,7 +35,10 @@ export class AttorneyAddEducationComponent implements OnInit {
     ]
   };
 
-  constructor(public formBuilder: FormBuilder) {
+  constructor(
+    public formBuilder: FormBuilder,
+    public dialogRef: MatDialogRef<AttorneyEditDialogEducationComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: AttorneyEducationModel) {
     this.createEducationalForm();
   }
 
@@ -42,28 +46,28 @@ export class AttorneyAddEducationComponent implements OnInit {
     this.educationForm = this.formBuilder.group(
       {
         university: new FormControl(
-          null,
+          this.data.university,
           Validators.compose([
             Validators.required,
             Validators.maxLength(200)
           ])
         ),
         grade: new FormControl(
-          null,
+          this.data.grade,
           Validators.compose([
             Validators.required,
             Validators.maxLength(100)
           ])
         ),
         major: new FormControl(
-          null,
+          this.data.major,
           Validators.compose([
             Validators.required,
             Validators.maxLength(200)
           ])
         ),
         startYear: new FormControl(
-          null,
+          this.data.startYear,
           Validators.compose([
             Validators.required,
             Validators.maxLength(4),
@@ -71,26 +75,34 @@ export class AttorneyAddEducationComponent implements OnInit {
           ])
         ),
         endYear: new FormControl(
-          null,
+          this.data.endYear,
           Validators.compose([
             Validators.maxLength(4),
             Validators.minLength(4)
           ])
         ),
         stillStudying: new FormControl(
-          null
+          this.data.stillStudying,
         ),
         degreePicture: new FormControl(
-          null
+          this.data.degreePicture
         ),
         lastDegree: new FormControl(
-          null
+          this.data.lastDegree
         )
       }
     );
   }
 
-  ngOnInit(): void {
+  onConfirm(): void {
+    const id = this.data.id;
+    this.data = this.educationForm.value;
+    this.data.id = id;
+    this.dialogRef.close(this.data);
+  }
+
+  onDismiss(): void {
+    this.dialogRef.close(false);
   }
 
   getDegreePicture(event): void {
@@ -98,4 +110,8 @@ export class AttorneyAddEducationComponent implements OnInit {
       this.educationForm.controls.degreePicture = file.name;
     }
   }
+
+  ngOnInit(): void {
+  }
+
 }

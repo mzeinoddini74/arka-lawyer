@@ -76,6 +76,11 @@ import { AttorneyLegalCaseComponent } from './panels/attorney/attorney-legal-cas
 import { AdminProfileComponent } from './panels/admin/admin-profile/admin-profile.component';
 import { AttorneyEssentialInfoComponent } from './panels/attorney/attorney-essential-info/attorney-essential-info.component';
 import {MatRadioModule} from '@angular/material/radio';
+import { AttorneyEditDialogEducationComponent } from './panels/attorney/attorney-essential-info/attorney-edit-dialog-education/attorney-edit-dialog-education.component';
+import { AttorneyEditDialogWorkComponent } from './panels/attorney/attorney-essential-info/attorney-edit-dialog-work/attorney-edit-dialog-work.component';
+import {DropdownModule} from 'primeng/dropdown';
+import {RadioButtonModule} from 'primeng/radiobutton';
+import { AttorneyTelConsultationComponent } from './panels/attorney/attorney-tel-consultation/attorney-tel-consultation.component';
 
 
 
@@ -136,7 +141,10 @@ import {MatRadioModule} from '@angular/material/radio';
     AdminProfileComponent,
     AttorneyAddWorkComponent,
     AttorneyAddEducationComponent,
-    AttorneyEssentialInfoComponent
+    AttorneyEssentialInfoComponent,
+    AttorneyEditDialogEducationComponent,
+    AttorneyEditDialogWorkComponent,
+    AttorneyTelConsultationComponent
   ],
   imports: [
     BrowserModule,
@@ -152,7 +160,9 @@ import {MatRadioModule} from '@angular/material/radio';
     NgxCaptchaModule,
     PrimengModule,
     HttpClientModule,
-    MatRadioModule
+    MatRadioModule,
+    DropdownModule,
+    RadioButtonModule
   ],
   providers: [
     { provide: MatPaginatorIntl, useValue: getDutchPaginatorIntl() }

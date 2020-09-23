@@ -1,10 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {MatTableDataSource} from '@angular/material/table';
+import {MatDialog} from '@angular/material/dialog';
+import {AttorneyEducationModel, AttorneyWorkModel} from '../../../models/attorney/AttorneyModel';
+import {AttorneyEditDialogEducationComponent} from './attorney-edit-dialog-education/attorney-edit-dialog-education.component';
+import {ConfirmationService} from 'primeng/api';
+import {AttorneyEditDialogWorkComponent} from './attorney-edit-dialog-work/attorney-edit-dialog-work.component';
+import {LegalUserType} from '../../../models/attorney/ILegalUserType';
 
 @Component({
   selector: 'app-attorney-essential-info',
   templateUrl: './attorney-essential-info.component.html',
-  styleUrls: ['./attorney-essential-info.component.css']
+  styleUrls: ['./attorney-essential-info.component.css'],
+  providers: [ConfirmationService]
 })
 export class AttorneyEssentialInfoComponent implements OnInit {
 
@@ -12,6 +20,7 @@ export class AttorneyEssentialInfoComponent implements OnInit {
   educationForm: FormGroup;
   workForm: FormGroup;
   additionalForm: FormGroup;
+  LegalUserTypes: LegalUserType[];
 
   personalErrorMessages = {
     fullname: [
@@ -92,11 +101,36 @@ export class AttorneyEssentialInfoComponent implements OnInit {
     ],
   };
 
-  constructor(public formBuilder: FormBuilder) {
+  displayedEducationColumns: string[] = ['id', 'university', 'grade', 'major', 'startYear', 'endYear', 'stillStudying', 'lastDegree', 'actions'];
+  displayedWorkColumns: string[] = ['id', 'company', 'position', 'startYear', 'endYear', 'stillWorking', 'actions'];
+  educationDataSource: MatTableDataSource<AttorneyEducationModel>;
+  workDataSource: MatTableDataSource<AttorneyWorkModel>;
+  public educationList: AttorneyEducationModel[] = [];
+  public workList: AttorneyWorkModel[] = [];
+
+  constructor(public formBuilder: FormBuilder,
+              public dialog: MatDialog,
+              protected confirmationService: ConfirmationService) {
+
+    this.educationDataSource = new MatTableDataSource(this.educationList);
+    this.workDataSource = new MatTableDataSource(this.workList);
+
     this.createPersonalForm();
     this.createEducationalForm();
     this.createWorkForm();
     this.createAdditionalForm();
+    this.LegalUserTypes = [
+      {name: 'وکیل پایه یک دادگستری', code: '1'},
+      {name: 'وکیل پایه یک قوه قضاییه', code: '2'},
+      {name: 'وکیل پایه دو قوه قضاییه', code: '3'},
+      {name: 'کارآموز کانون وکلای دادگستری', code: '4'},
+      {name: 'کارآموز قوه قضاییه', code: '5'},
+      {name: 'کارشناس حقوقی', code: '6'},
+      {name: 'کارشناس رسمی دادگستری', code: '7'}
+    ];
+  }
+
+  ngOnInit(): void {
   }
 
   createPersonalForm(): void {
@@ -154,7 +188,6 @@ export class AttorneyEssentialInfoComponent implements OnInit {
       }
     );
   }
-
   createEducationalForm(): void {
     this.educationForm = this.formBuilder.group(
       {
@@ -206,7 +239,6 @@ export class AttorneyEssentialInfoComponent implements OnInit {
       }
     );
   }
-
   createWorkForm(): void {
     this.workForm = this.formBuilder.group(
       {
@@ -245,7 +277,6 @@ export class AttorneyEssentialInfoComponent implements OnInit {
       }
     );
   }
-
   createAdditionalForm(): void {
     this.additionalForm = this.formBuilder.group(
       {
@@ -268,7 +299,128 @@ export class AttorneyEssentialInfoComponent implements OnInit {
     );
   }
 
-  ngOnInit(): void {
+  addEducation(): void {
+    this.educationList.push(this.educationForm.value);
+    this.refreshEducationDataSource();
+  }
+  deleteEducation(i): void {
+    this.confirmationService.confirm({
+      message: 'آیا از حذف رکورد انتخابی مطمین هستید؟',
+      header: 'تایید حذف',
+      icon: 'pi pi-info-circle',
+      acceptLabel: 'بله',
+      rejectLabel: 'خیر',
+      accept: () => {
+        this.educationList.splice(i - 1, 1);
+        this.refreshEducationDataSource();
+      }
+    });
+  }
+  openEditEducationDialog(row: AttorneyEducationModel): void {
+    const dialogRef = this.dialog.open(AttorneyEditDialogEducationComponent, {
+      width: '800px',
+      data: new AttorneyEducationModel(
+        row.id,
+        row.university,
+        row.grade,
+        row.major,
+        row.startYear,
+        row.endYear,
+        row.stillStudying,
+        row.degreePicture,
+        row.lastDegree,
+        row.date
+      )
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.editEducation(result);
+        this.refreshEducationDataSource();
+      }
+    });
+  }
+  editEducation(newData: AttorneyEducationModel): void {
+    this.educationList.splice(newData.id - 1, 1, newData);
+    this.refreshEducationDataSource();
+  }
+  refreshEducationDataSource(): void {
+    this.educationDataSource = new MatTableDataSource(this.educationList);
   }
 
+  addWork(): void {
+    this.workList.push(this.workForm.value);
+    this.refreshWorkDataSource();
+  }
+  deleteWork(i): void {
+    this.confirmationService.confirm({
+      message: 'آیا از حذف رکورد انتخابی مطمین هستید؟',
+      header: 'تایید حذف',
+      icon: 'pi pi-info-circle',
+      acceptLabel: 'بله',
+      rejectLabel: 'خیر',
+      accept: () => {
+        this.workList.splice(i - 1, 1);
+        this.refreshWorkDataSource();
+      }
+    });
+  }
+  openEditWorkDialog(row: AttorneyWorkModel): void {
+    const dialogRef = this.dialog.open(AttorneyEditDialogWorkComponent, {
+      width: '800px',
+      data: new AttorneyWorkModel(
+        row.id,
+        row.company,
+        row.position,
+        row.startYear,
+        row.endYear,
+        row.stillWorking,
+        row.date
+      )
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.editWork(result);
+        this.refreshWorkDataSource();
+      }
+    });
+  }
+  editWork(newData: AttorneyWorkModel): void {
+    this.workList.splice(newData.id - 1, 1, newData);
+    this.refreshWorkDataSource();
+  }
+  refreshWorkDataSource(): void {
+    this.workDataSource = new MatTableDataSource(this.workList);
+  }
+
+  getLicense(event): void {
+    for ( const file of event.files){
+      this.additionalForm.controls.license = file.name;
+    }
+  }
+  getBooklet(event): void {
+    for ( const file of event.files){
+      this.additionalForm.controls.booklet = file.name;
+    }
+  }
+  getResume(event): void {
+    for ( const file of event.files){
+      this.additionalForm.controls.resume = file.name;
+    }
+  }
+  getDegreePicture(event): void {
+    for ( const file of event.files){
+      this.educationForm.controls.degreePicture = file.name;
+    }
+  }
+  getProfilePicture(event): void {
+    for ( const file of event.files){
+      this.personalForm.controls.personalPicture = file.name;
+    }
+  }
+
+  save(): void {
+    console.log('saved');
+  }
 }

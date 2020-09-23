@@ -2,7 +2,8 @@ import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
-import {UserModel} from '../../../models/admin/UserModel';
+import {UserModel} from '../../../models/user/UserModel';
+
 
 @Component({
   selector: 'app-admin-user',
@@ -12,7 +13,7 @@ import {UserModel} from '../../../models/admin/UserModel';
 
 export class AdminUserComponent implements AfterViewInit {
 
-  displayedColumns: string[] = ['id', 'mobile', 'fullname', 'email', 'date'];
+  displayedColumns: string[] = ['id', 'mobile', 'fullname', 'email', 'type', 'actions'];
   dataSource: MatTableDataSource<UserModel>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -21,16 +22,10 @@ export class AdminUserComponent implements AfterViewInit {
   constructor() {
 
     const users = [
-      new UserModel(1, '09122222222', 'ali', 'ali@google.com', '1399/06/20'),
-      new UserModel(2, '09122222222', 'sara', 'sara@google.com', '1399/06/20'),
-      new UserModel(3, '09122222222', 'ali', 'ali@google.com', '1399/06/20'),
-      new UserModel(4, '09122222222', 'mina', 'mina@google.com', '1399/06/20'),
-      new UserModel(5, '09122222222', 'ali', 'ali@google.com', '1399/06/20'),
-      new UserModel(6, '09122222222', 'sima', 'sima@google.com', '1399/06/20'),
-      new UserModel(7, '09122222222', 'ali', 'ali@google.com', '1399/06/20'),
-      new UserModel(8, '09122222222', 'mohammad', 'mohammad@google.com', '1399/06/20'),
-      new UserModel(9, '09122222222', 'amir', 'amir@google.com', '1399/06/20')
-    ];
+      new UserModel(1, '09122222222', '', 'ali', 'Male', '',
+        'ali@google.com', '', 'tehran', 'tehran', 'teh', ''),
+      new UserModel(1, '09122222222', '', 'ali', 'Male', '',
+        'ali@google.com', '', 'tehran', 'tehran', 'teh', '')    ];
 
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(users);

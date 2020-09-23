@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {LegalUserType} from '../../../../models/attorney/ILegalUserType';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import {AttorneyWorkModel} from '../../../../models/attorney/AttorneyModel';
 
 @Component({
-  selector: 'app-attorney-add-work',
-  templateUrl: './attorney-add-work.component.html',
-  styleUrls: ['./attorney-add-work.component.css']
+  selector: 'app-attorney-edit-dialog-work',
+  templateUrl: './attorney-edit-dialog-work.component.html',
+  styleUrls: ['./attorney-edit-dialog-work.component.css']
 })
-export class AttorneyAddWorkComponent implements OnInit {
+export class AttorneyEditDialogWorkComponent implements OnInit {
 
   workForm: FormGroup;
   workErrorMessages = {
@@ -30,10 +31,12 @@ export class AttorneyAddWorkComponent implements OnInit {
     ]
   };
 
-  constructor(public formBuilder: FormBuilder) {
+  constructor(
+    public formBuilder: FormBuilder,
+    public dialogRef: MatDialogRef<AttorneyEditDialogWorkComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: AttorneyWorkModel) {
     this.createWorkForm();
   }
-
   createWorkForm(): void {
     this.workForm = this.formBuilder.group(
       {
@@ -72,6 +75,18 @@ export class AttorneyAddWorkComponent implements OnInit {
       }
     );
   }
+
+  onConfirm(): void {
+    const id = this.data.id;
+    this.data = this.workForm.value;
+    this.data.id = id;
+    this.dialogRef.close(this.data);
+  }
+
+  onDismiss(): void {
+    this.dialogRef.close(false);
+  }
+
   ngOnInit(): void {
   }
 

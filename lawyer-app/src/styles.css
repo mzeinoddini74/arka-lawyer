@@ -281,7 +281,7 @@ mat-icon {
   color: #929394;
 }
 .content .content-inner-box {
-  padding: 50px 20px 50px 20px;
+  padding: 50px 20px 50px 20px!important;
 }
 @media screen and (max-width: 768px) {
   .content .content-inner {
@@ -402,6 +402,18 @@ button:focus {
 
 .swal2-container{
   direction: rtl;
+}
+
+.p-dialog.p-confirm-dialog .p-confirm-dialog-message {
+  margin-left: unset!important;
+  margin-right: 1rem!important;
+}
+.p-dialog-footer{
+  padding-top: 30px!important;
+  text-align: left!important;
+}
+.p-dialog-content{
+  padding-top: 30px!important;
 }
 
 button.swal2-confirm.swal2-styled{

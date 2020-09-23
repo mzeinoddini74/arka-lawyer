@@ -1,0 +1,139 @@
+<h4 class="rtl text-right my-2">ویرایش سابقه تحصیلی</h4>
+<div mat-dialog-content class="my-4 rtl">
+  <form [formGroup]='educationForm' class="mt-5">
+    <div class="row">
+      <div class="col-sm-12 col-lg-12">
+        <div class="form-group">
+          <label> نام دانشگاه</label>
+          <input type="text"
+                 class="form-control"
+                 maxlength="100"
+                 formControlName="university">
+          <ul class="mt-1 mb-0 pb-0" *ngFor="let error of educationalErrorMessages.university">
+            <li class="font-small text-danger font-weight-bold"
+                *ngIf="educationForm.get('university').hasError(error.type)
+                                  && (educationForm.get('university').dirty
+                                  || educationForm.get('university').touched)">
+              {{ error.message }}
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-lg-6">
+        <div class="form-group">
+          <label>مقطع تحصیلی</label>
+          <input type="text"
+                 class="form-control"
+                 maxlength="100"
+                 formControlName="grade">
+          <ul class="mt-1 mb-0 pb-0" *ngFor="let error of educationalErrorMessages.grade">
+            <li class="font-small text-danger font-weight-bold"
+                *ngIf="educationForm.get('grade').hasError(error.type)
+                                && (educationForm.get('grade').dirty
+                                || educationForm.get('grade').touched)">
+              {{ error.message }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-6">
+        <div class="form-group">
+          <label>رشه تحصیلی</label>
+          <input type="text"
+                 class="form-control"
+                 maxlength="100"
+                 formControlName="major">
+          <ul class="mt-1 mb-0 pb-0" *ngFor="let error of educationalErrorMessages.major">
+            <li class="font-small text-danger font-weight-bold"
+                *ngIf="educationForm.get('major').hasError(error.type)
+                                && (educationForm.get('major').dirty
+                                || educationForm.get('major').touched)">
+              {{ error.message }}
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-lg-6">
+        <div class="form-group">
+          <label>سال شروع</label>
+          <input type="text"
+                 pKeyFilter="int"
+                 class="form-control"
+                 maxlength="4"
+                 minlength="4"
+                 formControlName="startYear">
+          <ul class="mt-1 mb-0 pb-0"
+              *ngFor="let error of educationalErrorMessages.startYear">
+            <li class="font-small text-danger font-weight-bold"
+                *ngIf="educationForm.get('startYear').hasError(error.type)
+                                && (educationForm.get('startYear').dirty
+                                || educationForm.get('startYear').touched)">
+              {{ error.message }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-6">
+        <div class="form-group">
+          <label>سال پایان</label>
+          <input type="text"
+                 pKeyFilter="int"
+                 class="form-control"
+                 maxlength="4"
+                 minlength="4"
+                 formControlName="endYear">
+          <ul class="mt-1 mb-0 pb-0"
+              *ngFor="let error of educationalErrorMessages.endYear">
+            <li class="font-small text-danger font-weight-bold"
+                *ngIf="educationForm.get('endYear').hasError(error.type)
+                                && (educationForm.get('endYear').dirty
+                                || educationForm.get('endYear').touched)">
+              {{ error.message }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-6">
+        <div class="form-group">
+          <div class="form-check text-right">
+            <input type="checkbox" class="form-check-input"
+                   formControlName="stillStudying" id="stillStudying">
+            <label class="form-check-label" for="stillStudying">در حال تحصیل</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-6">
+        <div class="form-group">
+          <div class="form-check text-right">
+            <input type="checkbox" class="form-check-input"
+                   formControlName="lastDegree" id="lastDegree">
+            <label class="form-check-label" for="lastDegree">آیا آخرین مدرک تحصیلی است؟</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-12">
+        <div class="form-group">
+          <label> تصویر مدرک تحصیلی</label>
+          <p-fileUpload
+            chooseLabel="انتخاب تصویر"
+            uploadLabel="آپلود تصویر"
+            cancelLabel="انصراف"
+            customUpload="true"
+            (uploadHandler)="getDegreePicture($event)"
+            accept="image/*" maxFileSize="1000000">
+          </p-fileUpload>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions class="my-2">
+  <button mat-button (click)="onDismiss()">لغو</button>
+  <button mat-button (click)="onConfirm()" cdkFocusInitial
+          [disabled]="educationForm.invalid">ثبت</button>
+</div>
+
+
+

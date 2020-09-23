@@ -32,7 +32,7 @@ export class AdminBlogComponent implements AfterViewInit{
 
   openEditDialog(row: BlogModel): void {
     const dialogRef = this.dialog.open(AdminEditDialogBlogComponent, {
-      width: '800px',
+      width: '700px',
       data: {id: row.id, title: row.title, picture: row.picture, summary: row.summary, description: row.description}
     });
 

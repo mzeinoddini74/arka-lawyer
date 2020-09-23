@@ -1,1 +1,158 @@
-<p>admin-attorney works!</p>
+<app-panel-header></app-panel-header>
+<app-admin-menu></app-admin-menu>
+
+<div class="content rtl">
+
+  <div class="content-inner" id="main-content">
+    <div class="content-wrapper">
+
+      <div class="content-titleSection row justify-content-center">
+        <div class="col-12 align-self-center">
+          <strong class="content-title">لیست کاربران حقوقی</strong>
+        </div>
+      </div>
+
+      <div class="content-titleSection row justify-content-center">
+        <div class="col-12 align-self-center">
+          <div class="breadcrumb">
+            <a routerLink="/admin/dashboard" class="breadcrumb-link">داشبورد</a>
+            <span class="breadcrumb-separator"><i class="fa fa-chevron-left"></i></span>
+            <a class="breadcrumb-link active">مدیریت کاربران حقوقی</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="content-inner-box">
+          <mat-form-field appearance="legacy">
+            <mat-label>جستجو</mat-label>
+            <input matInput (keyup)="applyFilter($event)" #input />
+            <mat-icon matSuffix>search</mat-icon>
+          </mat-form-field>
+
+          <div>
+            <table mat-table [dataSource]="dataSource" matSort multiTemplateDataRows>
+
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> کد </th>
+                <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="mobile">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> موبایل </th>
+                <td mat-cell *matCellDef="let row"> {{row.mobile}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="fullname">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> نام و نام خانوادگی </th>
+                <td mat-cell *matCellDef="let row"> {{row.fullname}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> آدرس الکترونیکی </th>
+                <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="type">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> نوع کاربر حقوقی </th>
+                <td mat-cell *matCellDef="let row"> {{row.type}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef> عملیات </th>
+                <td mat-cell *matCellDef="let element">
+                  <button mat-icon-button (click)="element.isExpanded = !element.isExpanded" matTooltip="مشاهده جزییات" matTooltipPosition="below"
+                          [disabled]="(!element.educationList || !element.educationList.length)
+                                       && (!element.workList || !element.workList.length)">
+                    <mat-icon color="primary">expand_more</mat-icon>
+                  </button>
+                </td>
+              </ng-container>
+              <!-- Template for details row -->
+              <ng-container matColumnDef="expandedDetail">
+                <td mat-cell *matCellDef="let row" [attr.colspan]="displayedColumns.length">
+                  <div class="row element-detail" [@detailExpand]="row.isExpanded ? 'expanded' : 'collapsed'">
+                    <table class="table table-light table-active" *ngIf="row.educationList && row.educationList.length">
+                      <tr>
+                        <td>کد</td>
+                        <td>دانشگاه</td>
+                        <td>مقطع تحصیلی</td>
+                        <td>دانشگاه</td>
+                        <td>سال شروع</td>
+                        <td>سال پایان</td>
+                        <td>مشغول تحصیل</td>
+                        <td>تصویر مدرک تحصیلی</td>
+                        <td>آخرین مقطع تحصیلی است؟</td>
+                        <td>عملیات</td>
+                      </tr>
+                      <tr *ngFor="let education of row.educationList">
+                        <td *ngIf="row.educationList && row.educationList.length">{{education.id}}</td>
+                        <td *ngIf="row.educationList && row.educationList.length">{{education.university}}</td>
+                        <td *ngIf="row.educationList && row.educationList.length">{{education.grade}}</td>
+                        <td *ngIf="row.educationList && row.educationList.length">{{education.major}}</td>
+                        <td *ngIf="row.educationList && row.educationList.length">{{education.startYear}}</td>
+                        <td *ngIf="row.educationList && row.educationList.length">{{education.endYear}}</td>
+                        <td *ngIf="row.educationList && row.educationList.length">{{education.stillStudying}}</td>
+                        <td *ngIf="row.educationList && row.educationList.length">{{education.degreePicture}}</td>
+                        <td *ngIf="row.educationList && row.educationList.length">{{education.lastDegree}}</td>
+                        <td *ngIf="row.educationList && row.educationList.length">
+<!--                          <button mat-icon-button (click)="openEditDialog(inner.id, inner.comment)" matTooltip="ویرایش" matTooltipPosition="below">-->
+<!--                            <mat-icon color="primary">edit</mat-icon>-->
+<!--                          </button>-->
+                          <button mat-icon-button matTooltip="حذف" matTooltipPosition="below">
+                            <mat-icon color="warn">delete</mat-icon>
+                          </button>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <table class="table table-light table-active mt-2" *ngIf="row.workList && row.workList.length">
+                      <tr>
+                        <td>کد</td>
+                        <td>موسسه</td>
+                        <td>سمت</td>
+                        <td>سال شروع</td>
+                        <td>سال پایان</td>
+                        <td>مشغول کار</td>
+                        <td>عملیات</td>
+                      </tr>
+                      <tr *ngFor="let education of row.educationList">
+                        <td *ngIf="row.workList && row.workList.length">{{education.id}}</td>
+                        <td *ngIf="row.workList && row.workList.length">{{education.company}}</td>
+                        <td *ngIf="row.workList && row.workList.length">{{education.position}}</td>
+                        <td *ngIf="row.workList && row.workList.length">{{education.startYear}}</td>
+                        <td *ngIf="row.workList && row.workList.length">{{education.endYear}}</td>
+                        <td *ngIf="row.workList && row.workList.length">{{education.stillWorking}}</td>
+                        <td *ngIf="row.workList && row.workList.length">
+                          <!--                          <button mat-icon-button (click)="openEditDialog(inner.id, inner.comment)" matTooltip="ویرایش" matTooltipPosition="below">-->
+                          <!--                            <mat-icon color="primary">edit</mat-icon>-->
+                          <!--                          </button>-->
+                          <button mat-icon-button matTooltip="حذف" matTooltipPosition="below">
+                            <mat-icon color="warn">delete</mat-icon>
+                          </button>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns;sticky: true"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+                  class="student-element-row" [class.expanded-row]="row.isExpanded"></tr>
+              <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="detail-row"></tr>
+
+              <!-- Row shown when there is no matching data. -->
+              <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="6">رکوردی یافت نشد.</td>
+              </tr>
+            </table>
+
+            <mat-paginator class="mt-5" showFirstLastButtons [pageSizeOptions]="[5, 10, 25, 50]"></mat-paginator>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-panel-footer></app-panel-footer>

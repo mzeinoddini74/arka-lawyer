@@ -36,6 +36,7 @@ import {AttorneyProfileComponent} from './panels/attorney/attorney-profile/attor
 import {AttorneyEducationComponent} from './panels/attorney/attorney-education/attorney-education.component';
 import {AttorneyAddEducationComponent} from './panels/attorney/attorney-education/attorney-add-education/attorney-add-education.component';
 import {AttorneyLegalCaseComponent} from './panels/attorney/attorney-legal-case/attorney-legal-case.component';
+import {AttorneyTelConsultationComponent} from './panels/attorney/attorney-tel-consultation/attorney-tel-consultation.component';
 import {AdminProfileComponent} from './panels/admin/admin-profile/admin-profile.component';
 import {AttorneyEssentialInfoComponent} from './panels/attorney/attorney-essential-info/attorney-essential-info.component';
 
@@ -78,6 +79,7 @@ const routes: Routes = [
   {path : 'attorney/education' , component : AttorneyEducationComponent},
   {path : 'attorney/add-education' , component : AttorneyAddEducationComponent},
   {path : 'attorney/legal-case' , component : AttorneyLegalCaseComponent},
+  {path : 'attorney/tel-consultation' , component : AttorneyTelConsultationComponent},
 
   {path : '**' , component : HomeComponent}
 ];

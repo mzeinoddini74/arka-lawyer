@@ -1,15 +1,16 @@
 import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
+import {LegalCaseModel} from '../../../models/attorney/LegalCaseModel';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatDialog} from '@angular/material/dialog';
-import {LegalCaseModel} from '../../../models/attorney/LegalCaseModel';
+import {TelConsultationModel} from '../../../models/attorney/TelConsultationModel';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
-  selector: 'app-attorney-legal-case',
-  templateUrl: './attorney-legal-case.component.html',
-  styleUrls: ['./attorney-legal-case.component.css'],
+  selector: 'app-attorney-tel-consultation',
+  templateUrl: './attorney-tel-consultation.component.html',
+  styleUrls: ['./attorney-tel-consultation.component.css'],
   animations: [
     trigger('detailExpand', [
       state('collapsed', style({ height: '0px', minHeight: '0' })),
@@ -18,22 +19,22 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
     ]),
   ],
 })
-export class AttorneyLegalCaseComponent implements AfterViewInit {
+export class AttorneyTelConsultationComponent implements AfterViewInit {
 
-  displayedColumns: string[] = ['id', 'title', 'category', 'user', 'actions'];
-  dataSource: MatTableDataSource<LegalCaseModel>;
+  displayedColumns: string[] = ['id', 'title', 'description', 'category', 'user', 'duration', 'actions'];
+  dataSource: MatTableDataSource<TelConsultationModel>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
   constructor(public dialog: MatDialog) {
-    const blogs = [
-      new LegalCaseModel(1, 'اگر بی گناه باشید عدالت برای شما ممکن است', 'salam', '', '', '', false ) ,
-      new LegalCaseModel(2, 'اگر بی گناه باشید عدالت برای شما ممکن است', 'salam', '', '', '', false)
+    const consultations = [
+      new TelConsultationModel(1, 'اگر بی گناه باشید عدالت برای شما ممکن است', 'salam', '', '', '', '30 دقیقه', false ) ,
+      new TelConsultationModel(2, 'اگر بی گناه باشید عدالت برای شما ممکن است', 'salam', '', '', '', '15 دقیقه', false)
     ];
 
     // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(blogs);
+    this.dataSource = new MatTableDataSource(consultations);
   }
 
   ngAfterViewInit(): void {
@@ -50,4 +51,5 @@ export class AttorneyLegalCaseComponent implements AfterViewInit {
       this.dataSource.paginator.firstPage();
     }
   }
+
 }
