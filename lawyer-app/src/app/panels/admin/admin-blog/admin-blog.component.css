@@ -8,9 +8,6 @@ mat-form-field{
 table{
   width: 100%;
 }
-table th{
-  text-align: right;
-}
 ::ng-deep .mat-paginator .mat-paginator-navigation-next {
   order: 4;
   transform: rotate(-180deg);
@@ -19,12 +16,10 @@ table th{
   order: 5;
   transform: rotate(-180deg);
 }
-
 ::ng-deep .mat-paginator .mat-paginator-range-label {
   order: 3;
   margin: 0 32px 0 32px;
 }
-
 ::ng-deep .mat-paginator .mat-paginator-navigation-previous {
   order: 2;
   transform: rotate(-180deg);
@@ -47,11 +42,16 @@ table th{
   position: absolute;
   right: 300px;
 }
-::ng-deep .ck.ck-dropdown .ck-dropdown__panel.ck-dropdown__panel_ne,::ng-deep .ck.ck-dropdown .ck-dropdown__panel.ck-dropdown__panel_se {
-  right: 0!important;
-  left: unset!important;
+::ng-deep .mat-sort-header-container {
+  display: flex;
+  justify-content: center;
 }
-
+th.mat-header-cell, td.mat-cell {
+  text-align: center;
+}
+th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+  padding-left: unset!important;
+}
 @media only screen and (max-width: 767px){
   ::ng-deep .mat-paginator .mat-paginator-page-size {
     display: flex;
@@ -62,9 +62,26 @@ table th{
 }
 /*end*/
 
-
 .blog-image{
   padding-top: 5px;
   padding-bottom: 5px;
   width: 100px;
+}
+.element-detail {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5px;
+}
+
+.element-detail table {
+  margin-top: 8px;
+}
+
+.detail-row{
+  height: 0;
+}
+.detail-row td{
+  border-bottom-width: 0;
 }

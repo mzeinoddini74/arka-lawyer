@@ -41,21 +41,21 @@ export class AttorneyEditDialogWorkComponent implements OnInit {
     this.workForm = this.formBuilder.group(
       {
         company: new FormControl(
-          null,
+          this.data.company,
           Validators.compose([
             Validators.required,
             Validators.maxLength(200)
           ])
         ),
         position: new FormControl(
-          null,
+          this.data.position,
           Validators.compose([
             Validators.required,
             Validators.maxLength(100)
           ])
         ),
         startYear: new FormControl(
-          null,
+          this.data.startYear,
           Validators.compose([
             Validators.required,
             Validators.maxLength(4),
@@ -63,14 +63,14 @@ export class AttorneyEditDialogWorkComponent implements OnInit {
           ])
         ),
         endYear: new FormControl(
-          null,
+          this.data.endYear,
           Validators.compose([
             Validators.maxLength(4),
             Validators.minLength(4)
           ])
         ),
         stillWorking: new FormControl(
-          null
+          this.data.stillWorking
         )
       }
     );

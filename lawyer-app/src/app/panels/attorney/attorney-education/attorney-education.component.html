@@ -24,6 +24,8 @@
 
       <div class="content-box">
         <div class="content-inner-box">
+          <p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000"></p-confirmDialog>
+
           <mat-form-field appearance="legacy">
             <mat-label>جستجو</mat-label>
             <input matInput (keyup)="applyFilter($event)" #input />

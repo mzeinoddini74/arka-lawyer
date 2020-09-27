@@ -25,9 +25,9 @@ export class AttorneyWorkComponent implements AfterViewInit {
   constructor(public dialog: MatDialog,
               protected confirmationService: ConfirmationService) {
     const workList = [
-      new AttorneyWorkModel(1, 'Shariaty', 'Developer',
+      new AttorneyWorkModel(1, 1, 'Shariaty', 'Developer',
         '1390', '1392', false, '') ,
-      new AttorneyWorkModel(1, 'Shariaty', 'Developer',
+      new AttorneyWorkModel(1, 1, 'Shariaty', 'Developer',
         '1392', '', true, '')
     ];
 
@@ -55,6 +55,7 @@ export class AttorneyWorkComponent implements AfterViewInit {
       width: '800px',
       data: new AttorneyWorkModel(
         row.id,
+        row.attorneyId,
         row.company,
         row.position,
         row.startYear,
@@ -72,6 +73,7 @@ export class AttorneyWorkComponent implements AfterViewInit {
   }
 
   delete(i): void {
+    console.log('opened');
     this.confirmationService.confirm({
       message: 'آیا از حذف رکورد انتخابی مطمین هستید؟',
       header: 'تایید حذف',

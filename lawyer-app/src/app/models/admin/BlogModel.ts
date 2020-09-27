@@ -5,7 +5,8 @@ export class BlogModel {
     public picture: string,
     public summary: string,
     public description: string,
-    public date: string
+    public date: string,
+    public isExpanded: boolean = false
   ) {
   }
 }

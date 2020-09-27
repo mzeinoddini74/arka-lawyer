@@ -31,39 +31,56 @@
           </mat-form-field>
 
           <div>
-            <table mat-table [dataSource]="dataSource" matSort>
+            <table mat-table [dataSource]="dataSource" matSort multiTemplateDataRows>
 
               <ng-container matColumnDef="id">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> کد </th>
                 <td mat-cell *matCellDef="let row"> {{row.id}} </td>
               </ng-container>
-
               <ng-container matColumnDef="title">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> عنوان </th>
                 <td mat-cell *matCellDef="let row"> {{row.title}} </td>
               </ng-container>
-
               <ng-container matColumnDef="picture">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header=""> تصویر </th>
                 <td mat-cell *matCellDef="let row"> <img src="{{row.picture}}" class="img-fluid blog-image"> </td>
               </ng-container>
-
               <ng-container matColumnDef="actions">
                 <th mat-header-cell *matHeaderCellDef> عملیات </th>
                 <td mat-cell *matCellDef="let row">
+                  <button mat-icon-button (click)="row.isExpanded = !row.isExpanded"
+                          matTooltip="مشاهده توضیحات" matTooltipPosition="below"
+                          [disabled]="!row.description || !row.summary">
+                    <mat-icon color="primary">expand_more</mat-icon>
+                  </button>
                   <button mat-icon-button (click)="openEditDialog(row)">
                     <mat-icon color="primary">edit</mat-icon>
                   </button>
-                  <button mat-icon-button [swal]="deleteSwal">
+                  <button mat-icon-button (click)="delete(row.id)">
                     <mat-icon color="warn">delete</mat-icon>
                   </button>
                 </td>
               </ng-container>
-
-              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
-              <!-- Row shown when there is no matching data. -->
+              <ng-container matColumnDef="expandedDetail">
+                <td mat-cell *matCellDef="let row"
+                    [attr.colspan]="displayedColumns.length">
+                  <div class="row element-detail"
+                       [@detailExpand]="row.isExpanded ? 'expanded' : 'collapsed'">
+                    <table class="table table-light table-active" *ngIf="row.description || row.summary">
+                      <tr class="text-right">
+                        <td> خلاصه: {{ row.summary }}</td>
+                      </tr>
+                      <tr class="text-right">
+                        <td> توضیحات: {{ row.description }}</td>
+                      </tr>
+                    </table>
+                  </div>
+                </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns;sticky: true"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+                  class="student-element-row" [class.expanded-row]="row.isExpanded"></tr>
+              <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="detail-row"></tr>
               <tr class="mat-row" *matNoDataRow>
                 <td class="mat-cell" colspan="4">رکوردی یافت نشد.</td>
               </tr>
@@ -77,15 +94,3 @@
   </div>
 </div>
 <app-panel-footer></app-panel-footer>
-
-<swal
-  #deleteSwal
-  title=''
-  text='آیا از حذف رکورد انتخابی مطمین هستید؟'
-  icon='warning'
-  cancelButtonText='خیر'
-  confirmButtonText='بله'
-  (confirm)='delete()'
-  [focusCancel]="true"
-  [showCancelButton]="true">
-</swal>

@@ -19,10 +19,13 @@
             <i class="fa fa-home fa-sm"></i><span class="hide-menu"> داشبورد </span>
           </a>
         </li>
-        <li class="" routerLink="/admin/user">
-          <a>
-            <i class="fa fa-users fa-sm"></i><span class="hide-menu"> کاربران </span>
+        <li class="">
+          <a class="has-arrow" data-toggle="collapse" href="#user" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <i class="fa fa-users fa-sm"></i><span class="hide-menu"> مدیریت کاربران عادی </span>
           </a>
+          <ul class="collapse" id="user">
+            <li routerLink="/admin/user"><a>لیست کاربران عادی</a></li>
+          </ul>
         </li>
         <li class="">
           <a class="has-arrow" data-toggle="collapse" href="#attorney" role="button" aria-expanded="false" aria-controls="collapseExample">

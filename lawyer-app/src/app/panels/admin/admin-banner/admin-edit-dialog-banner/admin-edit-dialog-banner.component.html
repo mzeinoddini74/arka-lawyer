@@ -1,1 +1,90 @@
-<p>admin-edit-dialog-banner works!</p>
+<h4 class="rtl text-right my-2">ویرایش بنر</h4>
+<div mat-dialog-content class="my-4 rtl">
+  <form [formGroup]="form" class="mt-5">
+    <div class="row">
+      <div class="col-sm-12 col-lg-12">
+        <div class="form-group">
+          <label> تصویر </label>
+          <p-fileUpload
+            chooseLabel="انتخاب تصویر"
+            uploadLabel="آپلود تصویر"
+            cancelLabel="انصراف"
+            customUpload="true"
+            (uploadHandler)="getPicture($event)"
+            accept="image/*" maxFileSize="1000000">
+          </p-fileUpload>
+          <ul class="mt-1 mb-0 pb-0" *ngIf="form.get('picture').errors != null">
+            <ng-container *ngFor="let error of errorMessages.picture">
+              <li class="font-small text-danger font-weight-bold"
+                  *ngIf="form.get('picture').hasError(error.type)
+                                && (form.get('picture').dirty
+                                || form.get('picture').touched)">
+                {{ error.message }}
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-6">
+        <div class="form-group">
+          <label>عنوان</label>
+          <input type="text"
+                 class="form-control"
+                 maxlength="100"
+                 formControlName="title">
+          <ul class="mt-1 mb-0 pb-0" *ngIf="form.get('title').errors != null">
+            <ng-container *ngFor="let error of errorMessages.title">
+              <li class="font-small text-danger font-weight-bold"
+                  *ngIf="form.get('title').hasError(error.type)
+                                && (form.get('title').dirty
+                                || form.get('title').touched)">
+                {{ error.message }}
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-6">
+        <div class="form-group">
+          <label>لینک</label>
+          <input type="text" formControlName="link"
+                 class="form-control"
+                 maxlength="500">
+          <ul class="mt-1 mb-0 pb-0" *ngIf="form.get('link').errors != null">
+            <ng-container *ngFor="let error of errorMessages.link">
+              <li class="font-small text-danger font-weight-bold"
+                  *ngIf="form.get('link').hasError(error.type)
+                                && (form.get('link').dirty
+                                || form.get('link').touched)">
+                {{ error.message }}
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-12">
+        <div class="form-group">
+          <label>توضیحات</label>
+          <textarea formControlName="description"
+                 class="form-control"
+                 maxlength="500"></textarea>
+          <ul class="mt-1 mb-0 pb-0" *ngIf="form.get('description').errors != null">
+            <ng-container *ngFor="let error of errorMessages.description">
+              <li class="font-small text-danger font-weight-bold"
+                  *ngIf="form.get('description').hasError(error.type)
+                                && (form.get('description').dirty
+                                || form.get('description').touched)">
+                {{ error.message }}
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions class="my-2">
+  <button mat-button (click)="onDismiss()">لغو</button>
+  <button mat-button (click)="onConfirm()" cdkFocusInitial
+          [disabled]="form.invalid">ثبت</button>
+</div>

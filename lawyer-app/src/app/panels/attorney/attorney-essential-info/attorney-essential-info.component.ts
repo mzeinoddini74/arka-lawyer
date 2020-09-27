@@ -321,6 +321,7 @@ export class AttorneyEssentialInfoComponent implements OnInit {
       width: '800px',
       data: new AttorneyEducationModel(
         row.id,
+        row.attorneyId,
         row.university,
         row.grade,
         row.major,
@@ -370,6 +371,7 @@ export class AttorneyEssentialInfoComponent implements OnInit {
       width: '800px',
       data: new AttorneyWorkModel(
         row.id,
+        row.attorneyId,
         row.company,
         row.position,
         row.startYear,

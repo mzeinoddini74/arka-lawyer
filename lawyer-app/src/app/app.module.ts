@@ -53,7 +53,6 @@ import { AdminMenuComponent } from './panels/admin/shared/admin-menu/admin-menu.
 import { AdminUserComponent } from './panels/admin/admin-user/admin-user.component';
 import { AdminBannerComponent } from './panels/admin/admin-banner/admin-banner.component';
 import { AdminAddBannerComponent } from './panels/admin/admin-banner/admin-add-banner/admin-add-banner.component';
-import { AdminEditBannerComponent } from './panels/admin/admin-banner/admin-edit-banner/admin-edit-banner.component';
 import { AdminBlogComponent } from './panels/admin/admin-blog/admin-blog.component';
 import { AdminAddBlogComponent } from './panels/admin/admin-blog/admin-add-blog/admin-add-blog.component';
 import { AdminAttorneyComponent } from './panels/admin/admin-attorney/admin-attorney.component';
@@ -81,8 +80,7 @@ import { AttorneyEditDialogWorkComponent } from './panels/attorney/attorney-esse
 import {DropdownModule} from 'primeng/dropdown';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import { AttorneyTelConsultationComponent } from './panels/attorney/attorney-tel-consultation/attorney-tel-consultation.component';
-
-
+import { AdminEditDialogUserComponent } from './panels/admin/admin-user/admin-edit-dialog-user/admin-edit-dialog-user.component';
 
 @NgModule({
   declarations: [
@@ -116,7 +114,6 @@ import { AttorneyTelConsultationComponent } from './panels/attorney/attorney-tel
     AdminUserComponent,
     AdminBannerComponent,
     AdminAddBannerComponent,
-    AdminEditBannerComponent,
     AdminBlogComponent,
     AdminAddBlogComponent,
     AdminAttorneyComponent,
@@ -144,7 +141,8 @@ import { AttorneyTelConsultationComponent } from './panels/attorney/attorney-tel
     AttorneyEssentialInfoComponent,
     AttorneyEditDialogEducationComponent,
     AttorneyEditDialogWorkComponent,
-    AttorneyTelConsultationComponent
+    AttorneyTelConsultationComponent,
+    AdminEditDialogUserComponent
   ],
   imports: [
     BrowserModule,

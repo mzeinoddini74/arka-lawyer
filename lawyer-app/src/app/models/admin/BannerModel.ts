@@ -5,7 +5,8 @@ export class BannerModel {
     public title: string,
     public description: string,
     public link: string,
-    public date: string
+    public date: string,
+    public isExpanded: boolean = false
   ) {
   }
 }

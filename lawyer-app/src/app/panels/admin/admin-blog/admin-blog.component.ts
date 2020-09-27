@@ -5,11 +5,21 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatDialog} from '@angular/material/dialog';
 import {AdminEditDialogBlogComponent} from './admin-edit-dialog-blog/admin-edit-dialog-blog.component';
+import {animate, state, style, transition, trigger} from '@angular/animations';
+import {ConfirmationService} from 'primeng/api';
 
 @Component({
   selector: 'app-admin-blog',
   templateUrl: './admin-blog.component.html',
-  styleUrls: ['./admin-blog.component.css']
+  styleUrls: ['./admin-blog.component.css'],
+  providers: [ConfirmationService],
+  animations: [
+    trigger('detailExpand', [
+      state('collapsed', style({ height: '0px', minHeight: '0' })),
+      state('expanded', style({ height: '*' })),
+      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+    ])
+  ]
 })
 
 export class AdminBlogComponent implements AfterViewInit{
@@ -20,9 +30,10 @@ export class AdminBlogComponent implements AfterViewInit{
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(public dialog: MatDialog) {
+  constructor(public dialog: MatDialog,
+              protected confirmationService: ConfirmationService) {
     const blogs = [
-      new BlogModel(1, 'اگر بی گناه باشید عدالت برای شما ممکن است', 'assets/images/home/1.jpg', '', '', '', ) ,
+      new BlogModel(1, 'اگر بی گناه باشید عدالت برای شما ممکن است', 'assets/images/home/1.jpg', '123', 'dfg', '', ) ,
       new BlogModel(2, 'اگر بی گناه باشید عدالت برای شما ممکن است', 'assets/images/home/1.jpg', '', '', '')
     ];
 
@@ -43,6 +54,19 @@ export class AdminBlogComponent implements AfterViewInit{
     });
   }
 
+  delete(i): void {
+    this.confirmationService.confirm({
+      message: 'آیا از حذف رکورد انتخابی مطمین هستید؟',
+      header: 'تایید حذف',
+      icon: 'pi pi-info-circle',
+      acceptLabel: 'بله',
+      rejectLabel: 'خیر',
+      accept: () => {
+        console.log('deleted');
+      }
+    });
+  }
+
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
@@ -58,8 +82,4 @@ export class AdminBlogComponent implements AfterViewInit{
     }
   }
 
-  // tslint:disable-next-line:typedef
-  delete() {
-    console.log('delete');
-  }
 }

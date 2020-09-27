@@ -1,6 +1,8 @@
 <div class="container-fluid login-bg">
   <div class="layer"></div>
   <div class="container rtl">
+    <p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000"></p-confirmDialog>
+
     <div class="row">
       <div class="col-9 login-area">
         <mat-horizontal-stepper linear="false" #stepper>
@@ -339,7 +341,6 @@
                         <button mat-icon-button (click)="openEditEducationDialog(row)">
                           <mat-icon color="primary">edit</mat-icon>
                         </button>
-                        <p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000"></p-confirmDialog>
                         <button mat-icon-button (click)="deleteEducation(row.id)">
                           <mat-icon color="warn">delete</mat-icon>
                         </button>
@@ -500,7 +501,6 @@
                         <button mat-icon-button (click)="openEditWorkDialog(row)">
                           <mat-icon color="primary">edit</mat-icon>
                         </button>
-                        <p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000"></p-confirmDialog>
                         <button mat-icon-button (click)="deleteWork(row.id)">
                           <mat-icon color="warn">delete</mat-icon>
                         </button>
@@ -599,3 +599,4 @@
     </div>
   </div>
 </div>
+

@@ -1,0 +1,257 @@
+<h4 class="rtl text-right my-2">ویرایش کاربر</h4>
+<div mat-dialog-content class="my-4 rtl">
+  <form [formGroup]="form" class="mt-5">
+    <div class="row">
+
+      <div class="col-sm-12 col-lg-6">
+        <div class="form-group">
+          <label> نام و نام خانوادگی</label>
+          <input type="text"
+                 class="form-control"
+                 maxlength="100"
+                 formControlName="fullname">
+          <ul class="mt-1 mb-0 pb-0" *ngIf="form.get('fullname').errors != null">
+            <ng-container *ngFor="let error of errorMessages.fullname">
+              <li class="font-small text-danger font-weight-bold"
+                  *ngIf="form.get('fullname').hasError(error.type)
+                                && (form.get('fullname').dirty
+                                || form.get('fullname').touched)">
+                {{ error.message }}
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-6">
+        <div class="form-group">
+          <label>پست الکترونیکی</label>
+          <input type="text" formControlName="email"
+                 class="form-control"
+                 maxlength="100">
+          <ul class="mt-1 mb-0 pb-0" *ngIf="form.get('email').errors != null">
+            <ng-container *ngFor="let error of errorMessages.email">
+              <li class="font-small text-danger font-weight-bold"
+                  *ngIf="form.get('email').hasError(error.type)
+                                && (form.get('email').dirty
+                                || form.get('email').touched)">
+                {{ error.message }}
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-6">
+        <div class="form-group">
+          <label>موبایل</label>
+          <input type="text" pKeyFilter="int" formControlName="mobile"
+                 class="form-control"
+                 maxlength="11" minlength="11">
+          <ul class="mt-1 mb-0 pb-0" *ngIf="form.get('mobile').errors != null">
+            <ng-container *ngFor="let error of errorMessages.mobile">
+              <li class="font-small text-danger font-weight-bold"
+                  *ngIf="form.get('mobile').hasError(error.type)
+                                && (form.get('mobile').dirty
+                                || form.get('mobile').touched)">
+                {{ error.message }}
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-6">
+        <div class="form-group">
+          <label>رمز عبور</label>
+          <input type="password" formControlName="password"
+                 class="form-control">
+          <ul class="mt-1 mb-0 pb-0" *ngIf="form.get('password').errors != null">
+            <ng-container *ngFor="let error of errorMessages.password">
+              <li class="font-small text-danger font-weight-bold"
+                  *ngIf="form.get('password').hasError(error.type)
+                                && (form.get('password').dirty
+                                || form.get('password').touched)">
+                {{ error.message }}
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-6">
+        <div class="form-group">
+          <label>تلفن</label>
+          <input type="text" pKeyFilter="int" formControlName="tel"
+                 class="form-control"
+                 maxlength="11">
+          <ul class="mt-1 mb-0 pb-0" *ngIf="form.get('tel').errors != null">
+            <ng-container *ngFor="let error of errorMessages.email">
+              <li class="font-small text-danger font-weight-bold"
+                  *ngIf="form.get('tel').hasError(error.type)
+                                && (form.get('tel').dirty
+                                || form.get('tel').touched)">
+                {{ error.message }}
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-6">
+        <div class="form-group">
+          <label>نام پدر</label>
+          <input type="text" formControlName="fatherName"
+                 class="form-control"
+                 maxlength="100">
+          <ul class="mt-1 mb-0 pb-0" *ngIf="form.get('fatherName').errors != null">
+            <ng-container *ngFor="let error of errorMessages.fatherName">
+              <li class="font-small text-danger font-weight-bold"
+                  *ngIf="form.get('fatherName').hasError(error.type)
+                                && (form.get('fatherName').dirty
+                                || form.get('fatherName').touched)">
+                {{ error.message }}
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-12">
+        <div class="form-group">
+          <label> تصویر پروفایل</label>
+          <p-fileUpload
+            chooseLabel="انتخاب تصویر"
+            uploadLabel="آپلود تصویر"
+            cancelLabel="انصراف"
+            customUpload="true"
+            (uploadHandler)="getProfilePicture($event)"
+            accept="image/*" maxFileSize="1000000">
+          </p-fileUpload>
+          <ul class="mt-1 mb-0 pb-0" *ngIf="form.get('profilePicture').errors != null">
+            <ng-container *ngFor="let error of errorMessages.profilePicture">
+              <li class="font-small text-danger font-weight-bold"
+                  *ngIf="form.get('profilePicture').hasError(error.type)
+                                && (form.get('profilePicture').dirty
+                                || form.get('profilePicture').touched)">
+                {{ error.message }}
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-12">
+        <div class="form-group">
+          <label>جنسیت</label>
+          <div class="clearfix"></div>
+
+          <!--                        <div class="p-field-radiobutton">-->
+          <!--                          <p-radioButton name="city" value="Chicago" id="city1"></p-radioButton>-->
+          <!--                          <label for="city1">Chicago</label>-->
+          <!--                        </div>-->
+          <!--                        <div class="p-field-radiobutton">-->
+          <!--                          <p-radioButton name="city" value="Los Angeles" id="city2"></p-radioButton>-->
+          <!--                          <label for="city2">Los Angeles</label>-->
+          <!--                        </div>-->
+
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio"
+                   id="maleRadio"
+                   value="1" formControlName="gender">
+            <label class="form-check-label" for="maleRadio">آقا</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio"
+                   id="femaleRadio"
+                   value="2" formControlName="gender">
+            <label class="form-check-label" for="femaleRadio">خانم</label>
+          </div>
+          <ul class="mt-1 mb-0 pb-0" *ngIf="form.get('gender').errors != null">
+            <ng-container *ngFor="let error of errorMessages.gender">
+              <li class="font-small text-danger font-weight-bold"
+                  *ngIf="form.get('gender').hasError(error.type)
+                                && (form.get('gender').dirty
+                                || form.get('gender').touched)">
+                {{ error.message }}
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-12">
+        <div class="form-group">
+          <label>آدرس</label>
+          <textarea formControlName="address"
+                    class="form-control"
+                    maxlength="200"></textarea>
+          <ul class="mt-1 mb-0 pb-0" *ngIf="form.get('address').errors != null">
+            <ng-container *ngFor="let error of errorMessages.address">
+              <li class="font-small text-danger font-weight-bold"
+                  *ngIf="form.get('address').hasError(error.type)
+                                && (form.get('address').dirty
+                                || form.get('address').touched)">
+                {{ error.message }}
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-12">
+        <div class="form-group">
+          <label>نوع کاربر حقوقی</label>
+          <p-dropdown [options]="LegalUserTypes"
+                      formControlName="type"
+                      placeholder="انتخاب کنید"
+                      optionLabel="name"></p-dropdown>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-12">
+        <div class="form-group">
+          <label> پروانه وکالت</label>
+
+          <p-fileUpload
+            chooseLabel="انتخاب تصویر"
+            uploadLabel="آپلود تصویر"
+            cancelLabel="انصراف"
+            customUpload="true"
+            (uploadHandler)="getLicense($event)"
+            accept="image/*" maxFileSize="1000000">
+          </p-fileUpload>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-12">
+        <div class="form-group">
+          <label> دفترچه وکالت</label>
+          <p-fileUpload
+            chooseLabel="انتخاب تصویر"
+            uploadLabel="آپلود تصویر"
+            cancelLabel="انصراف"
+            customUpload="true"
+            (uploadHandler)="getBooklet($event)"
+            accept="image/*" maxFileSize="1000000">
+          </p-fileUpload>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-12">
+        <div class="form-group">
+          <label> رزومه</label>
+          <p-fileUpload
+            chooseLabel="انتخاب تصویر"
+            uploadLabel="آپلود تصویر"
+            cancelLabel="انصراف"
+            customUpload="true"
+            (uploadHandler)="getResume($event)"
+            accept="image/*" maxFileSize="1000000">
+          </p-fileUpload>
+        </div>
+      </div>
+      <div class="col-md-12 col-lg-12 pt-30 pb-5">
+        <div class="text-center">
+          <button class="green-btn"
+                  mat-raised-button [disabled]="form.invalid">
+            ثبت
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions class="my-2">
+  <button mat-button (click)="onDismiss()">لغو</button>
+  <button mat-button (click)="onConfirm()" cdkFocusInitial
+          [disabled]="form.invalid">ثبت</button>
+</div>

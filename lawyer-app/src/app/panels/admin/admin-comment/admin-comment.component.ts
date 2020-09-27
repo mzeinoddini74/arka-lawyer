@@ -26,7 +26,7 @@ export class AdminCommentComponent implements AfterViewInit{
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  isTableExpanded = false;
+
   comments = [
     new CommentModel(
       1, 'mahnaz', 'mahnaz@gmail.com', 'Hello', 25, 21, '', false,
