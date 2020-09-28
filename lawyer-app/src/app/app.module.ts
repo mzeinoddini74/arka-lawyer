@@ -59,10 +59,10 @@ import { AdminAttorneyComponent } from './panels/admin/admin-attorney/admin-atto
 import { AdminAddAttorneyComponent } from './panels/admin/admin-attorney/admin-add-attorney/admin-add-attorney.component';
 import { AdminCommentComponent } from './panels/admin/admin-comment/admin-comment.component';
 import { AdminReplyDialogCommentComponent } from './panels/admin/admin-comment/admin-reply-dialog-comment/admin-reply-dialog-comment.component';
+// tslint:disable-next-line:max-line-length
 import { AdminEditDialogCommentComponent } from './panels/admin/admin-comment/admin-edit-dialog-comment/admin-edit-dialog-comment.component';
 import { AdminEditDialogBlogComponent } from './panels/admin/admin-blog/admin-edit-dialog-blog/admin-edit-dialog-blog.component';
 import { AdminEditDialogBannerComponent } from './panels/admin/admin-banner/admin-edit-dialog-banner/admin-edit-dialog-banner.component';
-import { AdminEditDialogAttorneyComponent } from './panels/admin/admin-attorney/admin-edit-dialog-attorney/admin-edit-dialog-attorney.component';
 
 import { AttorneyDashboardComponent } from './panels/attorney/attorney-dashboard/attorney-dashboard.component';
 import { AttorneyMenuComponent } from './panels/attorney/shared/attorney-menu/attorney-menu.component';
@@ -70,6 +70,7 @@ import { AttorneyProfileComponent } from './panels/attorney/attorney-profile/att
 import { AttorneyWorkComponent } from './panels/attorney/attorney-work/attorney-work.component';
 import { AttorneyAddWorkComponent } from './panels/attorney/attorney-work/attorney-add-work/attorney-add-work.component';
 import { AttorneyEducationComponent } from './panels/attorney/attorney-education/attorney-education.component';
+// tslint:disable-next-line:max-line-length
 import { AttorneyAddEducationComponent } from './panels/attorney/attorney-education/attorney-add-education/attorney-add-education.component';
 import { AttorneyLegalCaseComponent } from './panels/attorney/attorney-legal-case/attorney-legal-case.component';
 import { AdminProfileComponent } from './panels/admin/admin-profile/admin-profile.component';
@@ -81,6 +82,8 @@ import {DropdownModule} from 'primeng/dropdown';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import { AttorneyTelConsultationComponent } from './panels/attorney/attorney-tel-consultation/attorney-tel-consultation.component';
 import { AdminEditDialogUserComponent } from './panels/admin/admin-user/admin-edit-dialog-user/admin-edit-dialog-user.component';
+import { AdminAttorneyDetailComponent } from './panels/admin/admin-attorney/admin-attorney-detail/admin-attorney-detail.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -123,7 +126,6 @@ import { AdminEditDialogUserComponent } from './panels/admin/admin-user/admin-ed
     AdminEditDialogCommentComponent,
     AdminEditDialogBlogComponent,
     AdminEditDialogBannerComponent,
-    AdminEditDialogAttorneyComponent,
     OnlineConsultationComponent,
     TelConsultationComponent,
     InPersonConsultationComponent,
@@ -142,26 +144,28 @@ import { AdminEditDialogUserComponent } from './panels/admin/admin-user/admin-ed
     AttorneyEditDialogEducationComponent,
     AttorneyEditDialogWorkComponent,
     AttorneyTelConsultationComponent,
-    AdminEditDialogUserComponent
+    AdminEditDialogUserComponent,
+    AdminAttorneyDetailComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    CarouselModule,
-    NgwWowModule,
-    FormsModule,
-    ReactiveFormsModule,
-    CKEditorModule,
-    SweetAlert2Module.forRoot(),
-    NgxCaptchaModule,
-    PrimengModule,
-    HttpClientModule,
-    MatRadioModule,
-    DropdownModule,
-    RadioButtonModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+        CarouselModule,
+        NgwWowModule,
+        FormsModule,
+        ReactiveFormsModule,
+        CKEditorModule,
+        SweetAlert2Module.forRoot(),
+        NgxCaptchaModule,
+        PrimengModule,
+        HttpClientModule,
+        MatRadioModule,
+        DropdownModule,
+        RadioButtonModule,
+        MatTabsModule
+    ],
   providers: [
     { provide: MatPaginatorIntl, useValue: getDutchPaginatorIntl() }
   ],

@@ -1,15 +1,14 @@
 import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
-import {UserModel} from '../../../models/user/UserModel';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {AttorneyEducationModel, AttorneyModel, AttorneyWorkModel} from '../../../models/attorney/AttorneyModel';
 import {LegalUserType} from '../../../models/attorney/ILegalUserType';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {ConfirmationService} from 'primeng/api';
-import {AttorneyEditDialogEducationComponent} from '../../attorney/attorney-essential-info/attorney-edit-dialog-education/attorney-edit-dialog-education.component';
 import {MatDialog} from '@angular/material/dialog';
-import {AdminEditDialogAttorneyComponent} from './admin-edit-dialog-attorney/admin-edit-dialog-attorney.component';
+import {Router} from '@angular/router';
+import {AttorneyDataServiceService} from '../../../services/attorney/attorney-data-service.service';
 
 @Component({
   selector: 'app-admin-attorney',
@@ -29,63 +28,109 @@ export class AdminAttorneyComponent implements AfterViewInit {
   displayedColumns: string[] = ['id', 'mobile', 'fullname', 'email', 'type', 'actions'];
   dataSource: MatTableDataSource<AttorneyModel>;
   type: LegalUserType;
+  selectedRow: number;
+  users = [
+    new AttorneyModel(
+      1,
+      'ali',
+      'Male',
+      '',
+      'ali@google.com',
+      '',
+      '',
+      'tehran',
+      '',
+      [
+        new AttorneyEducationModel(
+          1,
+          1,
+          'Shariaty',
+          'Bachelor',
+          'Computer',
+          '1390',
+          '1392',
+          false,
+          '',
+          false,
+          ''
+        )
+      ],
+      [
+        new AttorneyWorkModel(
+          1,
+          1,
+          '12',
+          'developer',
+          '1399',
+          '',
+          true,
+          ''
+        )
+      ],
+      '',
+      '' ,
+      '',
+      this.type,
+      '',
+      '09122222222'
+    ),
+    new AttorneyModel(
+      2,
+      'ali',
+      'Male',
+      '',
+      'ali@google.com',
+      '',
+      '',
+      'tehran',
+      '',
+      [
+        new AttorneyEducationModel(
+          1,
+          1,
+          'Shariaty',
+          'Bachelor',
+          'Computer',
+          '1390',
+          '1392',
+          false,
+          '',
+          false,
+          ''
+        )
+      ],
+      [
+        new AttorneyWorkModel(
+          1,
+          1,
+          '12',
+          'developer',
+          '1399',
+          '',
+          true,
+          ''
+        )
+      ],
+      '',
+      '' ,
+      '',
+      this.type,
+      '',
+      '09122222222'
+    ),
+  ];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(public dialog: MatDialog,
+  constructor(private router: Router,
+              protected data: AttorneyDataServiceService,
+              public dialog: MatDialog,
               protected confirmationService: ConfirmationService) {
 
-    const users = [
-      new AttorneyModel(
-        1,
-        'ali',
-        'Male',
-        '',
-        'ali@google.com',
-        '',
-        '',
-        'tehran',
-        '',
-        [
-          new AttorneyEducationModel(
-            1,
-            1,
-            'Shariaty',
-            'Bachelor',
-            'Computer',
-            '1390',
-            '1392',
-            false,
-            '',
-            false,
-            ''
-          )
-        ],
-        [
-          new AttorneyWorkModel(
-            1,
-            1,
-            '12',
-            'developer',
-            '1399',
-            '',
-            true,
-            ''
-          )
-        ],
-        '',
-        '' ,
-        '',
-        this.type,
-        '',
-        false,
-        '09122222222'
-      ),
-    ];
-
     // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(users);
+    data.setData(this.users);
+    this.dataSource = new MatTableDataSource(data.getAllData());
   }
 
   // tslint:disable-next-line:typedef
@@ -102,40 +147,6 @@ export class AdminAttorneyComponent implements AfterViewInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
-  }
-
-  openEditAttorneyDialog(row: AttorneyModel): void {
-
-    const dialogRef = this.dialog.open(AdminEditDialogAttorneyComponent,
-      {
-        width: '800px',
-        data: new AttorneyModel(
-          row.id,
-          row.fullname,
-          row.gender,
-          row.tel,
-          row.email,
-          row.profilePicture,
-          row.fatherName,
-          row.address,
-          row.date,
-          row.educationList,
-          row.workList,
-          row.booklet,
-          row.license,
-          row.resume,
-          row.type,
-          row.licenseValidityDate,
-          row.isExpanded,
-          row.mobile
-        )
-      });
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        console.log('edited');
-      }
-    });
   }
   deleteAttorney(i): void {
     this.confirmationService.confirm({

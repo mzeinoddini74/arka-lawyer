@@ -18,7 +18,6 @@ export class AttorneyModel{
     public resume: string,
     public type: LegalUserType,
     public licenseValidityDate: string,
-    public isExpanded: boolean,
     public mobile: string
   ) {
   }

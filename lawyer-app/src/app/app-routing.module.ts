@@ -39,6 +39,7 @@ import {AttorneyLegalCaseComponent} from './panels/attorney/attorney-legal-case/
 import {AttorneyTelConsultationComponent} from './panels/attorney/attorney-tel-consultation/attorney-tel-consultation.component';
 import {AdminProfileComponent} from './panels/admin/admin-profile/admin-profile.component';
 import {AttorneyEssentialInfoComponent} from './panels/attorney/attorney-essential-info/attorney-essential-info.component';
+import {AdminAttorneyDetailComponent} from './panels/admin/admin-attorney/admin-attorney-detail/admin-attorney-detail.component';
 
 const routes: Routes = [
   {path : '' , component : HomeComponent},
@@ -68,6 +69,7 @@ const routes: Routes = [
   {path : 'admin/add-blog' , component : AdminAddBlogComponent},
   {path : 'admin/attorney' , component : AdminAttorneyComponent},
   {path : 'admin/add-attorney' , component : AdminAddAttorneyComponent},
+  {path : 'admin/attorney-detail' , component : AdminAttorneyDetailComponent},
   {path : 'admin/user' , component : AdminUserComponent},
   {path : 'admin/comment' , component : AdminCommentComponent},
 
