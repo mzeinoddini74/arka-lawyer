@@ -1,36 +1,31 @@
-import {NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
-import {MatIconModule} from '@angular/material/icon';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import {MatTableModule} from '@angular/material/table';
+import {MatMenuModule} from '@angular/material/menu';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatSortModule} from '@angular/material/sort';
-import {MatInputModule} from '@angular/material/input';
-import {MatTooltipModule} from '@angular/material/tooltip';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatStepperModule} from '@angular/material/stepper';
+import {MatDividerModule} from '@angular/material/divider';
 
-const materialComponents = [
+const MaterialComponents = [
+  MatToolbarModule,
+  MatSidenavModule,
+  MatIconModule,
   MatButtonModule,
   MatCardModule,
-  MatIconModule,
-  MatPaginatorModule,
-  MatTableModule,
-  MatExpansionModule,
-  MatSortModule,
-  MatInputModule,
+  MatMenuModule,
   MatFormFieldModule,
-  MatTooltipModule,
-  MatDialogModule,
-  MatStepperModule
+  MatDividerModule
 ];
-
+// @ts-ignore
 @NgModule({
   declarations: [],
-  imports: [materialComponents],
-  exports: [materialComponents]
+  imports: [
+    MaterialComponents
+  ],
+  exports: [
+    MaterialComponents
+  ]
 })
-export class MaterialModule {
-}
+export class MaterialModule { }
