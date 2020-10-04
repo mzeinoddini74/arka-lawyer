@@ -1,0 +1,38 @@
+<aside class="right-sidebar rtl text-right" id="panel-menu">
+  <div class="user-profile">
+    <div class="profile-img">
+      <img src="assets/images/shared/admin.png">
+    </div>
+    <div class="profile-text">
+      <h5></h5>
+      <a data-toggle="tooltip" title="" data-original-title="تنظیمات"><i class="fa fa-cog"></i></a>
+      <a data-toggle="tooltip" title="" data-original-title="خروج"><i class="fa fa-sign-out-alt"></i></a>
+    </div>
+  </div>
+  <nav class="sidebar-nav">
+    <ul id="sidebarnav">
+      <li class="nav-devider"></li>
+
+      <li class="nav-small-cap">اصلی</li>
+      <li class="" routerLink="/consultor/dashboard">
+        <a>
+          <i class="fa fa-home fa-sm"></i><span class="hide-menu"> داشبورد </span>
+        </a>
+      </li>
+      <li class="" routerLink="/consultor/profile">
+        <a>
+          <i class="fa fa-user fa-sm"></i><span class="hide-menu"> اطلاعات فردی </span>
+        </a>
+      </li>
+      <li class="">
+        <a class="has-arrow" data-toggle="collapse" href="#comment" role="button" aria-expanded="false" aria-controls="collapseExample">
+          <i class="fas fa-balance-scale fa-sm"></i><span class="hide-menu"> مدیریت مشاوره های حقوقی </span>
+        </a>
+        <ul class="collapse" id="comment">
+          <li routerLink="/consultor/online-request"><a>لیست مشاوره های آنلاین</a></li>
+          <li routerLink="/consultor/tel-request"><a>لیست مشاوره های تلفنی</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</aside>

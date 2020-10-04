@@ -1,0 +1,125 @@
+.expertise-area {
+  background-color: #1c1c1c;
+}
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 40px;
+}
+.section-title span {
+  text-align: right;
+  display: block;
+  color: #037160;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.expertise-area .section-title h2 {
+  margin-left: 0;
+  color: #fff;
+}
+.section-title h2 {
+  text-align: right;
+  font-weight: 700;
+  font-size: 38px;
+  font-family: Playfair Display,serif;
+  margin-bottom: 0;
+}
+.expertise-item {
+  color: #fff;
+}
+.expertise-item ul {
+  margin: 0;
+  padding: 0;
+}
+.expertise-area .expertise-item ul li {
+  border: 2px solid #037160;
+  padding: 20px 20px 25px 35px;
+  margin-bottom: 30px;
+}
+.expertise-item ul li {
+  list-style-type: none;
+  display: block;
+  position: relative;
+  margin-bottom: 70px;
+}
+mat-icon {
+  color: #037160;
+  font-size: 45px;
+  line-height: 18px;
+  vertical-align: middle;
+}
+img {
+  max-width: 100%;
+}
+.expertise-item ul li h3 {
+  text-align: right;
+  font-size: 28px;
+  font-weight: 700;
+  font-family: Playfair Display,serif;
+  margin-bottom: 18px;
+  color: #fff;
+}
+.expertise-item ul li p {
+  text-align: right;
+   font-size: 16px;
+   margin-bottom: 0;
+ }
+.expertise-image {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  padding-top: 100px;
+}
+.expertise-image:before {
+   position: absolute;
+   content: "";
+   width: 100%;
+   height: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   left: 0;
+   top: 0;
+   z-index: -1;
+   border: 10px solid #037160;
+   background-color: #373535;
+ }
+.expertise-image img {
+  position: relative;
+  bottom: 10px;
+}
+@media only screen and (max-width: 767px){
+  .expertise-area {
+    padding-top: 50px;
+  }
+  .section-title {
+    margin-bottom: 30px;
+    margin-top: -4px;
+  }
+  .section-title h2 {
+    font-size: 22px;
+  }
+  .expertise-area .expertise-item ul li {
+    padding: 14px 14px 20px 20px;
+  }
+  mat-icon {
+    font-size: 40px;
+    line-height: 15px;
+    margin-right: 15px;
+  }
+  .expertise-item ul li h3 {
+    padding-left: 110px;
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+  .expertise-item ul li p {
+
+    font-size: 14px;
+  }
+  .expertise-image {
+    padding-top: 50px;
+  }
+  .expertise-image:before {
+    border: 5px solid #037160;
+  }
+}

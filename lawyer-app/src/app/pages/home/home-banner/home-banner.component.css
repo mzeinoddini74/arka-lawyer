@@ -1,0 +1,143 @@
+.banner-area {
+  background: url(../../../../assets/images/home/home-bg.jpg) no-repeat center center fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  height: 700px;
+}
+
+.banner-area .container{
+  height: 700px;
+}
+
+.banner-area .container .row{
+  height: 100%;
+}
+
+.parent {
+  position: relative;
+  z-index: 0;
+  background: url(../../../../assets/images/home/counter-bg.png) no-repeat center center fixed;
+  background-repeat: repeat;
+  background-color: #ffffff;
+  height: 150px;
+  width: 100%;
+  top: -75px;
+  box-shadow: 0 0 11px rgba(33,33,33,.2);
+}
+
+.counter-item .counter-inner h3 {
+  font-weight: 600;
+  font-size: 36px;
+  color: #037160;
+  margin-bottom: 10px;
+}
+.counter-item .counter-inner p {
+  margin-bottom: 0;
+  font-weight: 600;
+  font-size: 18px;
+  color: #504f4f;
+}
+.counter-item mat-icon {
+  color: #037160;
+  display: inline-block;
+  font-size: 50px;
+  position: absolute;
+  top: 0;
+  right: 50px;
+}
+.counter-item {
+  position: relative;
+}
+.counter-item .counter-inner {
+  padding-right: 20px;
+}
+@media screen and (max-width: 978px) {
+  .banner-box{
+    display: flex;
+    text-align: center!important;
+  }
+  .text-right{
+    text-align: center!important;
+  }
+}
+.parent-div{
+  background-color:#f2faf9 ;
+}
+
+.banner-box a mat-icon{
+  font-size: 18px;
+}
+.banner-box h1{
+  font-size: 30px;
+  font-weight: bold;
+}
+.banner-box p{
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 30px;
+}
+.banner-box a{
+  font-size: 18px;
+  font-weight: bold;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+@media only screen and (max-width: 767px){
+  .desc{
+    padding-bottom: 30px;
+    padding-top: 50px;
+    text-align: center;
+  }
+
+  .desc h1{
+    font-size: 25px;
+  }
+
+  .desc p{
+    font-size: 16px;
+  }
+
+  .parent {
+    padding-top: 30px;
+    padding-bottom: 15px;
+    top: 0;
+    height: auto;
+  }
+  .counter-item{
+    padding-bottom: 15px;
+  }
+  .counter-item mat-icon {
+    font-size: 28px;
+    right: 0;
+  }
+  .counter-item .counter-inner p {
+    font-size: 13px;
+  }
+  .counter-item .counter-inner h3 {
+    font-size: 26px;
+  }
+  .parent-div{
+    padding: 0;
+  }
+  .parent {
+    padding-top: 30px;
+    padding-bottom: 0;
+    top: 0;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .parent {
+    padding-top: 30px;
+    padding-bottom: 15px;
+    top: 0;
+    height: auto;
+  }
+
+  .counter-item {
+    padding-bottom: 15px;
+  }
+
+}

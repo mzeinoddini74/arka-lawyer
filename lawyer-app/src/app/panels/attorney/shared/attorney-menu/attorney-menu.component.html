@@ -1,0 +1,64 @@
+<aside class="right-sidebar rtl text-right" id="panel-menu">
+  <div class="user-profile">
+    <div class="profile-img">
+      <img src="assets/images/shared/admin.png">
+    </div>
+    <div class="profile-text">
+      <h5></h5>
+      <a data-toggle="tooltip" title="" data-original-title="تنظیمات"><i class="fa fa-cog"></i></a>
+      <a data-toggle="tooltip" title="" data-original-title="خروج"><i class="fa fa-sign-out-alt"></i></a>
+    </div>
+  </div>
+  <nav class="sidebar-nav">
+    <ul id="sidebarnav">
+      <li class="nav-devider"></li>
+
+      <li class="nav-small-cap">اصلی</li>
+      <li class="" routerLink="/attorney/dashboard">
+        <a>
+          <i class="fa fa-home fa-sm"></i><span class="hide-menu"> داشبورد </span>
+        </a>
+      </li>
+      <li class="" routerLink="/attorney/profile">
+        <a>
+          <i class="fa fa-user fa-sm"></i><span class="hide-menu"> اطلاعات فردی </span>
+        </a>
+      </li>
+
+      <li class="">
+        <a class="has-arrow" data-toggle="collapse" href="#banner" role="button" aria-expanded="false" aria-controls="collapseExample">
+          <i class="fas fa-graduation-cap fa-sm"></i><span class="hide-menu"> مدیریت سوابق تحصیلی </span>
+        </a>
+        <ul class="collapse" id="banner">
+          <li routerLink="/attorney/education"><a>لیست سوابق تحصیلی</a></li>
+          <li routerLink="/attorney/add-education"><a>ثبت سابقه تحصیلی</a></li>
+        </ul>
+      </li>
+      <li class="">
+        <a class="has-arrow" data-toggle="collapse" href="#blog" role="button" aria-expanded="false" aria-controls="collapseExample">
+          <i class="fas fa-briefcase fa-sm"></i><span class="hide-menu"> مدیریت سوابق کاری </span>
+        </a>
+        <ul class="collapse" id="blog">
+          <li routerLink="/attorney/work"><a>لیست سوابق کاری</a></li>
+          <li routerLink="/attorney/add-work"><a>ثبت سابقه کاری</a></li>
+        </ul>
+      </li>
+      <li class="">
+        <a class="has-arrow" data-toggle="collapse" href="#comment" role="button" aria-expanded="false" aria-controls="collapseExample">
+          <i class="fas fa-balance-scale fa-sm"></i><span class="hide-menu"> مدیریت پرونده های حقوقی </span>
+        </a>
+        <ul class="collapse" id="comment">
+          <li routerLink="/attorney/legal-case"><a>لیست پرونده های حقوقی</a></li>
+        </ul>
+      </li>
+      <li class="">
+        <a class="has-arrow" data-toggle="collapse" href="#tel" role="button" aria-expanded="false" aria-controls="collapseExample">
+          <i class="fas fa-phone fa-sm"></i><span class="hide-menu"> مدیریت مشاوره های تلفنی </span>
+        </a>
+        <ul class="collapse" id="tel">
+          <li routerLink="/attorney/tel-consultation"><a>لیست مشاوره های تلفنی</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</aside>

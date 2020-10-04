@@ -1,0 +1,150 @@
+.contact-form {
+  background-image: url(../../../assets/images/contact/contact-bg.png);
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+.location-area {
+  position: relative;
+  top: -100px;
+}
+
+.location-bg {
+  background-image: url(../../../assets/images/contact/location-bg.jpg);
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 50px 40px 20px;
+}
+
+.location-bg:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #333;
+  opacity: .9;
+}
+
+.location-item {
+  margin-bottom: 30px;
+  color: #fff;
+  margin-right: -1px!important;
+  margin-left: -1px!important;
+}
+
+.contact-form .location-item {
+border: 1px solid #037160;
+padding-top: 15px;
+padding-bottom: 15px;
+padding-right: 15px;
+}
+
+.contact-form .location-item .location-icon mat-icon {
+width: 50px;
+height: 50px;
+line-height: 50px;
+border: 1px solid #037160;
+border-radius: 50%;
+text-align: center;
+font-size: 20px;
+}
+
+.location-item .location-icon mat-icon {
+color: #fff;
+font-size: 26px;
+}
+
+.contact-form .location-item h3 {
+font-size: 22px;
+margin-bottom: 12px;
+text-align: right;
+}
+
+.location-item h3 {
+color: #fff;
+margin-bottom: 15px;
+font-weight: 600;
+font-size: 28px;
+}
+
+.location-item ul {
+text-align: right;
+padding: 0;
+margin: 0 0 2px;
+}
+
+.contact-form-four .location-item ul li {
+font-size: 14px;
+}
+
+.location-item ul li {
+list-style-type: none;
+display: block;
+font-size: 15px;
+}
+.location-item ul li a {
+  color: white;
+}
+
+.contact-wrap {
+max-width: 970px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.contact-wrap .form-group {
+margin-bottom: 30px;
+}
+
+.contact-form-four .form-group .form-control {
+color: #333;
+}
+
+.contact-wrap .form-group .form-control {
+background-color: transparent;
+border: 1px solid #037160;
+border-radius: 0;
+height: 60px;
+padding-left: 30px;
+color: #fff;
+font-size: 15px;
+}
+
+.contact-btn {
+font-weight: 600;
+font-size: 16px;
+color: #fff;
+background-color: #037160;
+padding: 16px 40px;
+border: 0;
+position: relative;
+z-index: 1;
+transition: all .5s ease;
+}
+
+.map-area iframe {
+width: 100%;
+height: 500px;
+margin-bottom: -8px;
+border: none;
+}
+
+.mxx-2{
+margin-right: .1rem!important;
+margin-left: .1rem!important;
+}
+
+.font-small{
+  font-size: smaller!important;
+}
+
+
+::ng-deep ngx-recaptcha2 > div > div > div{
+  margin-left: auto!important;
+  margin-right: auto!important;
+}

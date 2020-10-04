@@ -1,0 +1,86 @@
+<app-header></app-header>
+<div class="container-fluid page-title-area title-img">
+  <div class="row justify-content-center">
+    <div class="col-12 align-self-center">
+      <div class="page-title-text">
+        <h2>انتخاب دسته بندی مشاوره حضوری</h2>
+        <ul>
+          <li>انتخاب دسته بندی مشاوره حضوری</li>
+          <li>
+            <mat-icon>keyboard_arrow_left</mat-icon>
+          </li>
+          <li>
+            <a routerLink="/consultation" class="">مشاوره</a>
+          </li>
+          <li>
+            <mat-icon>keyboard_arrow_left</mat-icon>
+          </li>
+          <li>
+            <a routerLink="/" class="">صفحه اصلی</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="blog-details-area pt-100 pb-70">
+  <div class="container rtl text-right">
+    <div class="row">
+
+      <div class="col-lg-4">
+        <div class="blog-details-item">
+
+          <div class="blog-details-category">
+            <div class="search-area">
+              <input (keyup)="applyFilter($event)" #input type="text" placeholder="جستجو" class="form-control">
+              <button type="submit" class="btn blog-details-btn">
+                <mat-icon>search</mat-icon>
+              </button>
+            </div>
+            <h3>مجموعه اصلی</h3>
+            <ul class="custom">
+              <li *ngFor="let item of mainCategories">
+                <a (click)="getList(item.id, item.title)">{{item.title}}
+                  <mat-icon>keyboard_arrow_left</mat-icon>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-lg-8">
+          <div class="row blog-details-category service-detail">
+            <div class="col-12">
+              <h3> زیر مجموعه {{ selectedCategory }}</h3>
+
+              <div class="row service-categories">
+
+                <div class="col-xs-6 col-md-4 my-2" *ngFor="let item of subCategories">
+                  <a routerLink="/in-person-consultation">
+                    <div class="card service-card card-inverse">
+                      <div class="card-block text-center py-2">
+<!--                        <i class="fa fa-check fa-3x"></i>-->
+                        <h4 class="card-title">{{item.title}}</h4>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<app-footer></app-footer>
+
+
+
+
+
+

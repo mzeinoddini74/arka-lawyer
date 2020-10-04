@@ -1,0 +1,114 @@
+<app-header></app-header>
+<div class="container-fluid page-title-area title-img">
+  <div class="row justify-content-center">
+    <div class="col-12 align-self-center">
+      <div class="page-title-text">
+        <h2>مشاوره حضوری</h2>
+        <ul>
+          <li>مشاوره حقوقی حضوری</li>
+          <li>
+            <mat-icon>keyboard_arrow_left</mat-icon>
+          </li>
+          <li>
+            <a routerLink="/consultation" class="">مشاوره حقوقی</a>
+          </li>
+          <li>
+            <mat-icon>keyboard_arrow_left</mat-icon>
+          </li>
+          <li>
+            <a routerLink="/" class="">صفحه اصلی</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="contact-form pt-100 rtl">
+  <div class="container">
+    <div class="contact-wrap">
+      <form [formGroup]='form' (ngSubmit)="saveComment()" class="w-100">
+        <h2>رزرو وقت مشاوره حضوری</h2>
+
+        <div class="row">
+          <div class="col-sm-12 col-lg-6">
+            <div class="form-group">
+              <input type="text" formControlName="name" name="name"
+                     placeholder="نام" class="form-control"
+                     maxlength="200">
+
+              <ul class="mt-1 mb-0 pb-0" *ngFor="let error of errorMessages.name">
+                <li class="font-small text-danger font-weight-bold"
+                    *ngIf="form.get('name').hasError(error.type)
+                            && (form.get('name').dirty
+                            || form.get('name').touched)">
+                  {{ error.message }}
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-12 col-lg-6">
+            <div class="form-group">
+              <input type="text" pKeyFilter="int" formControlName="mobile" name="mobile"
+                     placeholder="شماره موبایل" class="form-control"
+                     minlength="11" maxlength="11"
+                     [pattern]="mobileRegix">
+              <ul class="mt-1" *ngFor="let error of errorMessages.mobile">
+                <li class="font-small text-danger font-weight-bold"
+                    *ngIf="form.get('mobile').hasError(error.type)
+                            && (form.get('mobile').dirty
+                            || form.get('mobile').touched)">
+                  {{ error.message }}
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-12 col-lg-12">
+            <div class="form-group">
+              <ckeditor
+                [editor]="Editor"
+                formControlName="comment"
+                [config]="{ toolbar: [ 'heading', '|', 'bold', 'italic', '|', 'undo', 'redo' ] }"></ckeditor>
+
+              <ul class="mt-1 mb-0 pb-0" *ngFor="let error of errorMessages.comment">
+                <li class="font-small text-danger font-weight-bold"
+                    *ngIf="form.get('comment').hasError(error.type)
+                            && (form.get('comment').dirty
+                            || form.get('comment').touched)">
+                  {{ error.message }}
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-12 col-lg-12 text-center">
+            <div class="form-group">
+              <ngx-recaptcha2 #captchaElem siteKey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                              (success)="handleSuccess($event)"
+                              size="normal"
+                              hl="en"
+                              theme="light"
+                              type="'image' | 'audio'"
+                              formControlName="recaptcha">
+              </ngx-recaptcha2>
+
+              <ul class="mt-1 mb-0 pb-0 text-center" *ngIf="captchaError">
+                <li class="font-small text-danger font-weight-bold">
+                  فیلد اعتبارسنجی (کپچا) اجباری است.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-12">
+            <div class="text-center">
+              <button mat-raised-button type="submit" class="btn btn-block green-btn"
+                      [disabled]="form.invalid">ثبت</button>
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

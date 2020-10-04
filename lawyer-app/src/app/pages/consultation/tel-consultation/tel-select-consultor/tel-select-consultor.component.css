@@ -1,0 +1,94 @@
+.card {
+  padding: 27px 16px;
+  background: white;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  box-shadow: 7px 7px 44px 5px rgba(180, 180, 180, 0.2);
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin: 8px;
+  z-index: 999;
+}
+
+.card_content_horizontal {
+  width: 100%;
+  flex-direction: row;
+}
+
+.card-span-accent {
+  font-weight: 700;
+}
+
+.card-price-property {
+  font-size: 18px;
+  color: #037160;
+}
+
+.card-title {
+  color: #121514;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 1.58px;
+  margin: 12px 0 7px;
+}
+
+img {
+  width: 156px;
+  height: 156px;
+}
+
+.button-row{
+  text-align: left;
+}
+
+@media screen and (max-width: 626px) {
+  .card {
+    padding: 15px 10px;
+    margin: 4px;
+  }
+  .data-row{
+    text-align: center;
+    margin-top: 15px;
+  }
+  .button-row{
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  img {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+.classic-button {
+  text-align: center;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 1.4px;
+  background-color: #037160;
+  border: none;
+  padding: 10px;
+  padding-right: 30px;
+  padding-left: 30px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.classic-button:hover {
+  border: 1px #037160 solid;
+  color: #037160;
+  background-color: #ffffff;
+}
+

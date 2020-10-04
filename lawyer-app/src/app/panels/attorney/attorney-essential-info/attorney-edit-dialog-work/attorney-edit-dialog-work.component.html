@@ -1,0 +1,99 @@
+<h4 class="rtl text-right my-2">ویرایش سابقه کاری</h4>
+<div mat-dialog-content class="my-4 rtl">
+  <form [formGroup]="workForm" class="mt-5">
+    <div class="row">
+      <div class="col-sm-12 col-lg-6">
+        <div class="form-group">
+          <label> نام موسسه</label>
+          <input type="text"
+                 class="form-control"
+                 maxlength="100"
+                 formControlName="company">
+          <ul class="mt-1 mb-0 pb-0" *ngFor="let error of workErrorMessages.company">
+            <li class="font-small text-danger font-weight-bold"
+                *ngIf="workForm.get('company').hasError(error.type)
+                                  && (workForm.get('company').dirty
+                                  || workForm.get('company').touched)">
+              {{ error.message }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-6">
+        <div class="form-group">
+          <label>سمت</label>
+          <input type="text"
+                 class="form-control"
+                 maxlength="100"
+                 formControlName="position">
+          <ul class="mt-1 mb-0 pb-0"
+              *ngFor="let error of workErrorMessages.position">
+            <li class="font-small text-danger font-weight-bold"
+                *ngIf="workForm.get('position').hasError(error.type)
+                                  && (workForm.get('position').dirty
+                                  || workForm.get('position').touched)">
+              {{ error.message }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-6">
+        <div class="form-group">
+          <label>سال شروع</label>
+          <input type="text"
+                 pKeyFilter="int"
+                 class="form-control"
+                 maxlength="4"
+                 minlength="4"
+                 formControlName="startYear">
+          <ul class="mt-1 mb-0 pb-0"
+              *ngFor="let error of workErrorMessages.startYear">
+            <li class="font-small text-danger font-weight-bold"
+                *ngIf="workForm.get('startYear').hasError(error.type)
+                                  && (workForm.get('startYear').dirty
+                                  || workForm.get('startYear').touched)">
+              {{ error.message }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-6">
+        <div class="form-group">
+          <label>سال پایان</label>
+          <input type="text"
+                 pKeyFilter="int"
+                 class="form-control"
+                 maxlength="4"
+                 minlength="4"
+                 formControlName="major">
+          <ul class="mt-1 mb-0 pb-0"
+              *ngFor="let error of workErrorMessages.endYear">
+            <li class="font-small text-danger font-weight-bold"
+                *ngIf="workForm.get('endYear').hasError(error.type)
+                                  && (workForm.get('endYear').dirty
+                                  || workForm.get('endYear').touched)">
+              {{ error.message }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-6">
+        <div class="form-group">
+          <div class="form-check text-right">
+            <input type="checkbox" class="form-check-input"
+                   formControlName="stillWorking" id="stillWorking">
+            <label class="form-check-label" for="stillWorking">در حال کار</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions class="my-2">
+  <button mat-button (click)="onDismiss()">لغو</button>
+  <button mat-button (click)="onConfirm()" cdkFocusInitial
+          [disabled]="workForm.invalid">ثبت</button>
+</div>
+
+
+

@@ -1,0 +1,6 @@
+.panel-footer{
+  z-index: 5;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

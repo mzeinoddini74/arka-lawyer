@@ -1,0 +1,108 @@
+.attor-details-item {
+  margin-bottom: 30px;
+  text-align: right;
+}
+.attor-details-item img {
+  width: 100%;
+}
+.attor-details-item .attor-details-left {
+  padding: 0 50px 40px;
+  box-shadow: 0 0 20px 0 #ddd;
+  margin-bottom: 30px;
+}
+.attor-details-item .attor-details-left .attor-social {
+  text-align: center;
+  margin-top: -28px;
+}
+.attor-details-item .attor-details-left .attor-social ul {
+  background-color: #282828;
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px 0 #ddd;
+  margin: 0 0 25px;
+}
+.attor-details-item .attor-details-left .attor-social ul li {
+  list-style-type: none;
+  display: inline-block;
+  margin-right: 4px;
+  margin-left: 4px;
+}
+.attor-details-item .attor-details-left .attor-social ul li a {
+  display: block;
+  color: #037160;
+  font-size: 18px;
+}
+.attor-details-item .attor-details-left .attor-social-details {
+  margin-bottom: 30px;
+}
+.attor-details-item .attor-details-left .attor-social-details h3 {
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+.attor-details-item .attor-details-left .attor-social-details ul {
+  margin: 0;
+  padding: 0;
+}
+.attor-details-item .attor-details-left .attor-social-details ul li {
+  list-style-type: none;
+  display: block;
+  color: #333;
+  margin-bottom: 13px;
+}
+.attor-details-item .attor-details-left .attor-social-details ul li mat-icon {
+  display: inline-block;
+  color: #037160;
+  font-size: 18px;
+  margin-right: 5px;
+}
+.attor-details-item .attor-details-left .attor-social-details ul li a {
+  display: inline-block;
+  color: #333;
+}
+.attor-details-item .attor-details-left .attor-work h3 {
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+.attor-details-item .attor-details-left .attor-work ul {
+  margin: 0;
+  padding: 0;
+}
+.attor-details-item .attor-details-left .attor-work .attor-work-left ul li {
+  position: relative;
+}
+.attor-details-item .attor-details-left .attor-work ul li {
+  list-style-type: none;
+  display: block;
+  color: #333;
+  margin-bottom: 8px;
+}
+.attor-details-item .attor-details-left .attor-work .attor-work-left ul li:before {
+  position: absolute;
+  content: "";
+  width: 50px;
+  height: 1px;
+  top: 10px;
+  right: 88px;
+  background-color: #ccc;
+}
+
+.attor-details-item .attor-details-right .attor-details-name {
+  margin-bottom: 40px;
+}
+.attor-details-item .attor-details-right .attor-details-things h3 {
+  color: #037160;
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+.attor-details-item .attor-details-right .attor-details-things p {
+    margin-bottom: 20px;
+    color: #333;
+}
+.attor-details-item .attor-details-left .attor-social ul li a:hover {
+  color: #fff;
+}
+
