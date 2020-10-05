@@ -6,7 +6,6 @@ import { MaterialModule } from './modules/material/material.module';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgwWowModule } from 'ngx-wow';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatPaginatorIntl } from '@angular/material/paginator';
@@ -14,6 +13,7 @@ import { getDutchPaginatorIntl } from './dutch-paginator-intl';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {PrimengModule} from './modules/primeng/primeng.module';
 import { HttpClientModule } from '@angular/common/http';
+import {DpDatePickerModule} from 'ng2-jalali-date-picker';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -42,7 +42,7 @@ import { ServiceComponent } from './pages/service/service.component';
 import { ServiceDetailComponent } from './pages/service/service-detail/service-detail.component';
 import { InPersonSelectCategoryComponent } from './pages/consultation/in-person-consultation/in-person-select-category/in-person-select-category.component';
 import { TelSelectCategoryComponent } from './pages/consultation/tel-consultation/tel-select-category/tel-select-category.component';
-import { TelSelectConsultorComponent } from './pages/consultation/tel-consultation/tel-select-consultor/tel-select-consultor.component';
+import { TelSelectConsultantComponent } from './pages/consultation/tel-consultation/tel-select-consultant/tel-select-consultant.component';
 
 import { LoginComponent } from './pages/account/login/login.component';
 import { RegisterComponent } from './pages/account/register/register.component';
@@ -66,9 +66,9 @@ import { AdminProfileComponent } from './panels/admin/admin-profile/admin-profil
 import { AdminEditDialogUserComponent } from './panels/admin/admin-user/admin-edit-dialog-user/admin-edit-dialog-user.component';
 import { AdminAttorneyDetailComponent } from './panels/admin/admin-attorney/admin-attorney-detail/admin-attorney-detail.component';
 import { AdminLegalCaseComponent } from './panels/admin/admin-legal-case/admin-legal-case.component';
-import { AdminConsultorComponent } from './panels/admin/admin-consultor/admin-consultor.component';
-import { AdminAddConsultorComponent } from './panels/admin/admin-consultor/admin-add-consultor/admin-add-consultor.component';
-import { AdminEditDialogConsultorComponent } from './panels/admin/admin-consultor/admin-edit-dialog-consultor/admin-edit-dialog-consultor.component';
+import { AdminConsultantComponent } from './panels/admin/admin-consultant/admin-consultant.component';
+import { AdminAddConsultantComponent } from './panels/admin/admin-consultant/admin-add-consultant/admin-add-consultant.component';
+import { AdminEditDialogConsultantComponent } from './panels/admin/admin-consultant/admin-edit-dialog-consultant/admin-edit-dialog-consultant.component';
 import { AdminAddLegalCaseComponent } from './panels/admin/admin-legal-case/admin-add-legal-case/admin-add-legal-case.component';
 import { AdminEditDialogLegalCaseComponent } from './panels/admin/admin-legal-case/admin-edit-dialog-legal-case/admin-edit-dialog-legal-case.component';
 import { AdminInPersonRequestComponent } from './panels/admin/admin-in-person-request/admin-in-person-request.component';
@@ -91,14 +91,15 @@ import { AttorneyEditDialogEducationComponent } from './panels/attorney/attorney
 import { AttorneyEditDialogWorkComponent } from './panels/attorney/attorney-essential-info/attorney-edit-dialog-work/attorney-edit-dialog-work.component';
 import { AttorneyTelConsultationComponent } from './panels/attorney/attorney-tel-consultation/attorney-tel-consultation.component';
 
-
 import { UserDashboardComponent } from './panels/user/user-dashboard/user-dashboard.component';
 import { UserProfileComponent } from './panels/user/user-profile/user-profile.component';
 import { UserMenuComponent } from './panels/user/shared/user-menu/user-menu.component';
-import { ConsultorDashboardComponent } from './panels/consultor/consultor-dashboard/consultor-dashboard.component';
-import { ConsultorMenuComponent } from './panels/consultor/shared/consultor-menu/consultor-menu.component';
-import {DpDatePickerModule} from 'ng2-jalali-date-picker';
 import { AdminAssignRequestDialogComponent } from './panels/admin/admin-in-person-request/admin-assign-request-dialog/admin-assign-request-dialog.component';
+import { ConsultantDashboardComponent } from './panels/consultant/consultant-dashboard/consultant-dashboard.component';
+import { ConsultantMenuComponent } from './panels/consultant/shared/consultant-menu/consultant-menu.component';
+import { AdminCategoryComponent } from './panels/admin/admin-category/admin-category.component';
+import { AdminAddCategoryComponent } from './panels/admin/admin-category/admin-add-category/admin-add-category.component';
+import { AdminCategoryDetailComponent } from './panels/admin/admin-category/admin-category-detail/admin-category-detail.component';
 
 @NgModule({
   declarations: [
@@ -161,9 +162,9 @@ import { AdminAssignRequestDialogComponent } from './panels/admin/admin-in-perso
     AdminEditDialogUserComponent,
     AdminAttorneyDetailComponent,
     AdminLegalCaseComponent,
-    AdminConsultorComponent,
-    AdminAddConsultorComponent,
-    AdminEditDialogConsultorComponent,
+    AdminConsultantComponent,
+    AdminAddConsultantComponent,
+    AdminEditDialogConsultantComponent,
     UserDashboardComponent,
     UserProfileComponent,
     UserMenuComponent,
@@ -174,10 +175,13 @@ import { AdminAssignRequestDialogComponent } from './panels/admin/admin-in-perso
     AdminOnlineRequestComponent,
     InPersonSelectCategoryComponent,
     TelSelectCategoryComponent,
-    TelSelectConsultorComponent,
-    ConsultorDashboardComponent,
-    ConsultorMenuComponent,
-    AdminAssignRequestDialogComponent
+    TelSelectConsultantComponent,
+    AdminAssignRequestDialogComponent,
+    ConsultantDashboardComponent,
+    ConsultantMenuComponent,
+    AdminCategoryComponent,
+    AdminAddCategoryComponent,
+    AdminCategoryDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -189,7 +193,6 @@ import { AdminAssignRequestDialogComponent } from './panels/admin/admin-in-perso
     FormsModule,
     ReactiveFormsModule,
     CKEditorModule,
-    SweetAlert2Module.forRoot(),
     NgxCaptchaModule,
     PrimengModule,
     HttpClientModule,

@@ -4,12 +4,11 @@ import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {UserModel} from '../../../../models/user/UserModel';
 
 @Component({
-  selector: 'app-admin-edit-dialog-consultor',
-  templateUrl: './admin-edit-dialog-consultor.component.html',
-  styleUrls: ['./admin-edit-dialog-consultor.component.css']
+  selector: 'app-admin-edit-dialog-consultant',
+  templateUrl: './admin-edit-dialog-consultant.component.html',
+  styleUrls: ['./admin-edit-dialog-consultant.component.css']
 })
-export class AdminEditDialogConsultorComponent{
-
+export class AdminEditDialogConsultantComponent {
   form: FormGroup;
   mobileRegix = /^0?9[123]\d{8}$/;
   errorMessages = {
@@ -33,7 +32,7 @@ export class AdminEditDialogConsultorComponent{
 
   constructor(
     public formBuilder: FormBuilder,
-    public dialogRef: MatDialogRef<AdminEditDialogConsultorComponent>,
+    public dialogRef: MatDialogRef<AdminEditDialogConsultantComponent>,
     @Inject(MAT_DIALOG_DATA) public data: UserModel) {
     this.createForm();
   }
@@ -106,4 +105,5 @@ export class AdminEditDialogConsultorComponent{
       this.form.controls.profilePicture = file.name;
     }
   }
+
 }

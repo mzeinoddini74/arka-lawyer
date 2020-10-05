@@ -1,8 +1,7 @@
 nav.navbar {
   height: 60px;
   width: calc(100% - 270px);
-  z-index: 1039;
-  /*background-color: #1F262D;*/
+  /*z-index: 1039;*/
   background-color: #037160;
 }
 nav.navbar a,nav.navbar ul li,nav.navbar button{

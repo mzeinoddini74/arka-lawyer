@@ -8,12 +8,12 @@ import {ConfirmationService} from 'primeng/api';
 import {AdminEditDialogUserComponent} from '../admin-user/admin-edit-dialog-user/admin-edit-dialog-user.component';
 
 @Component({
-  selector: 'app-admin-consultor',
-  templateUrl: './admin-consultor.component.html',
-  styleUrls: ['./admin-consultor.component.css'],
+  selector: 'app-admin-consultant',
+  templateUrl: './admin-consultant.component.html',
+  styleUrls: ['./admin-consultant.component.css'],
   providers: [ConfirmationService]
 })
-export class AdminConsultorComponent implements AfterViewInit {
+export class AdminConsultantComponent implements AfterViewInit {
 
   displayedColumns: string[] = ['id', 'mobile', 'fullname', 'email', 'gender', 'actions'];
   dataSource: MatTableDataSource<UserModel>;
@@ -112,4 +112,5 @@ export class AdminConsultorComponent implements AfterViewInit {
       }
     });
   }
+
 }

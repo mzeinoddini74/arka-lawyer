@@ -610,24 +610,25 @@
                     <div class="row blog-details-category service-detail">
 
                       <div class="col-12">
-
-  <!--                      <div class="search-area">-->
-  <!--                        <input (keyup)="applyFilter($event)" #input type="text" placeholder="جستجو" class="form-control">-->
-  <!--                        <button type="submit" class="btn blog-details-btn">-->
-  <!--                          <mat-icon>search</mat-icon>-->
-  <!--                        </button>-->
-  <!--                      </div>-->
+                        <div class="search-area">
+                          <input #input type="text" placeholder="جستجو" class="form-control">
+                          <button type="submit" class="btn blog-details-btn">
+                            <mat-icon>search</mat-icon>
+                          </button>
+                        </div>
                         <div class="row">
                         <div class="col-12 service-categories">
 
                           <mat-selection-list #subCategoriesElement class="row"
                                               (selectionChange)="onSelectionChange()">
+                            <ng-container *ngFor="let item of subCategories;">
                               <mat-list-option color="primary"
                                                class="col-xs-6 col-md-6 mt-2"
-                                               *ngFor="let item of subCategories;"
+                                               [hidden]="!item.title.includes(input.value.trim().toLowerCase())"
                                                [value]="item.id">
                                 {{item.title}}
                               </mat-list-option>
+                            </ng-container>
                           </mat-selection-list>
 
                         </div>

@@ -19,11 +19,13 @@ export class PanelHeaderComponent implements OnInit {
 
       $('#panel-menu').css('display', 'none');
       $('#panel-navbar').addClass('w-100');
+      $('#panel-footer').addClass('w-100');
       $('#main-content').addClass('pr-0');
     }
     else{
       $('#panel-menu').css('display', 'block');
       $('#panel-navbar').removeClass('w-100');
+      $('#panel-footer').removeClass('w-100');
       $('#main-content').removeClass('pr-0');
     }
   }

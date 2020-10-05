@@ -13,19 +13,19 @@
       <ul id="sidebarnav">
         <li class="nav-devider"></li>
 
-        <li class="" routerLink="/admin/dashboard">
+        <li routerLink="/admin/dashboard">
           <a>
             <i class="fa fa-home fa-sm"></i><span class="hide-menu"> داشبورد </span>
           </a>
         </li>
-        <li class="" routerLink="/admin/profile">
+        <li routerLink="/admin/profile">
           <a>
-            <i class="fa fa-user fa-sm"></i><span class="hide-menu"> پروفایل </span>
+            <i class="fa fa-user fa-sm"></i><span class="hide-menu"> پروفایل کاربری </span>
           </a>
         </li>
 
         <li class="nav-small-cap">مدیر</li>
-        <li class="">
+        <li>
           <a class="has-arrow" data-toggle="collapse" href="#user" role="button" aria-expanded="false" aria-controls="collapseExample">
             <i class="fa fa-users fa-sm"></i><span class="hide-menu"> مدیریت کاربران عادی </span>
           </a>
@@ -33,7 +33,7 @@
             <li routerLink="/admin/user"><a>لیست کاربران عادی</a></li>
           </ul>
         </li>
-        <li class="">
+        <li>
           <a class="has-arrow" data-toggle="collapse" href="#attorney" role="button" aria-expanded="false" aria-controls="collapseExample">
             <i class="fa fa-users fa-sm"></i><span class="hide-menu"> مدیریت کاربران حقوقی </span>
           </a>
@@ -42,16 +42,16 @@
             <li routerLink="/admin/add-attorney"><a>ثبت کاربر حقوقی</a></li>
           </ul>
         </li>
-        <li class="">
+        <li>
           <a class="has-arrow" data-toggle="collapse" href="#consultant" role="button" aria-expanded="false" aria-controls="collapseExample">
             <i class="fas fa-users fa-sm"></i><span class="hide-menu"> مدیریت مشاورین حقوقی </span>
           </a>
           <ul class="collapse" id="consultant">
-            <li routerLink="/admin/consultor"><a>لیست مشاورین حقوقی</a></li>
-            <li routerLink="/admin/add-consultor"><a>ثبت مشاور حقوقی</a></li>
+            <li routerLink="/admin/consultant"><a>لیست مشاورین حقوقی</a></li>
+            <li routerLink="/admin/add-consultant"><a>ثبت مشاور حقوقی</a></li>
           </ul>
         </li>
-        <li class="">
+        <li>
           <a class="has-arrow" data-toggle="collapse" href="#legal-case" role="button" aria-expanded="false" aria-controls="collapseExample">
             <i class="fa fa-balance-scale fa-sm"></i><span class="hide-menu"> مدیریت پرونده های حقوقی </span>
           </a>
@@ -60,7 +60,7 @@
             <li routerLink="/admin/add-legal-case"><a>ثبت پرونده حقوقی</a></li>
           </ul>
         </li>
-        <li class="">
+        <li>
           <a class="has-arrow" data-toggle="collapse" href="#in-person" role="button" aria-expanded="false" aria-controls="collapseExample">
             <i class="fa fa-user fa-sm"></i><span class="hide-menu"> مدیریت مشاوره های حضوری </span>
           </a>
@@ -68,7 +68,7 @@
             <li routerLink="/admin/in-person-request"><a>لیست مشاوره های حضوری</a></li>
           </ul>
         </li>
-        <li class="">
+        <li>
           <a class="has-arrow" data-toggle="collapse" href="#tel" role="button" aria-expanded="false" aria-controls="collapseExample">
             <i class="fa fa-phone fa-sm"></i><span class="hide-menu"> مدیریت مشاوره های تلفنی </span>
           </a>
@@ -76,7 +76,7 @@
             <li routerLink="/admin/tel-request"><a>لیست مشاوره های تلفنی</a></li>
           </ul>
         </li>
-        <li class="">
+        <li>
           <a class="has-arrow" data-toggle="collapse" href="#online" role="button" aria-expanded="false" aria-controls="collapseExample">
             <i class="fas fa-comment fa-sm"></i><span class="hide-menu"> مدیریت مشاوره های آنلاین </span>
           </a>
@@ -84,9 +84,18 @@
             <li routerLink="/admin/online-request"><a>لیست مشاوره های آنلاین</a></li>
           </ul>
         </li>
+        <li>
+          <a class="has-arrow" data-toggle="collapse" href="#category" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <i class="fas fa-th fa-sm"></i><span class="hide-menu"> مدیریت دسته بندی مشاوره ها </span>
+          </a>
+          <ul class="collapse" id="category">
+            <li routerLink="/admin/category"><a>لیست دسته بندی موضوعی مشاوره ها</a></li>
+            <li routerLink="/admin/add-category"><a>ثبت دسته بندی</a></li>
+          </ul>
+        </li>
 
         <li class="nav-small-cap">مدیریت صفحه اصلی</li>
-        <li class="">
+        <li>
           <a class="has-arrow" data-toggle="collapse" href="#banner" role="button" aria-expanded="false" aria-controls="collapseExample">
             <i class="fa fa-image fa-sm"></i><span class="hide-menu"> مدیریت تصاویر هدر </span>
           </a>
@@ -95,7 +104,7 @@
             <li routerLink="/admin/add-banner"><a>ثبت تصویر</a></li>
           </ul>
         </li>
-        <li class="">
+        <li>
           <a class="has-arrow" data-toggle="collapse" href="#blog" role="button" aria-expanded="false" aria-controls="collapseExample">
             <i class="fa fa-blog fa-sm"></i><span class="hide-menu"> مدیریت اخبار </span>
           </a>

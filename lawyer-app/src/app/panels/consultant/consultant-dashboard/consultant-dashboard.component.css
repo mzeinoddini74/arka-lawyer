@@ -2,9 +2,11 @@
   margin-bottom: 15px;
 }
 .c-dashboardInfo .wrap {
-  background: #ffffff;
-  border:1px #037160 solid;
-  border-radius: 7px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 5px 0 rgba(43,43,43,.1), 0 11px 6px -7px rgba(43,43,43,.1);
+  box-shadow: 0 0 5px 0 rgba(43,43,43,.1), 0 11px 6px -7px rgba(43,43,43,.1);
+  border: none;
+  background-color: white;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -34,11 +36,9 @@
   height: 10px;
   content: "";
 }
-
 .c-dashboardInfo .wrap:after {
   background: linear-gradient(69.83deg, #037160 0%, #ffffff 100%);
 }
-
 .MuiSvgIcon-root-19 {
   fill: currentColor;
   width: 1em;
