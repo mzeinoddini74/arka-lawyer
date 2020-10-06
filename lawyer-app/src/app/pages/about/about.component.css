@@ -1,6 +1,6 @@
 .help-area {
   position: relative;
-  background-color: #F2FAF9;
+  /*background-color: #F2FAF9;*/
   padding-top: 0;
 }
 .help-left {
@@ -329,9 +329,9 @@ ul{
 }
 
 
-.app-form {
-  background-color: #F2FAF9;
-}
+/*.app-form {*/
+/*  background-color: #F2FAF9;*/
+/*}*/
 
 .app-area {
   position: relative;

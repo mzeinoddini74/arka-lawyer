@@ -1,0 +1,6 @@
+mat-card-content h2::after{
+  content: '';
+  border-bottom: 3px solid #037160;
+  width: 20px;
+  display: block;
+}

@@ -76,6 +76,13 @@ import { AdminTelRequestComponent } from './panels/admin/admin-tel-request/admin
 import { AdminOnlineRequestComponent } from './panels/admin/admin-online-request/admin-online-request.component';
 import { AdminReplyDialogOnlineRequestComponent } from './panels/admin/admin-online-request/admin-reply-dialog-online-request/admin-reply-dialog-online-request.component';
 import { AdminEditDialogOnlineRequestComponent } from './panels/admin/admin-online-request/admin-edit-dialog-online-request/admin-edit-dialog-online-request.component';
+import { AdminLawCategoryComponent } from './panels/admin/admin-law-category/admin-law-category.component';
+import { AdminSpecialtyCategoryComponent } from './panels/admin/admin-specialty-category/admin-specialty-category.component';
+import { AdminAddLawCategoryComponent } from './panels/admin/admin-law-category/admin-add-law-category/admin-add-law-category.component';
+import { AdminAddSpecialtyCategoryComponent } from './panels/admin/admin-specialty-category/admin-add-specialty-category/admin-add-specialty-category.component';
+import { AdminEditDialogLawCategoryComponent } from './panels/admin/admin-law-category/admin-edit-dialog-law-category/admin-edit-dialog-law-category.component';
+import { AdminEditDialogSpecialtyCategoryComponent } from './panels/admin/admin-specialty-category/admin-edit-dialog-specialty-category/admin-edit-dialog-specialty-category.component';
+import { AdminAssignRequestDialogComponent } from './panels/admin/admin-in-person-request/admin-assign-request-dialog/admin-assign-request-dialog.component';
 
 import { AttorneyDashboardComponent } from './panels/attorney/attorney-dashboard/attorney-dashboard.component';
 import { AttorneyMenuComponent } from './panels/attorney/shared/attorney-menu/attorney-menu.component';
@@ -94,12 +101,14 @@ import { AttorneyTelConsultationComponent } from './panels/attorney/attorney-tel
 import { UserDashboardComponent } from './panels/user/user-dashboard/user-dashboard.component';
 import { UserProfileComponent } from './panels/user/user-profile/user-profile.component';
 import { UserMenuComponent } from './panels/user/shared/user-menu/user-menu.component';
-import { AdminAssignRequestDialogComponent } from './panels/admin/admin-in-person-request/admin-assign-request-dialog/admin-assign-request-dialog.component';
+
 import { ConsultantDashboardComponent } from './panels/consultant/consultant-dashboard/consultant-dashboard.component';
 import { ConsultantMenuComponent } from './panels/consultant/shared/consultant-menu/consultant-menu.component';
-import { AdminCategoryComponent } from './panels/admin/admin-category/admin-category.component';
-import { AdminAddCategoryComponent } from './panels/admin/admin-category/admin-add-category/admin-add-category.component';
-import { AdminCategoryDetailComponent } from './panels/admin/admin-category/admin-category-detail/admin-category-detail.component';
+import { AdminLawCategoryDetailComponent } from './panels/admin/admin-law-category/admin-law-category-detail/admin-law-category-detail.component';
+import { AdminSpecialtyCategoryDetailComponent } from './panels/admin/admin-specialty-category/admin-specialty-category-detail/admin-specialty-category-detail.component';
+import { LawCategoryComponent } from './pages/law-category/law-category.component';
+import { LawSubCategoryComponent } from './pages/law-category/law-sub-category/law-sub-category.component';
+import { LawDetailComponent } from './pages/law-category/law-sub-category/law-detail/law-detail.component';
 
 @NgModule({
   declarations: [
@@ -179,9 +188,17 @@ import { AdminCategoryDetailComponent } from './panels/admin/admin-category/admi
     AdminAssignRequestDialogComponent,
     ConsultantDashboardComponent,
     ConsultantMenuComponent,
-    AdminCategoryComponent,
-    AdminAddCategoryComponent,
-    AdminCategoryDetailComponent
+    AdminLawCategoryComponent,
+    AdminSpecialtyCategoryComponent,
+    AdminAddLawCategoryComponent,
+    AdminAddSpecialtyCategoryComponent,
+    AdminEditDialogLawCategoryComponent,
+    AdminEditDialogSpecialtyCategoryComponent,
+    AdminLawCategoryDetailComponent,
+    AdminSpecialtyCategoryDetailComponent,
+    LawCategoryComponent,
+    LawSubCategoryComponent,
+    LawDetailComponent
   ],
   imports: [
     BrowserModule,

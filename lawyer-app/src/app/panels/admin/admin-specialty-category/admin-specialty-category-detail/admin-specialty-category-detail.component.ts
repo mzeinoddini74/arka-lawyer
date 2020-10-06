@@ -1,21 +1,18 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
-import {LegalCaseModel} from '../../../models/attorney/LegalCaseModel';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatDialog} from '@angular/material/dialog';
-import {animate, state, style, transition, trigger} from '@angular/animations';
 import {ConfirmationService} from 'primeng/api';
 
 @Component({
-  selector: 'app-admin-category',
-  templateUrl: './admin-category.component.html',
-  styleUrls: ['./admin-category.component.css'],
-  providers: [ConfirmationService]
+  selector: 'app-admin-specialty-category-detail',
+  templateUrl: './admin-specialty-category-detail.component.html',
+  styleUrls: ['./admin-specialty-category-detail.component.css']
 })
-export class AdminCategoryComponent implements AfterViewInit {
+export class AdminSpecialtyCategoryDetailComponent implements AfterViewInit {
 
-  displayedColumns: string[] = ['id', 'title', 'count', 'actions'];
+  displayedColumns: string[] = ['id', 'title', 'actions'];
   dataSource: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -24,9 +21,9 @@ export class AdminCategoryComponent implements AfterViewInit {
   constructor(public dialog: MatDialog,
               protected confirmationService: ConfirmationService) {
     const categories = [
-      {id: 1, titile: 'کیفری', count: 6  },
-      {id: 2, titile: 'کیفری', count: 12  },
-      {id: 3, titile: 'کیفری', count: 3  }
+      {id: 1, titile: 'کیفری1'},
+      {id: 2, titile: 'کیفری2'},
+      {id: 3, titile: 'کیفری3'}
     ];
 
     // Assign the data to the data source for the table to render

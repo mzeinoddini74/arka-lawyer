@@ -4,25 +4,21 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatDialog} from '@angular/material/dialog';
 import {ConfirmationService} from 'primeng/api';
-import {ActivatedRoute} from '@angular/router';
 
 @Component({
-  selector: 'app-admin-category-detail',
-  templateUrl: './admin-category-detail.component.html',
-  styleUrls: ['./admin-category-detail.component.css'],
+  selector: 'app-admin-law-category-detail',
+  templateUrl: './admin-law-category-detail.component.html',
+  styleUrls: ['./admin-law-category-detail.component.css'],
   providers: [ConfirmationService]
 })
-export class AdminCategoryDetailComponent implements AfterViewInit {
-
-  id: number;
+export class AdminLawCategoryDetailComponent implements AfterViewInit {
   displayedColumns: string[] = ['id', 'title', 'actions'];
   dataSource: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private route: ActivatedRoute,
-              public dialog: MatDialog,
+  constructor(public dialog: MatDialog,
               protected confirmationService: ConfirmationService) {
     const categories = [
       {id: 1, titile: 'کیفری1'},
@@ -35,7 +31,6 @@ export class AdminCategoryDetailComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.id = Number(this.route.snapshot.queryParamMap.get('id'));
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
@@ -62,5 +57,4 @@ export class AdminCategoryDetailComponent implements AfterViewInit {
       }
     });
   }
-
 }

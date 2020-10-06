@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminAddCategoryComponent } from './admin-add-category.component';
+import { LawCategoryComponent } from './law-category.component';
 
-describe('AdminAddCategoryComponent', () => {
-  let component: AdminAddCategoryComponent;
-  let fixture: ComponentFixture<AdminAddCategoryComponent>;
+describe('LawCategoryComponent', () => {
+  let component: LawCategoryComponent;
+  let fixture: ComponentFixture<LawCategoryComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminAddCategoryComponent ]
+      declarations: [ LawCategoryComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdminAddCategoryComponent);
+    fixture = TestBed.createComponent(LawCategoryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

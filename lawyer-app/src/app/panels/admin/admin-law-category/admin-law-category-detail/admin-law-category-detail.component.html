@@ -50,6 +50,15 @@
                   <th mat-header-cell *matHeaderCellDef> عملیات </th>
                   <td mat-cell *matCellDef="let row">
                     <button mat-icon-button>
+                      <mat-icon color="primary">add</mat-icon>
+                    </button>
+                    <button mat-icon-button
+                            [routerLink]="['/admin/category-detail']"
+                            [queryParams]="{id: row.id}"
+                            matTooltip="مشاهده جزییات" matTooltipPosition="below">
+                      <mat-icon color="primary">remove_red_eye</mat-icon>
+                    </button>
+                    <button mat-icon-button>
                       <mat-icon color="primary">edit</mat-icon>
                     </button>
                     <button mat-icon-button (click)="delete(row.id)">

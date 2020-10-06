@@ -14,6 +14,9 @@ import {OnlineConsultationComponent} from './pages/consultation/online-consultat
 import {InPersonConsultationComponent} from './pages/consultation/in-person-consultation/in-person-consultation.component';
 import {ServiceComponent} from './pages/service/service.component';
 import {ServiceDetailComponent} from './pages/service/service-detail/service-detail.component';
+import {InPersonSelectCategoryComponent} from './pages/consultation/in-person-consultation/in-person-select-category/in-person-select-category.component';
+import {TelSelectCategoryComponent} from './pages/consultation/tel-consultation/tel-select-category/tel-select-category.component';
+import {TelSelectConsultantComponent} from './pages/consultation/tel-consultation/tel-select-consultant/tel-select-consultant.component';
 
 import {LoginComponent} from './pages/account/login/login.component';
 import {ForgotPasswordComponent} from './pages/account/forgot-password/forgot-password.component';
@@ -29,8 +32,16 @@ import {AdminAddAttorneyComponent} from './panels/admin/admin-attorney/admin-add
 import {AdminUserComponent} from './panels/admin/admin-user/admin-user.component';
 import {AdminConsultantComponent} from './panels/admin/admin-consultant/admin-consultant.component';
 import {AdminAddConsultantComponent} from './panels/admin/admin-consultant/admin-add-consultant/admin-add-consultant.component';
-import {AdminCategoryComponent} from './panels/admin/admin-category/admin-category.component';
-import {AdminAddCategoryComponent} from './panels/admin/admin-category/admin-add-category/admin-add-category.component';
+import {AdminLawCategoryComponent} from './panels/admin/admin-law-category/admin-law-category.component';
+import {AdminAddLawCategoryComponent} from './panels/admin/admin-law-category/admin-add-law-category/admin-add-law-category.component';
+import {AdminLawCategoryDetailComponent} from './panels/admin/admin-law-category/admin-law-category-detail/admin-law-category-detail.component';
+import {AdminAttorneyDetailComponent} from './panels/admin/admin-attorney/admin-attorney-detail/admin-attorney-detail.component';
+import {AdminLegalCaseComponent} from './panels/admin/admin-legal-case/admin-legal-case.component';
+import {AdminInPersonRequestComponent} from './panels/admin/admin-in-person-request/admin-in-person-request.component';
+import {AdminAddLegalCaseComponent} from './panels/admin/admin-legal-case/admin-add-legal-case/admin-add-legal-case.component';
+import {AdminOnlineRequestComponent} from './panels/admin/admin-online-request/admin-online-request.component';
+import {AdminTelRequestComponent} from './panels/admin/admin-tel-request/admin-tel-request.component';
+import {AdminProfileComponent} from './panels/admin/admin-profile/admin-profile.component';
 
 import {AttorneyDashboardComponent} from './panels/attorney/attorney-dashboard/attorney-dashboard.component';
 import {AttorneyWorkComponent} from './panels/attorney/attorney-work/attorney-work.component';
@@ -40,22 +51,18 @@ import {AttorneyEducationComponent} from './panels/attorney/attorney-education/a
 import {AttorneyAddEducationComponent} from './panels/attorney/attorney-education/attorney-add-education/attorney-add-education.component';
 import {AttorneyLegalCaseComponent} from './panels/attorney/attorney-legal-case/attorney-legal-case.component';
 import {AttorneyTelConsultationComponent} from './panels/attorney/attorney-tel-consultation/attorney-tel-consultation.component';
-import {AdminProfileComponent} from './panels/admin/admin-profile/admin-profile.component';
 import {AttorneyEssentialInfoComponent} from './panels/attorney/attorney-essential-info/attorney-essential-info.component';
-import {AdminAttorneyDetailComponent} from './panels/admin/admin-attorney/admin-attorney-detail/admin-attorney-detail.component';
-import {AdminLegalCaseComponent} from './panels/admin/admin-legal-case/admin-legal-case.component';
-import {AdminInPersonRequestComponent} from './panels/admin/admin-in-person-request/admin-in-person-request.component';
-import {AdminAddLegalCaseComponent} from './panels/admin/admin-legal-case/admin-add-legal-case/admin-add-legal-case.component';
-import {AdminOnlineRequestComponent} from './panels/admin/admin-online-request/admin-online-request.component';
-import {AdminTelRequestComponent} from './panels/admin/admin-tel-request/admin-tel-request.component';
+
 import {UserDashboardComponent} from './panels/user/user-dashboard/user-dashboard.component';
 import {UserProfileComponent} from './panels/user/user-profile/user-profile.component';
-import {InPersonSelectCategoryComponent} from './pages/consultation/in-person-consultation/in-person-select-category/in-person-select-category.component';
-import {TelSelectCategoryComponent} from './pages/consultation/tel-consultation/tel-select-category/tel-select-category.component';
-import {TelSelectConsultantComponent} from './pages/consultation/tel-consultation/tel-select-consultant/tel-select-consultant.component';
 
 import {ConsultantDashboardComponent} from './panels/consultant/consultant-dashboard/consultant-dashboard.component';
-import {AdminCategoryDetailComponent} from './panels/admin/admin-category/admin-category-detail/admin-category-detail.component';
+import {AdminSpecialtyCategoryComponent} from './panels/admin/admin-specialty-category/admin-specialty-category.component';
+import {AdminAddSpecialtyCategoryComponent} from './panels/admin/admin-specialty-category/admin-add-specialty-category/admin-add-specialty-category.component';
+import {AdminSpecialtyCategoryDetailComponent} from './panels/admin/admin-specialty-category/admin-specialty-category-detail/admin-specialty-category-detail.component';
+import {LawSubCategoryComponent} from './pages/law-category/law-sub-category/law-sub-category.component';
+import {LawCategoryComponent} from './pages/law-category/law-category.component';
+import {LawDetailComponent} from './pages/law-category/law-sub-category/law-detail/law-detail.component';
 
 const routes: Routes = [
   {path : '' , component : HomeComponent},
@@ -75,6 +82,9 @@ const routes: Routes = [
   {path : 'tel-select-consultant' , component : TelSelectConsultantComponent},
   {path : 'in-person-consultation' , component : InPersonConsultationComponent},
   {path : 'in-person-select-category' , component : InPersonSelectCategoryComponent},
+  {path : 'law-category' , component : LawCategoryComponent},
+  {path : 'law-sub-category' , component : LawSubCategoryComponent},
+  {path : 'law-detail' , component : LawDetailComponent},
 
   {path : 'login' , component : LoginComponent},
   {path : 'register' , component : RegisterComponent},
@@ -98,9 +108,12 @@ const routes: Routes = [
   {path : 'admin/in-person-request' , component : AdminInPersonRequestComponent},
   {path : 'admin/consultant' , component : AdminConsultantComponent},
   {path : 'admin/add-consultant' , component : AdminAddConsultantComponent},
-  {path : 'admin/category' , component : AdminCategoryComponent},
-  {path : 'admin/add-category' , component : AdminAddCategoryComponent},
-  {path : 'admin/category-detail' , component : AdminCategoryDetailComponent},
+  {path : 'admin/law-category' , component : AdminLawCategoryComponent},
+  {path : 'admin/add-law-category' , component : AdminAddLawCategoryComponent},
+  {path : 'admin/law-category-detail' , component : AdminLawCategoryDetailComponent},
+  {path : 'admin/specialty-category' , component : AdminSpecialtyCategoryComponent},
+  {path : 'admin/add-specialty-category' , component : AdminAddSpecialtyCategoryComponent},
+  {path : 'admin/specialty-category-detail' , component : AdminSpecialtyCategoryDetailComponent},
 
   {path : 'attorney/dashboard' , component : AttorneyDashboardComponent},
   {path : 'attorney' , component : AttorneyDashboardComponent},
